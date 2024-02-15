@@ -1,4 +1,4 @@
-import Navegador from '../../components/navegador/Navegador'
+import { CarouselHome } from '../../components/carousel/Carousel'
 
 const Home = () => {
 	return (
@@ -10,8 +10,9 @@ const Home = () => {
       -cards
       -section (Informacion)
     -footer */}
-			<Navegador></Navegador>
-			<h1>Home</h1>
+
+			<h1 className='text-center'>Home</h1>
+			<CarouselHome></CarouselHome>
 		</>
 	)
 }
