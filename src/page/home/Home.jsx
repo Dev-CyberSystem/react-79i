@@ -1,13 +1,16 @@
 
 const Home = () => {
   return (
+    <>
     {/* 
       Landing page
       -Navbar
       -carrousel
       -cards
       -section (Informacion)
-      -footer */}
+    -footer */}
+      <h1>Home</h1>
+    </>
 
   )
 }
