@@ -1,11 +1,20 @@
-import { Button, Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
-
+import { Container, Nav, NavDropdown, Navbar } from 'react-bootstrap'
+import reactLogo from '../../assets/react.svg'
 const Navegador = () => {
 	return (
 		<>
-			<Navbar expand='lg' className='bg-body-tertiary'>
+			<Navbar expand='lg' bg='dark' data-bs-theme='dark'>
 				<Container>
-					<Navbar.Brand href='#home'>React-Bootstrap</Navbar.Brand>
+					<Navbar.Brand href='#home'>
+						<img
+							src={reactLogo}
+							alt='logo'
+							width='30'
+							height='30'
+							className='d-inline-block align-top me-2 '
+						/>
+						Eze Massa
+					</Navbar.Brand>
 					<Navbar.Toggle aria-controls='basic-navbar-nav' />
 					<Navbar.Collapse id='basic-navbar-nav'>
 						<Nav className='me-auto'>
@@ -28,11 +37,6 @@ const Navegador = () => {
 					</Navbar.Collapse>
 				</Container>
 			</Navbar>
-			<Button className='btnPrueba' variant='danger'>
-				Boton react Bootstrap
-			</Button>
-
-			<button className='btn btn-primary'>Botón de prueba</button>
 		</>
 	)
 }

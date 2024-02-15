@@ -1,18 +1,19 @@
+import Navegador from '../../components/navegador/Navegador'
 
 const Home = () => {
-  return (
-    <>
-    {/* 
+	return (
+		<>
+			{/* 
       Landing page
       -Navbar
       -carrousel
       -cards
       -section (Informacion)
     -footer */}
-      <h1>Home</h1>
-    </>
-
-  )
+			<Navegador></Navegador>
+			<h1>Home</h1>
+		</>
+	)
 }
 
 export default Home
