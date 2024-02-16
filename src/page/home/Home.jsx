@@ -1,15 +1,15 @@
-
 const Home = () => {
-  return (
-    {/* 
+  return {
+    /* 
       Landing page
       -Navbar
       -carrousel
       -cards
       -section (Informacion)
-      -footer */}
+      -footer */
+  };
 
-  )
-}
+  //Empezando la tarea de react
+};
 
-export default Home
+export default Home;
