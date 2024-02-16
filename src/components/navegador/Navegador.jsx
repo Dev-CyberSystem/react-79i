@@ -29,9 +29,9 @@ const Navegador = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Button className="btnPrueba" variant="danger">Boton react Bootstrap</Button>
+    
 
-      <button className="btn btn-primary">Botón de prueba</button>
+      
     </>
   );
 };
