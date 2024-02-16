@@ -7,7 +7,7 @@ export const CarouselHome = () => {
 			<Carousel>
 				<Carousel.Item interval={1000}>
 					<Image
-						src='https://picsum.photos/600/400'
+						src='https://loremflickr.com/600/400'
 						className='d-block mx-auto '
 						alt='carousel imagen'
 					/>
@@ -18,7 +18,7 @@ export const CarouselHome = () => {
 				</Carousel.Item>
 				<Carousel.Item interval={500}>
 					<Image
-						src='https://picsum.photos/600/400?blur'
+						src='https://loremflickr.com/600/400'
 						className='d-block mx-auto '
 						alt='carousel imagen'
 					/>
@@ -29,7 +29,7 @@ export const CarouselHome = () => {
 				</Carousel.Item>
 				<Carousel.Item>
 					<Image
-						src='https://picsum.photos/600/400?grayscale'
+						src='https://loremflickr.com/600/400'
 						className='d-block mx-auto '
 						alt='carousel imagen'
 					/>
