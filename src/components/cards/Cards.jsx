@@ -10,9 +10,9 @@ export function CardsHome() {
   return (
     <>
 
-    <div className="container-fluid">
-        <div className="row justify-content-center mt-4">
-        <div className="d-flex justify-content-evenly text-center w-50 rounded-top"> 
+    <div>
+        <div className="row justify-content-center mt-4 ">
+        <div className=" d-flex justify-content-evenly text-center w-50 rounded-top md-3 sm-1"> 
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={adaptabilidad} />
         <Card.Body>
