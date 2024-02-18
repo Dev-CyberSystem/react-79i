@@ -3,11 +3,11 @@ import reactLogo from '../../assets/react.svg'
 const Navegador = () => {
 	return (
 		<>
-			<Navbar expand='lg' bg='dark' data-bs-theme='dark'>
+			<Navbar expand='lg' bg='dark' data-bs-theme='dark' sticky='top'>
 				<Container>
 					<Navbar.Brand href='#home'>
 						<img
-							src={reactLogo}
+							src={ reactLogo }
 							alt='logo'
 							width='30'
 							height='30'
