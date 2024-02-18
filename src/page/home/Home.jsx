@@ -7,10 +7,14 @@ import Footer from '../../components/footer/Footer';
 const Home = () => {
   return (
     <>
-      <NavbarComponent />
-      <Carousel />
-      <Cards />
-      <SectionReact />
+      <header>
+        <NavbarComponent />
+      </header>
+      <section>
+        <Carousel />
+        <Cards />
+        <SectionReact />
+      </section>
       <Footer />
     </>
   );
