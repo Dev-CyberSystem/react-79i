@@ -1,15 +1,21 @@
+import Navegador from "../../components/navegador/Navegador"
+
+
 
 const Home = () => {
   return (
     <>
-    {/* 
+    <Navegador />
+    
+    
+    {/* <CarrouselHome />    
       Landing page
-      -Navbar
+      
       -carrousel
       -cards
       -section (Informacion)
     -footer */}
-      <h1>Home</h1>
+      <h1></h1>
     </>
 
   )
