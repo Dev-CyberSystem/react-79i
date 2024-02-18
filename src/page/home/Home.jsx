@@ -1,24 +1,14 @@
-import Navegador from "../../components/navegador/Navegador"
+import { Carrousel } from "../../components/carrousel/Carrousel";
+import { Navegador } from "../../components/navegador/Navegador";
 
-
-
-const Home = () => {
+export function Home(){
   return (
-    <>
-    <Navegador />
+   <div>
     
-    
-    {/* <CarrouselHome />    
-      Landing page
-      
-      -carrousel
-      -cards
-      -section (Informacion)
-    -footer */}
-      <h1></h1>
-    </>
+    <Navegador/>
+    <Carrousel/>
+   </div>
 
   )
 }
 
-export default Home

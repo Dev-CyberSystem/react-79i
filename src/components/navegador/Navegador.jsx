@@ -3,9 +3,7 @@ import logo from "../../assets/SINERGIA.png"
 import "./styleNavegador.css"
 
 
-
-
-const Navegador = () => {
+export function Navegador(){
   return (
     <>
       
@@ -43,7 +41,7 @@ const Navegador = () => {
               className="me-2"
               aria-label="Search"
             />
-            <Button variant="outline-success">Search</Button>
+            <Button variant="outline-light">Buscar</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
@@ -53,4 +51,3 @@ const Navegador = () => {
   );
 };
 
-export default Navegador;

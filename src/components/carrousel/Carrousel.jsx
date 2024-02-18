@@ -1,39 +1,35 @@
-{/*
-import { Carousel, ExampleCarouselImage} from "react-bootstrap";
+import { Image } from 'react-bootstrap';
+import Carousel from 'react-bootstrap/Carousel';
+
+import imagen2 from '../../assets/carrousel2.jpg'
 
 
-
-const CarrouselHome = () => {
+export function Carrousel() {
   return (
-    <>
-    <Carousel>
-      <Carousel.Item interval={1000}>
-        <ExampleCarouselImage text="First slide" />
+    <Carousel className='mx-auto d-block text-center  w-50'>
+      <Carousel.Item>
+      <Image src={imagen2} />
         <Carousel.Caption>
-          <h3>First slide label</h3>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </Carousel.Caption>
-      </Carousel.Item>
-      <Carousel.Item interval={500}>
-        <ExampleCarouselImage text="Second slide" />
-        <Carousel.Caption>
-          <h3>Second slide label</h3>
+          <h3>Capacitacion</h3>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
         </Carousel.Caption>
       </Carousel.Item>
       <Carousel.Item>
-        <ExampleCarouselImage text="Third slide" />
+      <Image src={imagen2} />
         <Carousel.Caption>
-          <h3>Third slide label</h3>
+          <h3>Empresas</h3>
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+      <Image src={imagen2} />
+        <Carousel.Caption>
+          <h3>Personal seleccionado</h3>
           <p>
-            Praesent commodo cursus magna, vel scelerisque nisl consectetur.
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
           </p>
         </Carousel.Caption>
       </Carousel.Item>
     </Carousel>
-    </>
   );
 };
-
-export default CarrouselHome;
-*/}
