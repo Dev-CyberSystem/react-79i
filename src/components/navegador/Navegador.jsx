@@ -1,5 +1,5 @@
 import { Container, Nav, Navbar, NavDropdown, Button, Form, Col, Image} from "react-bootstrap";
-import logo from "../../assets/SINERGIA.png"
+import logo from "../../assets/img/SINERGIA.png"
 import "./styleNavegador.css"
 
 

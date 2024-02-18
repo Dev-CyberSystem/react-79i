@@ -1,0 +1,14 @@
+.btn-cardHome{
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    background-color: rgb(4, 24, 71);
+}
+
+.btn-cardHome:hover{
+    background-color: #ccccccb4;
+    color: rgb(4, 24, 71);
+    font-size: 1.2rem;
+
+}

@@ -1,10 +1,9 @@
 import { Image } from 'react-bootstrap';
 import Carousel from 'react-bootstrap/Carousel';
+import imagen2 from '../../assets/img/carrousel2.jpg'
 
-import imagen2 from '../../assets/carrousel2.jpg'
 
-
-export function Carrousel() {
+export function CarrouselHome() {
   return (
     <Carousel className='mx-auto d-block text-center  w-50'>
       <Carousel.Item>

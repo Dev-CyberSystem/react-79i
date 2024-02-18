@@ -1,4 +1,5 @@
-import { Carrousel } from "../../components/carrousel/Carrousel";
+import { CardsHome } from "../../components/cards/Cards";
+import { CarrouselHome } from "../../components/carrousel/Carrousel";
 import { Navegador } from "../../components/navegador/Navegador";
 
 export function Home(){
@@ -6,7 +7,8 @@ export function Home(){
    <div>
     
     <Navegador/>
-    <Carrousel/>
+    <CarrouselHome/>
+    <CardsHome/>
    </div>
 
   )

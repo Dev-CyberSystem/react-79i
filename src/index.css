@@ -1,0 +1,14 @@
+
+:root{
+    --color-principal: rgba(19, 23, 216, 0.5);
+    --fuente-principal: 'Inter', sans-serif;
+    --fuente-tamanio-titulo: 2rem;
+    --fuente-tamanio-subtitulo: 1.5rem;
+    --fuente-tamanio-parrafo: 1rem;
+}
+
+body {
+	background-color: #ccc;
+    font-family: var(--fuente-principal);
+	overflow-x: hidden;
+}
