@@ -1,9 +1,14 @@
+import "./styleFooter.css"
 
-
-const Footer = () => {
+export function Footer() {
   return (
-    <div>Footer</div>
-  )
+    <div>
+      <div
+        class="copyright text-center p-3 text-white mt-5 "
+      >
+        © Todos los Derechos Reservados Sinergia Selección de Personal
+        
+      </div>
+    </div>
+  );
 }
-
-export default Footer
