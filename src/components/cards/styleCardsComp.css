@@ -1,0 +1,7 @@
+.cardGroup {
+    padding: 10px;
+};
+.cardGroup__card {
+    background-color: red;
+    color: pink;
+}

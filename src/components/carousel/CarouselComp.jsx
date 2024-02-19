@@ -1,6 +1,5 @@
 import { Carousel, Image } from 'react-bootstrap';
 import './styleCarouselComp.css';
-
 const CarouselComp = () => {
   return (
     <>
@@ -35,5 +34,4 @@ const CarouselComp = () => {
     </>
   )
 };
-
 export default CarouselComp;

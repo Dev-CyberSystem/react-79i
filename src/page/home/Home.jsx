@@ -1,6 +1,6 @@
 import Navbarbar from '../../components/navbar/Navbarbar';
 import CarouselComp from '../../components/carousel/CarouselComp';
-// import { Cards } from '../../components/cards/Cards';
+import CardsComp from '../../components/cards/CardsComp';
 // import { Section } from '../../components/section/Section';
 // import { Footer } from '../../components/footer/Footer';
 
@@ -9,9 +9,9 @@ const Home = () => {
     <>
     <Navbarbar/>
     <CarouselComp/>
-    {/* <Cards/>
-    <Section/>
-    <Footer/> */}
+    <CardsComp/>
+    {/* <Section/> */}
+    {/* <Footer/> */}
        
     {/* 
       Landing page
@@ -23,5 +23,4 @@ const Home = () => {
     </>
   );
 }
-
 export default Home
