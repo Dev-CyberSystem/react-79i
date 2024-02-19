@@ -2,7 +2,7 @@ import Navbarbar from '../../components/navbar/Navbarbar';
 import CarouselComp from '../../components/carousel/CarouselComp';
 import CardsComp from '../../components/cards/CardsComp';
 import SectionComp from '../../components/section/SectionComp';
-// import { Footer } from '../../components/footer/Footer';
+import FooterComp from '../../components/footer/FooterComp';
 
 const Home = () => {
   return (
@@ -11,7 +11,7 @@ const Home = () => {
     <CarouselComp/>
     <CardsComp/>
     <SectionComp/>
-    {/* <Footer/> */}
+    <FooterComp/>
        
     {/* 
       Landing page

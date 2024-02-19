@@ -9,7 +9,7 @@ const SectionComp = () => {
           <Col className='section__col section__col_1 mx-auto col-12 col-sm-10 col-md-3'>
             <Row>
             <div className='col-auto mx-auto'>
-            <img className='img-fluid my-2 rounded-2' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Mantid_August_2007-2.jpg/250px-Mantid_August_2007-2.jpg" alt="foto-mantis-religiosa" />
+            <img className='img-fluid my-2 rounded-2' src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a0/Mantid_August_2007-2.jpg/250px-Mantid_August_2007-2.jpg" alt="foto-mantis" />
             </div>
             </Row>
             <p>Mantis religiosa es el nombre científico de una especie de insecto mantodeo de la familia Mantidae comúnmente llamado santateresa, silbata, mamboretá, campamocha, tatadiós o simplemente mantis. Tiene una amplia distribución geográfica en todo el Viejo Mundo (Eurasia y África), con numerosas subespecies según las regiones. Se introdujo en Norteamérica en 1899, en un barco con plantones, y a pesar de ser una especie introducida, es el insecto oficial del estado estadounidense de Connecticut.</p>
