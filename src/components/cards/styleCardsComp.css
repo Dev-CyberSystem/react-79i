@@ -1,7 +1,14 @@
 .cardGroup {
-    padding: 10px;
-};
+    padding: 2vw;
+}
 .cardGroup__card {
-    background-color: red;
-    color: pink;
+    background-color: rgb(160, 212, 255);
+    color: rgb(73, 14, 14);
+    box-shadow: 4px 4px 4px 5px rgb(1, 3, 141);
+    transition: all 0.3s;
+}
+.cardGroup__card:hover {
+    box-shadow: 8px 8px 15px 10px rgb(25, 0, 255);
+    transform: scale(1.03);
+    transition: all 0.8s;
 }

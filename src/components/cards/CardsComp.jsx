@@ -5,9 +5,9 @@ const CardsComp = () => {
   return (
     <>
     <div className='m-3 cardGroup'>
-    <Row xs={1} md={3} className="g-4 cardGroup__cardRow">
+    <Row xs={1} sm={2} lg={3} className="cardGroup__cardRow">
       {Array.from({ length: 6 }).map((_, idx) => (
-        <Col className='cardGroup__cardCol' key={idx}>
+        <Col className='cardGroup__cardCol g-4 mt-0 mb-4' key={idx}>
           <Card className='cardGroup__card'>
             <Card.Img variant="top" src="https://fastly.picsum.photos/id/901/200/300.jpg?hmac=hkPEpuBNrCAj1u5K7KgiXGa6ToLCG2iG5C99wLLEdKo" />
             <Card.Body>
