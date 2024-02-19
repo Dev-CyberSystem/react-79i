@@ -1,17 +1,16 @@
+import React from 'react'
+import Carrousel from '../../components/carrousel/Carrousel'
+import Cards from '../../components/cards/Cards'
+import Section from '../../components/section/Section'
 
 const Home = () => {
   return (
     <>
-    {/* 
-      Landing page
-      -Navbar
-      -carrousel
-      -cards
-      -section (Informacion)
-    -footer */}
-      <h1>Home</h1>
+   
+    <Carrousel/>
+    <Cards/>
+    <Section/>
     </>
-
   )
 }
 
