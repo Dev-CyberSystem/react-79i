@@ -1,5 +1,5 @@
 import { Carousel, Image, Container, Row, Col } from 'react-bootstrap';
-import './styleCarouselComp.css';
+// import './styleCarouselComp.css';
 const CarouselComp = () => {
   return (
     <>
