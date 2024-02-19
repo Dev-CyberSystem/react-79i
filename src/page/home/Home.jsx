@@ -1,10 +1,18 @@
-import { Navbarbar } from "../../components/navbar/Navbarbar";
+import Navbarbar from '../../components/navbar/Navbarbar';
+import CarouselComp from '../../components/carousel/CarouselComp';
+// import { Cards } from '../../components/cards/Cards';
+// import { Section } from '../../components/section/Section';
+// import { Footer } from '../../components/footer/Footer';
 
 const Home = () => {
   return (
     <>
     <Navbarbar/>
-    
+    <CarouselComp/>
+    {/* <Cards/>
+    <Section/>
+    <Footer/> */}
+       
     {/* 
       Landing page
       -Navbar
@@ -12,7 +20,6 @@ const Home = () => {
       -cards
       -section (Informacion)
       -footer */}
-      <h1>Home</h1>
     </>
   );
 }

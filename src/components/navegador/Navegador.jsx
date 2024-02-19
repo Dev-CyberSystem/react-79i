@@ -1,5 +1,5 @@
-import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
-import "./styleNavegador.css"
+import { Container, Nav, Navbar, NavDropdown, Button } from 'react-bootstrap';
+import './styleNavegador.css'
 
 const Navegador = () => {
   return (
