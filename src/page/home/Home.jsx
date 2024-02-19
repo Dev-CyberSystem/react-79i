@@ -1,7 +1,7 @@
 import Navbarbar from '../../components/navbar/Navbarbar';
 import CarouselComp from '../../components/carousel/CarouselComp';
 import CardsComp from '../../components/cards/CardsComp';
-// import { Section } from '../../components/section/Section';
+import SectionComp from '../../components/section/SectionComp';
 // import { Footer } from '../../components/footer/Footer';
 
 const Home = () => {
@@ -10,7 +10,7 @@ const Home = () => {
     <Navbarbar/>
     <CarouselComp/>
     <CardsComp/>
-    {/* <Section/> */}
+    <SectionComp/>
     {/* <Footer/> */}
        
     {/* 
