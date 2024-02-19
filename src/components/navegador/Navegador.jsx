@@ -1,39 +1,32 @@
 import { Container, Nav, Navbar, NavDropdown, Button } from "react-bootstrap";
+import { useState } from "react";
 import "./styleNavegador.css"
 
 const Navegador = () => {
+  const [menuActivo, setMenuActivo] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuActivo(!menuActivo);
+  };
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary">
-        <Container>
-          <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="me-auto">
-              <Nav.Link href="#home">Home</Nav.Link>
-              <Nav.Link href="#link">Link</Nav.Link>
-              <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-                <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.2">
-                  Another action
-                </NavDropdown.Item>
-                <NavDropdown.Item href="#action/3.3">
-                  Something
-                </NavDropdown.Item>
-                <NavDropdown.Divider />
-                <NavDropdown.Item href="#action/3.4">
-                  Separated link
-                </NavDropdown.Item>
-              </NavDropdown>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      <Button className="btnPrueba" variant="danger">Boton react Bootstrap</Button>
-
-      <button className="btn btn-primary">Botón de prueba</button>
+      <nav className={`navBar ${menuActivo ? 'active' : ''}`}>
+        <div className="logo">
+          <a href="/index.html">Navegador</a>
+        </div>
+        <ul className={`navBar__items ${menuActivo ? 'active' : ''}`}>
+          <li><a href="/index.html">Inicio</a></li>
+          <li><a href="/views/about.html">Nosotros</a></li>
+          <li className="nav-item">
+            <a className="nav-link" href="/views/login.html">Ingresar <i className="bi bi-box-arrow-in-right"></i></a>
+          </li>
+        </ul>
+        <div className="menu-icon" onClick={toggleMenu}></div>
+      </nav>
     </>
   );
+  
 };
+
 
 export default Navegador;
