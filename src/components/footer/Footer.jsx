@@ -2,6 +2,7 @@ import React, { Fragment } from "react"
 
 export function Footer () {
   return(
+    <>
 <footer className="bg-secondary page-footer font-small blue pt-4 mt-4">
     <div className="container-fluid text-center text-md-left">
         <div className="row">
@@ -28,5 +29,6 @@ export function Footer () {
         <a href="https://web.rollingcodeschool.com/"> RollingCordeSchool</a>
     </div>
 </footer>
+</>
   );
 };

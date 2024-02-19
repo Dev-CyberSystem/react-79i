@@ -3,6 +3,7 @@ import Table from 'react-bootstrap/Table';
 
 export function Info() {
   return (
+    <>
     <Container className="d-flex justify-content-center">
     <Table striped bordered hover className='my-2 w-75'>
       <thead>
@@ -35,5 +36,6 @@ export function Info() {
       </tbody>
     </Table>
   </Container>
+  </>
   );
 };

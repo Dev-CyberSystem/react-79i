@@ -8,6 +8,7 @@ import NavDropdown from 'react-bootstrap/NavDropdown';
 
 export function Navegador() {
   return (
+    <>
     <Navbar expand="lg" className="bg-body-tertiary p-2 m-1">
       <Container fluid>
         <Navbar.Brand href="#"><Image src="https://web.rollingcodeschool.com/wp-content/uploads/2023/10/RollingCode-Logo-3.svg" /></Navbar.Brand>
@@ -44,5 +45,6 @@ export function Navegador() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+    </>
   );
 };
