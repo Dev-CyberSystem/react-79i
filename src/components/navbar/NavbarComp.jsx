@@ -1,6 +1,9 @@
 import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
+import { useNavigate } from 'react-router-dom';
 import './styleNavbarComp.css';
+
  const NavbarComp = () => {
+  const navigate = useNavigate();
     return (
         <>
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -13,8 +16,8 @@ import './styleNavbarComp.css';
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+            <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
+            <Nav.Link onClick={() => navigate('/products')}>Productos</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action4">
@@ -28,6 +31,7 @@ import './styleNavbarComp.css';
             <Nav.Link href="#" disabled>
               Link
             </Nav.Link>
+            <Nav.Link onClick={() => navigate('/s')}>Destino Incierto</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control
