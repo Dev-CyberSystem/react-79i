@@ -7,14 +7,6 @@ import './Home.css'
 const Home = () => {
 	return (
 		<>
-			{/* 
-      Landing page
-      -Navbar
-      -carrousel
-      -cards
-      -section (Informacion)
-    -footer */}
-
 			<h1 className='text-center text-decoration-underline  my-4'>Home</h1>
 
 			<article className='container-md mb-5 '>
