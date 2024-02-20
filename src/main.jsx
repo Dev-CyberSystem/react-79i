@@ -1,3 +1,4 @@
+import 'bootstrap/dist/css/bootstrap.min.css'
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
@@ -5,6 +6,7 @@ import Layout from './components/layout/Layout.jsx'
 import './index.css'
 import Home from './page/home/Home.jsx'
 import NotFound from './page/not-found/NotFound.jsx'
+import Counter from './page/counter/Counter.jsx'
 
 const router = createBrowserRouter([
 	{
@@ -13,6 +15,10 @@ const router = createBrowserRouter([
 			{
 				path: '/',
 				element: <Home />,
+			},
+			{
+				path: '/counter',
+				element: <Counter />,
 			},
 		],
 		errorElement: <NotFound></NotFound>,

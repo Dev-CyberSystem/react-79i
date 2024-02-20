@@ -3,3 +3,7 @@ body {
 	padding: 0;
 	box-sizing: border-box;
 }
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link.show {
+	color: #66dbfb;
+}
