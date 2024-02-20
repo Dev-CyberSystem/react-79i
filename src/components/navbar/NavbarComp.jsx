@@ -1,6 +1,6 @@
 import { Button, Container, Form, Nav, Navbar, NavDropdown } from 'react-bootstrap';
-import './styleNavbarbar.css';
- const Navbarbar = () => {
+import './styleNavbarComp.css';
+ const NavbarComp = () => {
     return (
         <>
         <Navbar expand="lg" className="bg-body-tertiary">
@@ -45,4 +45,4 @@ import './styleNavbarbar.css';
     )
  };
 
- export default Navbarbar;
+ export default NavbarComp;

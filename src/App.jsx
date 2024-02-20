@@ -1,12 +1,15 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Home from './page/home/Home'
-
+import NavbarComp from './components/navbar/NavbarComp';
+import FooterComp from './components/footer/FooterComp';
+import RoutesComp from './components/routes/RoutesComp'
 
 function App() {
   return (
     <>
-    <Home/>
+    <NavbarComp/>
+    <RoutesComp/>
+    <FooterComp/>
     </>
   );
 }

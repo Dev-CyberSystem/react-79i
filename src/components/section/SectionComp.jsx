@@ -4,7 +4,7 @@ import './styleSectionComp.css'
 const SectionComp = () => {
   return (
     <>
-    <Container fluid className='section'>
+    <Container fluid className='section my-3'>
         <Row>
           <Col className='section__col section__col_1 mx-auto col-12 col-sm-10 col-md-3'>
             <Row>
