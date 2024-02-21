@@ -1,7 +1,6 @@
 import Carousel from 'react-bootstrap/Carousel';
 import ExampleCarouselImage from 'components/ExampleCarouselImage';
 import '../carrousel/styleCarrousel.css'
-<carrousel />
 
 const Carrousel = () => {
     return (

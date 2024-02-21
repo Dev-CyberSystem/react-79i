@@ -1,4 +1,3 @@
-import Contador from "../../components/Contador/Contador"
 import Cards from "../../components/cards/Cards"
 import Carrousel from "../../components/carrousel/Carrousel"
 import Section from "../../components/section/Section"
