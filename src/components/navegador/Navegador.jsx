@@ -1,8 +1,5 @@
 import { Container, Nav, Navbar, NavDropdown } from "react-bootstrap";
 import { useNavigate } from "react-router-dom"
-
-
-
 import "./styleNavegador.css"
 
 const Navegador = () => {

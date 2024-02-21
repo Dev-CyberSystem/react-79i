@@ -1,0 +1,22 @@
+.fondoColor {
+    background-color: var(--fuente-color-secundario);
+}
+
+.colorLetra {
+    color: var(--fuente-color-primario);
+    font-size: 25px;
+}
+
+.imgLogo {
+    font-size: 40px;
+    color: var(--fuente-color-primario);
+}
+
+.imgLogo :hover {
+    color: var(--color-primario);
+}
+
+a {
+    color: var(--fuente-color-primario);
+    text-decoration: none;
+}
