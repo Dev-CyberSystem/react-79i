@@ -3,19 +3,17 @@ import "./App.css";
 import Navegador from "./components/navegador/Navegador";
 import Rutas from "./components/rutas/Rutas";
 import Footer from "./components/footer/Footer";
-import Home from "./page/home/Home";
 
 function App() {
   return (
     <>
       <Navegador />
-      <Home />
-      {/* <Rutas /> */}
+      <Rutas />
       <Footer />
     </>
   );
 }
 
-// aqui van todos los componentes en comun en todas las paginas
+// aqui van todos los componentes en comun en todas las páginas
 
 export default App;
