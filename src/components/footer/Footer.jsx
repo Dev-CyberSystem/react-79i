@@ -1,5 +1,5 @@
 import { Card } from "react-bootstrap"
-
+import "./footer.css"
 const Footer = () => {
   return (
     <>
