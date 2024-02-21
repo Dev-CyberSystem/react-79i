@@ -1,5 +1,6 @@
 import { Card, Col, Row } from 'react-bootstrap';
 import './styleCardsComp.css';
+import { propTypes } from 'prop-types';
 
 const CardsComp = ({prodQty}) => {
   return (
