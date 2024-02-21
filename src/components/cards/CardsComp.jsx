@@ -1,15 +1,20 @@
 import { Card, Col, Row } from 'react-bootstrap';
+import { useState } from 'react'
 import './styleCardsComp.css';
 
-const CardsComp = () => {
+const CardsComp = ({prodQty}) => {
+  // console.log(prodQty)
+  // const [qty, setQty] = useState(prodQty);
+  // console.log(qty)
+
   return (
     <>
     <div className='m-3 cardGroup'>
-    <Row xs={1} sm={2} lg={3} className="cardGroup__cardRow">
-      {Array.from({ length: 6 }).map((_, idx) => (
-        <Col className='cardGroup__cardCol g-4 mt-0 mb-4' key={idx}>
+    <Row xs={1} sm={2} md={3} lg={4} xl={5} className="cardGroup__cardRow">
+      {Array.from({ length: prodQty }).map((_, idx) => (
+        <Col className='cardGroup__cardCol g-4 mt-0 mb-4 mx-auto' key={idx}>
           <Card className='cardGroup__card'>
-            <Card.Img variant="top" src="https://fastly.picsum.photos/id/901/200/300.jpg?hmac=hkPEpuBNrCAj1u5K7KgiXGa6ToLCG2iG5C99wLLEdKo" />
+            <Card.Img className='' variant="top" src="https://fastly.picsum.photos/id/901/200/300.jpg?hmac=hkPEpuBNrCAj1u5K7KgiXGa6ToLCG2iG5C99wLLEdKo" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>

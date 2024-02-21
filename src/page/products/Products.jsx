@@ -1,9 +1,9 @@
 import CardsComp from '../../components/cards/CardsComp';
 
-const Products = () => {
+const Products = ({prodQty}) => {
   return (
     <>
-    <CardsComp/>
+    <CardsComp prodQty={prodQty} />
     </>
   )
 }

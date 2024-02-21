@@ -12,3 +12,10 @@
     transform: scale(1.03);
     transition: all 0.8s;
 }
+.cardGroup__card {
+    /* width: 20vh; */
+    
+}
+.cardGroup__cardCol {
+    
+}
