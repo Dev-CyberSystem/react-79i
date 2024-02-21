@@ -1,15 +1,12 @@
 import PropTypes from "prop-types";
 
-const Productos = ({ funcionProps, club }) => {
-  const { nombre, estadio } = club;
+const Productos = ({ funcionProps }) => {
 
   return (
     <>
       <h1>Componente de Productos</h1>
-      <h2>
-        Nombre: {nombre} - Estadio: {estadio}
-      </h2>
-      <button onClick={funcionProps}>Ejecuta la funcion</button>
+      
+      <button onClick={funcionProps}>Disminuir desde producto</button>
     </>
   );
 };
