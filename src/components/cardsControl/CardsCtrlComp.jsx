@@ -1,5 +1,6 @@
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import "./styleCardsCtrlComp.css";
+import PropTypes from 'prop-types'
 
 const CardsCtrlComp = ({hookSet, monitor}) => {
   return (
@@ -31,5 +32,8 @@ const CardsCtrlComp = ({hookSet, monitor}) => {
     </>
   );
 };
-
+CardsCtrlComp.propTypes = {
+  hookSet: PropTypes.func,
+  monitor: PropTypes.number
+}
 export default CardsCtrlComp;

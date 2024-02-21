@@ -13,7 +13,12 @@ const Admin = ({ hookSet, monitor, hookReset }) => {
         </Row>
         <Row>
           <Col className="col-8">
+          <Card>
+            <Card.Header className="text-center my-0 py-0">
+              <h5 className="py-0 my-0">VISTA PREVIA</h5>
+            </Card.Header>
             <CardsComp prodQty={monitor} />
+          </Card>
           </Col>
           <Col className="col-4 mx-auto">
             <Row>
