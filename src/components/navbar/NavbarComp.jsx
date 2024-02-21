@@ -16,7 +16,7 @@ import './styleNavbarComp.css';
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
+            <Nav.Link onClick={() => navigate('/')}>Inicio</Nav.Link>
             <Nav.Link onClick={() => navigate('/products')}>Productos</Nav.Link>
             <NavDropdown title="Link" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">Action</NavDropdown.Item>
@@ -31,7 +31,8 @@ import './styleNavbarComp.css';
             <Nav.Link href="#" disabled>
               Link
             </Nav.Link>
-            <Nav.Link onClick={() => navigate('/s')}>Destino Incierto</Nav.Link>
+            <Nav.Link onClick={() => navigate('/s')}>404</Nav.Link>
+            <Nav.Link onClick={() => navigate('/admin')}>Admin panel</Nav.Link>
           </Nav>
           <Form className="d-flex">
             <Form.Control

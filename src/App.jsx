@@ -10,6 +10,13 @@ function App() {
     <NavbarComp/>
     <RoutesComp/>
     <FooterComp/>
+    {/* 
+      Landing page
+      -Navbar
+      -carrousel
+      -cards
+      -section (Informacion)
+      -footer */}
     </>
   );
 }

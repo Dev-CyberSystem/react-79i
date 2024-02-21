@@ -5,15 +5,7 @@ const Home = () => {
   return (
     <>
     <CarouselComp/>
-    <SectionComp/>
-       
-    {/* 
-      Landing page
-      -Navbar
-      -carrousel
-      -cards
-      -section (Informacion)
-      -footer */}
+    <SectionComp/>      
     </>
   );
 }

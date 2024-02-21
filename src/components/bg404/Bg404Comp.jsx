@@ -1,7 +1,9 @@
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Row, Col, Button } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom';
 import "./styleBg404Comp.css";
 
 const Bg404Comp = () => {
+  const navigate = useNavigate();
   return (
     <>
       <Container fluid>
@@ -20,10 +22,11 @@ const Bg404Comp = () => {
                         <h3 class="h2">Look like you're lost</h3>
 
                         <p>the page you are looking for not avaible!</p>
-
-                        <a href="" class="link_404">
+                        
+                        <a onClick={() => navigate('/')} class="link_404">
                           Go to Home
                         </a>
+                          
                       </div>
                     </div>
                   </div>
