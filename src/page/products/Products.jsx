@@ -3,7 +3,7 @@ import CardsComp from '../../components/cards/CardsComp';
 const Products = ({prodQty}) => {
   return (
     <>
-    <CardsComp prodQty={prodQty} />
+      <CardsComp prodQty={prodQty} />
     </>
   )
 }

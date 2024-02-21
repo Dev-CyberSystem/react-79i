@@ -1,19 +1,8 @@
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import CardsCtrlComp from "../../components/cardsControl/CardsCtrlComp";
-// import { useState } from "react";
-// import RoutesComp from '../../components/routes/RoutesComp';
-// import { Routes, Route } from "react-router-dom";
-import Products from "../products/Products.jsx";
 import CardsComp from "../../components/cards/CardsComp.jsx";
 
 const Admin = ({ hookSet, monitor, hookReset }) => {
-  // const [count, setCount] = useState(10);
-
-  // const hookSet = (qty) => {
-  //     setCount(count+qty)
-  //     console.log(count+qty)
-  // }
-
   return (
     <>
       <Container fluid className="admin__body">

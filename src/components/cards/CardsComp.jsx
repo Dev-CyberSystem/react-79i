@@ -1,12 +1,7 @@
 import { Card, Col, Row } from 'react-bootstrap';
-import { useState } from 'react'
 import './styleCardsComp.css';
 
 const CardsComp = ({prodQty}) => {
-  // console.log(prodQty)
-  // const [qty, setQty] = useState(prodQty);
-  // console.log(qty)
-
   return (
     <>
     <div className='m-3 cardGroup'>

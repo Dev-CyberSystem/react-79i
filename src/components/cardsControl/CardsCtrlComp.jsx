@@ -1,10 +1,7 @@
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
-import { useState } from "react";
 import "./styleCardsCtrlComp.css";
 
 const CardsCtrlComp = ({hookSet, monitor}) => {
-  // const [count, setCount] = useState(0);
-  // console.log(count, "desde componente CardsCtrlComp")
   return (
     <>
       <Card className="text-center col-auto mx-auto">
