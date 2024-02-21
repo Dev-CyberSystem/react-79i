@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
+import { NavLink } from 'react-router-dom';
 
 export function Navegador() {
   return (
@@ -19,8 +20,8 @@ export function Navegador() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1">Home</Nav.Link>
-            <Nav.Link href="#action2">Link</Nav.Link>
+            <NavLink className="nav-link" to="/">Home</NavLink>
+            <NavLink className="nav-link" to="/link">Link</NavLink>
             <NavDropdown title="DropDown" id="navbarScrollingDropdown">
               <NavDropdown.Item href="#action3">DropDown1</NavDropdown.Item>
               <NavDropdown.Item href="#action4">

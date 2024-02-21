@@ -1,7 +1,7 @@
 import { Container } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 
-export function Info() {
+export function Info () {
   return (
     <>
     <Container className="d-flex justify-content-center">
