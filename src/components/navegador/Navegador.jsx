@@ -1,6 +1,7 @@
 import { Container, Nav, Navbar, NavDropdown, Button, Form, Col, Image} from "react-bootstrap";
 import logo from "../../assets/img/SINERGIA.png"
 import "./styleNavegador.css"
+import { NavLink } from "react-router-dom";
 
 
 export function Navegador(){
@@ -21,16 +22,24 @@ export function Navegador(){
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link className="letraNavbar">Inicio</Nav.Link>
-            <Nav.Link className="letraNavbar">Nosotros</Nav.Link>
-            <NavDropdown className="letraNavbar" title="Ascesoria Laboral" id="navbarScrollingDropdown">
-              <NavDropdown.Item>Empresas</NavDropdown.Item>
+            <NavLink className="nav-link letraNavbar" to="/" >Inicio</NavLink>
+            <NavLink className="nav-link letraNavbar" to="/nosotros" >Nosotros</NavLink>
+            <NavDropdown className="letraNavbar" title="Asesoria Laboral" id="navbarScrollingDropdown">
               <NavDropdown.Item>
+                <NavLink to="/asesoriaEmpresas" className="nav-link">
+                Empresas
+                </NavLink>
+                </NavDropdown.Item>
+              <NavDropdown.Item>
+              <NavLink to="/asesoriaPersonal" className="nav-link">
                 Personal
+                </NavLink>
               </NavDropdown.Item>
               <NavDropdown.Divider />
-              <NavDropdown.Item >
+              <NavDropdown.Item>
+                <NavLink to="/ascesoriaCurriculum" className="nav-link">
                 Cargá tu curriculum
+                </NavLink>
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>

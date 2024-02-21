@@ -1,9 +1,9 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
 import adaptabilidad from "../../assets/img/adaptabilidad.png";
-import honestidad from "../../assets/img/honestidad.png"
-import profesionalismo from "../../assets/img/profesionalismo.png"
-import './styleCardsHome.css'
+import honestidad from "../../assets/img/honestidad.png";
+import profesionalismo from "../../assets/img/profesionalismo.png";
+import './styleCardsHome.css';
 
 
 export function CardsHome() {
@@ -52,4 +52,4 @@ export function CardsHome() {
     
     </>
   );
-}
+};

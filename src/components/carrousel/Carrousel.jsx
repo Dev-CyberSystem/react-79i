@@ -5,7 +5,7 @@ import imagen2 from '../../assets/img/carrousel2.jpg'
 
 export function CarrouselHome() {
   return (
-    <Carousel className='mx-auto d-block text-center  w-50'>
+    <Carousel className='mx-auto d-block text-center  w-50 mt-3 '>
       <Carousel.Item>
       <Image src={imagen2} />
         <Carousel.Caption>
