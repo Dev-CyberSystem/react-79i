@@ -18,18 +18,12 @@ function App() {
     setProdQty(defaultQty)
     console.log(`hook restablecido en App.jsx, valor:${defaultQty}`)
   }
+  
   return (
     <>
     <NavbarComp/>
     <RoutesComp prodQty={prodQty} hookSet={hookSet} hookReset={hookReset} />
     <FooterComp/>
-    {/* 
-      Landing page
-      -Navbar
-      -carrousel
-      -cards
-      -section (Informacion)
-      -footer */}
     </>
   );
 }

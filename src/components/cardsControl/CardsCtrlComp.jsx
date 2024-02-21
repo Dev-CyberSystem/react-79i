@@ -7,22 +7,24 @@ const CardsCtrlComp = ({hookSet, monitor}) => {
   // console.log(count, "desde componente CardsCtrlComp")
   return (
     <>
-      <Card className="text-center">
-        <Card.Header>Cantidad de cards a mostrar (Pág. Productos)</Card.Header>
+      <Card className="text-center col-auto mx-auto">
+        <Card.Header>Cantidad de cards a mostrar <br/> (Pág. Productos)</Card.Header>
         <Card.Body>
           <Container>
-            <Row>
-              <Col className="col-2 p-0 my-1">
-                <Card>
+            <Row className="row row-cols-1 row-cols-md-2">
+              <Col className="mx-auto p-0 my-1">
+                <Card className="ctrl__screen col-4 mx-auto">
                   <Card.Text className="fs-5 text-center text-nowrap">
                     {monitor}
                   </Card.Text>
                 </Card>
               </Col>
-              <Col className="col-5 ctrl__buttonCont">
+            </Row>
+            <Row className="row row-cols-1 row-cols-md-2">
+              <Col className=" ctrl__buttonCont mt-1">
                 <Button className="ctrl__button" onClick={() => hookSet(1)+console.log("btn 'Aumentar' presionado en componente CardsCtrlComp.jsx")} >Aumentar</Button>
               </Col>
-              <Col className="col-5 ctrl__buttonCont">
+              <Col className=" ctrl__buttonCont mt-1">
                 <Button className="ctrl__button" onClick={() => hookSet(-1)+console.log("btn 'Reducir' presionado en componente CardsCtrlComp.jsx")}>Reducir</Button>
               </Col>
             </Row>
