@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import { useState } from 'react'
 
-const Contador = () => {
+const Contador = ({contador}) => {
+    const [count, setcount] = useState(0)
 
-    const [count, setCount] = useState(0);
+    const handleIncrementar = () => {
+        setcount(count + contador)
+    }
+    const handleDecrementar = () => {
 
-    const incrementador = () => {
-      setCount(count + 1);
-    };
-  
+        setcount(count - contador)
+    }
     return (
-      <div>
-        <h1>Contador: {count}</h1>
-        <button onClick={incrementador}>Incrementar</button>
-      </div>
-    );
+        <div>
+            <p>{contador}</p>
+            <button onClick={handleIncrementar}>+</button>
+            <button onClick={handleDecrementar}>-</button>
+        </div>
+    )
 }
 
 export default Contador

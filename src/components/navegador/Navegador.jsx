@@ -15,7 +15,7 @@ const Navegador = () => {
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="me-auto">
               <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
-              <Nav.Link onClick={() => navigate("/")}>Contador</Nav.Link>
+              <Nav.Link onClick={() => navigate("Contador")}>Contador</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>

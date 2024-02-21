@@ -1,14 +1,14 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Navegador from "./components/navegador/Navegador";
-import Rutas from "./components/rutas/Rutas";
-import Footer from "./components/footer/Footer";
+import Navegador from "../src/components/navegador/Navegador.jsx";
+import Rutas from "../src/components/rutas/Rutas.jsx";
+import Footer from "../src/components/footer/Footer.jsx";
 
 function App() {
   return (
     <>
       <Navegador />
-      <Rutas />
+      <Rutas contador={0} />
       <Footer />
     </>
   );

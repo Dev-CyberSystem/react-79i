@@ -1,4 +1,4 @@
-import '../footer/styleFooter.css';
+import './styleFooter.css';
 import { FaEnvelope, FaFacebook, FaInstagram, FaTwitter } from 'react-icons/fa';
 import logoRolling from '../../img/logoRolling.png';
 
