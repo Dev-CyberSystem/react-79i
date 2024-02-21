@@ -24,7 +24,7 @@ const Admin = ({ hookSet, monitor, hookReset }) => {
                 className="ctrl__button col-auto mx-auto"
                 onClick={() =>
                   hookReset() +
-                  console.log("btn 'Restablecer' presionado en page Admin.jsx")
+                  console.log("btn 'Restablecer' presionado en página Admin.jsx")
                 }>
                 Restablecer
               </Button>

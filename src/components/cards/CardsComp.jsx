@@ -1,6 +1,6 @@
 import { Card, Col, Row } from 'react-bootstrap';
 import './styleCardsComp.css';
-import { propTypes } from 'prop-types';
+import PropTypes from 'prop-types'
 
 const CardsComp = ({prodQty}) => {
   return (
@@ -27,5 +27,7 @@ const CardsComp = ({prodQty}) => {
     </>
   )
 };
-
+CardsComp.propTypes = {
+  prodQty: PropTypes.number,
+}
 export default CardsComp;
