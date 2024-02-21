@@ -1,11 +1,15 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
-import Home from './page/home/Home';
+import Navegador from '../src/components/navegador/Navegador';
+import Rutas from './components/rutas/Rutas';
 
 function App() {
   return (
     <>
-      <Home />
+      <header>
+        <Navegador />
+      </header>
+      <Rutas />
     </>
   );
 }

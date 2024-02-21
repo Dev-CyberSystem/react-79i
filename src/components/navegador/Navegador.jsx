@@ -7,13 +7,17 @@ import {
   NavDropdown,
 } from 'react-bootstrap';
 
+import { useNavigate } from 'react-router-dom';
+
 import './styleNavegador.css';
 
 function NavbarComponent() {
+  const navigate = useNavigate();
+
   return (
     <Navbar expand="lg" className="bg-navbar">
       <Container fluid className="text-white">
-        <Navbar.Brand href="#" className="text-light">
+        <Navbar.Brand onClick={() => navigate('/')} className="text-light">
           Nav React
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
@@ -23,19 +27,25 @@ function NavbarComponent() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
-            <Nav.Link href="#action1" className="text-light">
-              Home
+            <Nav.Link
+              onClick={() => navigate('/Productos')}
+              className="text-light"
+            >
+              Productos
             </Nav.Link>
-            <Nav.Link href="#action2" className="text-light">
-              Market
+            <Nav.Link
+              onClick={() => navigate('/NuevaPagina')}
+              className="text-light"
+            >
+              Nueva Pagina
             </Nav.Link>
             <NavDropdown
               title="Options"
               id="navbarScrollingDropdown"
               className="dropdown-text"
             >
-              <NavDropdown.Item href="#action3">First Option</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Second option</NavDropdown.Item>
+              <NavDropdown.Item>Error404</NavDropdown.Item>
+              <NavDropdown.Item href="#action4">Nueva Pagina</NavDropdown.Item>
               <NavDropdown.Divider />
               <NavDropdown.Item href="#action5">Split option</NavDropdown.Item>
             </NavDropdown>

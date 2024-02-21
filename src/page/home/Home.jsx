@@ -1,4 +1,3 @@
-import NavbarComponent from '../../components/navegador/Navegador';
 import Carousel from '../../components/carrousel/Carousel';
 import Cards from '../../components/cards/Cards';
 import SectionReact from '../../components/section/section';
@@ -7,9 +6,6 @@ import Footer from '../../components/footer/Footer';
 const Home = () => {
   return (
     <>
-      <header>
-        <NavbarComponent />
-      </header>
       <section>
         <Carousel />
         <Cards />
