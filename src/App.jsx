@@ -1,15 +1,14 @@
-import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
-import Navegador from "./components/navegador/Navegador";
-import Rutas from "./components/rutas/Rutas";
+import Home from "./page/home/Home"
 
-function App() {
+
+function App() { // Ahora este componente contiene el estado y el controlador de evento 'handleClick'. Ambos pasan como 'props' a c/u de los botones
+  
+
   return (
-    <>
-      <Navegador />
-      <Rutas />
-    </>
-  );
+    
+    <Home/>
+
+  )
 }
 
-export default App;
+export default App // Con 'default' se exporta todo
