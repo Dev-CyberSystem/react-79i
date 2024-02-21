@@ -10,7 +10,7 @@ const CardsComp = ({prodQty}) => {
       {Array.from({ length: prodQty }).map((_, idx) => (
         <Col className='cardGroup__cardCol g-4 mt-0 mb-4 mx-auto' key={idx}>
           <Card className='cardGroup__card'>
-            <Card.Img className='' variant="top" src="https://fastly.picsum.photos/id/901/200/300.jpg?hmac=hkPEpuBNrCAj1u5K7KgiXGa6ToLCG2iG5C99wLLEdKo" />
+            <Card.Img className='cardGroup__img' variant="top" src="https://fastly.picsum.photos/id/901/200/300.jpg?hmac=hkPEpuBNrCAj1u5K7KgiXGa6ToLCG2iG5C99wLLEdKo" />
             <Card.Body>
               <Card.Title>Card title</Card.Title>
               <Card.Text>
