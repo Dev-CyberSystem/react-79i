@@ -6,7 +6,7 @@ const Footer = () => {
 			<section className='container-fluid'>
 				<ul className='row list-unstyled d-flex flex-column flex-md-row align-items-center justify-content-center gap-4 gap-md-0 '>
 					<li className='col-12 col-md-4 '>
-						<h4 className='text-center '>Ezequiel Massa</h4>
+						<h4 className='text-center text-light  '>Ezequiel Massa</h4>
 					</li>
 					<li className='col-12 col-md-4'>
 						<Image
@@ -15,7 +15,7 @@ const Footer = () => {
 							style={{ width: '3rem' }}></Image>
 					</li>
 					<li className='col-12 col-md-4'>
-						<h5 className='text-center '>©️ 2024</h5>
+						<h5 className='text-center text-light '>©️ 2024</h5>
 					</li>
 				</ul>
 			</section>

@@ -1,39 +1,69 @@
 import { CardGeneric } from '../../components/card/CardGeneric'
-import { cards } from '../../components/card/cards'
 import { CarouselHome } from '../../components/carousel/Carousel'
 import { InfoSection } from '../../components/info/Info'
-import { infoHome } from '../../components/info/infoHome'
+import { GetPopularMovies } from '../../components/services/getPopularMovies'
+import Spinner from '../../components/spinner/Spinner'
 import './Home.css'
+
 const Home = () => {
+	const { data, isLoading, error } = GetPopularMovies()
+	const carouselItems = data?.slice(0, 3).map((item) => {
+		return {
+			title: item.original_title,
+			id: item.id,
+			img: item.backdrop_path,
+			description: item.overview,
+		}
+	})
+
+	const infoHome = {
+		img: carouselItems[1]?.img,
+		text: carouselItems[1]?.description,
+	}
+
 	return (
 		<>
-			<h1 className='text-center text-decoration-underline  my-4'>Home</h1>
-
-			<article className='container-md mb-5 '>
+			<article className='container-fluid  my-2'>
 				<section className='row'>
 					<div className='col'>
-						<CarouselHome></CarouselHome>
+						<CarouselHome
+							itemsArray={carouselItems}
+							interval={2000}></CarouselHome>
 					</div>
 				</section>
 			</article>
 
-			<article className='container-md mb-5 '>
-				<section className='row'>
-					<div className='col-12 d-flex flex-wrap justify-content-center align-items-center gap-4'>
-						{cards.map((card) => (
-							<CardGeneric
-								key={card.id}
-								cardImg={card.imagen}
-								cardTitle={card.title}
-								cardText={card.text}></CardGeneric>
-						))}
-					</div>
-				</section>
-			</article>
+			<h1 className='text-center py-2 text-light '>Peliculas destacadas</h1>
+			{isLoading ? (
+				<Spinner />
+			) : (
+				<article className='container-md mb-5 '>
+					<section className='row'>
+						{error ? (
+							<h2>{error.code}</h2>
+						) : (
+							<div className='col-12 d-flex flex-wrap justify-content-center align-items-stretch gap-4'>
+								{data.map((movie) => (
+									<CardGeneric
+										key={movie.id}
+										cardImg={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
+										cardTitle={movie.title}
+										cardText={movie.overview}></CardGeneric>
+								))}
+							</div>
+						)}
+					</section>
+				</article>
+			)}
 
-			<article className='container-md mb-5 '>
-				<InfoSection info={infoHome}></InfoSection>
-			</article>
+			<h2 className='text-center py-2 text-light '>Nuestra recomendacion</h2>
+			{isLoading ? (
+				<Spinner />
+			) : (
+				<article className='container-md mb-5 '>
+					<InfoSection info={infoHome}></InfoSection>
+				</article>
+			)}
 		</>
 	)
 }

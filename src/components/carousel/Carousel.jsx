@@ -1,49 +1,26 @@
 import Carousel from 'react-bootstrap/Carousel'
 import Image from 'react-bootstrap/Image'
+import './carousel.css'
 
-export const CarouselHome = () => {
+export const CarouselHome = ({ itemsArray, interval }) => {
 	return (
 		<>
-			<Carousel data-bs-theme='dark'>
-				<Carousel.Item interval={1000}>
-					<Image
-						src='https://loremflickr.com/600/400'
-						className='d-block mx-auto '
-						alt='carousel imagen'
-					/>
-					<Carousel.Caption>
-						<h3 className='text-light '>First slide label</h3>
-						<p className='text-light '>
-							Nulla vitae elit libero, a pharetra augue mollis interdum.
-						</p>
-					</Carousel.Caption>
-				</Carousel.Item>
-				<Carousel.Item interval={500}>
-					<Image
-						src='https://loremflickr.com/600/400'
-						className='d-block mx-auto '
-						alt='carousel imagen'
-					/>
-					<Carousel.Caption>
-						<h3 className='text-light '>Second slide label</h3>
-						<p className='text-light '>
-							Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-						</p>
-					</Carousel.Caption>
-				</Carousel.Item>
-				<Carousel.Item>
-					<Image
-						src='https://loremflickr.com/600/400'
-						className='d-block mx-auto '
-						alt='carousel imagen'
-					/>
-					<Carousel.Caption>
-						<h3 className='text-light '>Third slide label</h3>
-						<p className='text-light '>
-							Praesent commodo cursus magna, vel scelerisque nisl consectetur.
-						</p>
-					</Carousel.Caption>
-				</Carousel.Item>
+			<Carousel data-bs-theme='light' className='carousel-container'>
+				{itemsArray.map((item) => {
+					return (
+						<Carousel.Item key={item.id} interval={interval}>
+							<Image
+								src={`https://image.tmdb.org/t/p/original${item.img}`}
+								className='d-block mx-auto carousel-img  '
+								alt='carousel imagen'
+							/>
+							<Carousel.Caption className='carousel-caption-container d-none d-md-block '>
+								<h3 className='text-light '>{item.title}</h3>
+								<p className='text-light '>{item.description}</p>
+							</Carousel.Caption>
+						</Carousel.Item>
+					)
+				})}
 			</Carousel>
 		</>
 	)

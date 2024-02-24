@@ -2,12 +2,12 @@ import { Image } from 'react-bootstrap'
 
 export const InfoSection = ({ info }) => {
 	return (
-		<section className='row d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center bg-dark p-4 bg-opacity-50 '>
+		<section className='row d-flex flex-column flex-md-row flex-wrap justify-content-center align-items-center bg-light p-4 bg-opacity-10 rounded  '>
 			<div className='col-12 col-md-6  d-flex justify-content-center mb-2 mb-md-0 '>
 				<div className='overflow-hidden'>
 					<Image
-						src={info.img}
-						className='object-fit-cover rounded'
+						src={`https://image.tmdb.org/t/p/original${info.img}`}
+						className='object-fit-cover rounded w-100 shadow'
 						alt='info imagen'></Image>
 				</div>
 			</div>
