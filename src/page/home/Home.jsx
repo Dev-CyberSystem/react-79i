@@ -1,5 +1,6 @@
 import { CardGeneric } from '../../components/card/CardGeneric'
 import { CarouselHome } from '../../components/carousel/Carousel'
+import { Error } from '../../components/error/Error'
 import { InfoSection } from '../../components/info/Info'
 import Spinner from '../../components/spinner/Spinner'
 import { GetPopularMovies } from '../../services/getPopularMovies'
@@ -15,6 +16,7 @@ const Home = () => {
 			description: item.overview,
 		}
 	})
+	console.log()
 
 	const infoHome = {
 		img: carouselItems[1]?.img,
@@ -40,7 +42,7 @@ const Home = () => {
 				<article className='container-md mb-5 '>
 					<section className='row'>
 						{error ? (
-							<h2 className='text-light text-center'>{error.code}</h2>
+							<Error errorMsg={error.response.data.status_message} />
 						) : (
 							<div className='col-12 d-flex flex-wrap justify-content-center align-items-stretch gap-4'>
 								{data.map((movie) => (
