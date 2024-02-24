@@ -1,8 +1,8 @@
 import { CardGeneric } from '../../components/card/CardGeneric'
 import { CarouselHome } from '../../components/carousel/Carousel'
 import { InfoSection } from '../../components/info/Info'
-import { GetPopularMovies } from '../../components/services/getPopularMovies'
 import Spinner from '../../components/spinner/Spinner'
+import { GetPopularMovies } from '../../services/getPopularMovies'
 import './Home.css'
 
 const Home = () => {

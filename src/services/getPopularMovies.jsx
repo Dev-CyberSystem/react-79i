@@ -1,4 +1,4 @@
-import useFetch from '../../hooks/useFetch.hook'
+import useFetch from '../hooks/useFetch.hook'
 
 const url = 'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1'
 
