@@ -5,7 +5,7 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from './components/layout/Layout.jsx'
 import './index.css'
 import Home from './page/home/Home.jsx'
-import NotFound from './page/not-found/NotFound.jsx'
+import NotFound from './page/not-found/PageNotFound.jsx'
 import Counter from './page/counter/Counter.jsx'
 
 const router = createBrowserRouter([

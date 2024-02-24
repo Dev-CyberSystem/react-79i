@@ -40,7 +40,7 @@ const Home = () => {
 				<article className='container-md mb-5 '>
 					<section className='row'>
 						{error ? (
-							<h2>{error.code}</h2>
+							<h2 className='text-light text-center'>{error.code}</h2>
 						) : (
 							<div className='col-12 d-flex flex-wrap justify-content-center align-items-stretch gap-4'>
 								{data.map((movie) => (
