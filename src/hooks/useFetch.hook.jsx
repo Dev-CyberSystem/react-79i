@@ -15,10 +15,11 @@ const useFetch = (url) => {
 						'Bearer eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiJjYWUwODJlZWI4MzNhYTUwYzBmN2E4MmFlNjdmNjZhNyIsInN1YiI6IjY1ZDdmMzU4OTkyNTljMDE2MjkzNjk1YSIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.1lWGlRsuu0NKN1n2mpuoKRs-Ychby1khq7pFoccaPl8',
 				},
 			})
-			setData(response.data.results)
+			setData(response.data)
 			setIsLoading(false)
 			setError(null)
 		} catch (error) {
+			setData([])
 			setIsLoading(false)
 			setError(error)
 		}
