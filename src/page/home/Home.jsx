@@ -7,8 +7,8 @@ import { GetPopularMovies } from '../../services/getPopularMovies'
 import './Home.css'
 
 const Home = () => {
-	const { data, isLoading, error } = GetPopularMovies()
-	const carouselItems = data?.slice(0, 3).map((item) => {
+	const { firstTen, isLoading, error } = GetPopularMovies()
+	const carouselItems = firstTen?.slice(0, 3).map((item) => {
 		return {
 			title: item.original_title,
 			id: item.id,
@@ -16,7 +16,6 @@ const Home = () => {
 			description: item.overview,
 		}
 	})
-	console.log()
 
 	const infoHome = {
 		img: carouselItems[1]?.img,
@@ -45,7 +44,7 @@ const Home = () => {
 							<Error errorMsg={error.response.data.status_message} />
 						) : (
 							<div className='col-12 d-flex flex-wrap justify-content-center align-items-stretch gap-4'>
-								{data.map((movie) => (
+								{firstTen.map((movie) => (
 									<CardGeneric
 										key={movie.id}
 										cardImg={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
