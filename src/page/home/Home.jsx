@@ -48,7 +48,7 @@ const Home = () => {
 			<article className='container-md mb-5 '>
 				<section className='row'>
 					<div className='col-12 d-flex flex-wrap justify-content-center align-items-stretch gap-4'>
-						{data.results.map((movie) => (
+						{data.results.slice(0, 10).map((movie) => (
 							<CardGeneric
 								key={movie.id}
 								elementId={movie.id}
