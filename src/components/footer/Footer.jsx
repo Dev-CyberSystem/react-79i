@@ -4,7 +4,7 @@ function Footer() {
   return (
     <>
       <footer>
-        <Container xl>
+        <Container>
           <div className="row mt-3 border-top border-dark">
             <div className="col-md-4 text-white text-center">
               <h3 className="pt-3 mb-3">Categorías</h3>
