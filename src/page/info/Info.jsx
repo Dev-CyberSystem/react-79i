@@ -10,8 +10,6 @@ export const Info = () => {
 
 	const { data, isLoading, error } = useFetch(url)
 
-	console.log(data)
-
 	if (error) {
 		return <Error errorMsg={error.response.data.status_message}></Error>
 	}
