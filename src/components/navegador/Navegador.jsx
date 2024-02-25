@@ -24,6 +24,9 @@ const Navegador = () => {
 							<NavLink to='/' className='nav-link '>
 								Home
 							</NavLink>
+							<NavLink to='/movies' className='nav-link '>
+								Movies
+							</NavLink>
 							<NavLink to='/counter' className='nav-link '>
 								Counter
 							</NavLink>

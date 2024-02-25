@@ -8,6 +8,7 @@ import Home from './page/home/Home.jsx'
 import NotFound from './page/not-found/PageNotFound.jsx'
 import Counter from './page/counter/Counter.jsx'
 import { Info } from './page/info/Info.jsx'
+import { Movies } from './page/movies/Movies.jsx'
 
 const router = createBrowserRouter([
 	{
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
 			{
 				path: 'info/:elementId',
 				element: <Info />,
+			},
+			{
+				path: 'movies',
+				element: <Movies />,
 			},
 			{
 				path: 'counter',
