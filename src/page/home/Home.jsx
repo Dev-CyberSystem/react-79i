@@ -51,6 +51,7 @@ const Home = () => {
 						{data.results.map((movie) => (
 							<CardGeneric
 								key={movie.id}
+								elementId={movie.id}
 								cardImg={`https://image.tmdb.org/t/p/original${movie.poster_path}`}
 								cardTitle={movie.title}
 								cardText={movie.overview}></CardGeneric>

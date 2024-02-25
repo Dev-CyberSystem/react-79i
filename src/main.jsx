@@ -7,6 +7,7 @@ import './index.css'
 import Home from './page/home/Home.jsx'
 import NotFound from './page/not-found/PageNotFound.jsx'
 import Counter from './page/counter/Counter.jsx'
+import { Info } from './page/info/Info.jsx'
 
 const router = createBrowserRouter([
 	{
@@ -17,7 +18,11 @@ const router = createBrowserRouter([
 				element: <Home />,
 			},
 			{
-				path: '/counter',
+				path: 'info/:elementId',
+				element: <Info />,
+			},
+			{
+				path: 'counter',
 				element: <Counter />,
 			},
 		],

@@ -1,8 +1,8 @@
-import Button from 'react-bootstrap/Button'
 import Card from 'react-bootstrap/Card'
 import './cardGeneric.css'
+import { Link } from 'react-router-dom'
 
-export const CardGeneric = ({ cardImg, cardTitle, cardText }) => {
+export const CardGeneric = ({ cardImg, cardTitle, cardText, elementId }) => {
 	return (
 		<Card style={{ width: '18rem' }}>
 			<Card.Img variant='top' src={cardImg} />
@@ -11,7 +11,9 @@ export const CardGeneric = ({ cardImg, cardTitle, cardText }) => {
 				<Card.Text className='truncate text-center'>{cardText}</Card.Text>
 			</Card.Body>
 
-			<Button variant='primary'>Go somewhere</Button>
+			<Link className='btn btn-primary ' to={`/info/${elementId}`}>
+				Ver
+			</Link>
 		</Card>
 	)
 }
