@@ -10,23 +10,23 @@ import { ContadorPadreBoton } from "../../components/contador/ContadorPadreBoton
 
 export function Home () {
 
-// const [users, setUsers] = useState([])
+const [users, setUsers] = useState([])
 
-//       useEffect(() => {
-//         const obtenerDatos = async () => {
-//           try {
-//             const url = 'https://jsonplaceholder.typicode.com/todos/'
-//             const response = await fetch(url)
-//             const resultado = await response.json()
-//             console.log(resultado)
-//             setUsers(response.data);
-//           }
-//           catch (error) {
-//             console.error(error);
-//           }
-//         }
-//         obtenerDatos();
-//       }, []);
+      useEffect(() => {
+        const obtenerDatos = async () => {
+          try {
+            const url = 'https://jsonplaceholder.typicode.com/todos/'
+            const response = await fetch(url)
+            const resultado = await response.json()
+            console.log(resultado)
+            setUsers(response.data);
+          }
+          catch (error) {
+            console.error(error);
+          }
+        }
+        obtenerDatos();
+      }, []);
 
   return (
     <>
