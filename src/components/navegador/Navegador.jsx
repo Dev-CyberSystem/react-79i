@@ -30,6 +30,9 @@ const Navegador = () => {
 							<NavLink to='/counter' className='nav-link '>
 								Counter
 							</NavLink>
+							<NavLink to='/users' className='nav-link '>
+								Users
+							</NavLink>
 						</Nav>
 					</Navbar.Collapse>
 				</Container>

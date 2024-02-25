@@ -4,11 +4,12 @@ import ReactDOM from 'react-dom/client'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from './components/layout/Layout.jsx'
 import './index.css'
-import Home from './page/home/Home.jsx'
-import NotFound from './page/not-found/PageNotFound.jsx'
 import Counter from './page/counter/Counter.jsx'
+import Home from './page/home/Home.jsx'
 import { Info } from './page/info/Info.jsx'
 import { Movies } from './page/movies/Movies.jsx'
+import NotFound from './page/not-found/PageNotFound.jsx'
+import { Users } from './page/users/Users.jsx'
 
 const router = createBrowserRouter([
 	{
@@ -29,6 +30,10 @@ const router = createBrowserRouter([
 			{
 				path: 'counter',
 				element: <Counter />,
+			},
+			{
+				path: 'users',
+				element: <Users />,
 			},
 		],
 		errorElement: <NotFound></NotFound>,
