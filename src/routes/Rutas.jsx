@@ -2,6 +2,7 @@ import React from 'react'
 import {Routes,Route} from "react-router-dom"
 import Home from '../page/Home.jsx'
 import Error from '../page/Error.jsx'
+import About from '../page/About.jsx'
 import Contador from '../components/contador/Contador.jsx'
 import Usuarios from '../components/usuarios/Usuarios.jsx'
 const Rutas = () => {
@@ -11,6 +12,7 @@ const Rutas = () => {
       <Route path='*' element={<Error/>}/>
       <Route path='/contador' element={<Contador/>}/>
       <Route path='/usuarios' element={<Usuarios/>}/>
+      <Route path='/about' element={<About/>}/>
     </Routes>
   )
 }

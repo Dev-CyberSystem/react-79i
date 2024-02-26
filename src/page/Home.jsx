@@ -1,4 +1,3 @@
-import Navegador from "../components/navegador/Navegador"
 import Footer from "../components/footer/Footer"
 import Cards from "../components/cards/Cards"
 import Carrousel from "../components/carrousel/Carrousel"
@@ -34,8 +33,7 @@ const Home = () => {
       <Cards/>
       <Section/>
       <Contador estado={estado} sumandoUno={()=>estado >= 0 ? setEstado(estado + 1) : setEstado(0)} restandoUno={()=>estado>0 ? setEstado(estado-1) : setEstado(0)}/>
-      {usuarios.map(u=>{<Usuarios name={u.name} email={u.email} id={u.id}/>})}
-      <Usuarios/>
+      {usuarios.map(u=>{ return <Usuarios name={u.name} email={u.email} id={u.id}/>})}
       <Footer/>
       
     </>
