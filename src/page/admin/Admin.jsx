@@ -2,7 +2,7 @@ import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import CardsCtrlComp from "../../components/cardsControl/CardsCtrlComp";
 import CardsComp from "../../components/cards/CardsComp.jsx";
 
-const Admin = ({ hookSet, monitor, hookReset }) => {
+const Admin = ({ hookSet, monitor, hookReset, prodArr }) => {
   return (
     <>
       <Container fluid className="admin__body">
@@ -17,7 +17,7 @@ const Admin = ({ hookSet, monitor, hookReset }) => {
             <Card.Header className="text-center my-0 py-0">
               <h5 className="py-0 my-0">VISTA PREVIA</h5>
             </Card.Header>
-            <CardsComp prodQty={monitor} />
+            <CardsComp prodQty={monitor} prodArr={prodArr}/>
           </Card>
           </Col>
           <Col className="col-4 mx-auto">
