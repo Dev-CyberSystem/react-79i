@@ -1,8 +1,9 @@
 import React from 'react'
-
+import Navegador from "../components/navegador/Navegador.jsx"
 const About = () => {
   return (
     <div>
+    <Navegador/>
     <h1>Acerca de Tomas williams</h1>
     <p>Bienvenido a nuestra página "Acerca de". Somos un equipo apasionado dedicado a crear soluciones increíbles con React.</p>
     <p>Nuestro objetivo es proporcionar experiencias de usuario excepcionales a través de desarrollo web innovador y eficiente.</p>

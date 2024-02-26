@@ -1,16 +1,12 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
-import Home from "./page/Home";
-import {Route,Routes} from "react-router-dom"
+import Navegador from "./components/navegador/Navegador.jsx";
+import Rutas from "./routes/Rutas.jsx";
 function App() {
   return (
     <>
-      <Routes>
-        <Route  
-          path="/"
-          element={<Home/>}
-        />
-      </Routes>
+      <Navegador/>
+      <Rutas/>
     </>
   );
 }

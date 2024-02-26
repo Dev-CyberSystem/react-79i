@@ -1,36 +1,18 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import  App  from './App.jsx'
-import About from "./page/About.jsx"
 import './index.css'
-import Error from './page/Error.jsx'
-import { createBrowserRouter,RouterProvider} from 'react-router-dom'
-import Contador from './components/contador/Contador.jsx'
-const router = createBrowserRouter([
-  {
-    path:"/",
-    element:<App/>,
-    errorElement:<Error/>
-  },
-  {
-    path:"/about",
-    element:<About/>,
-    errorElement:<Error/>
-  },
-  {
-    path:"/contador",
-    element:<Contador/>,
-    errorElement:<Error/>
-  },
-  {
-    path:"#",
-    element:<Error/>,
-  }
-]);
+import { BrowserRouter } from "react-router-dom";
+
+
+
 ReactDOM.createRoot(document.getElementById('root')).render(
   
-   <React.StrictMode>
-      <RouterProvider router={router}/>
-   </React.StrictMode>
+   
+<BrowserRouter>
+
+  <App/>
+
+</BrowserRouter>
   
 )

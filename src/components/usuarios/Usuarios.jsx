@@ -1,14 +1,17 @@
 import React from 'react'
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+
 import './usuarios.css'
-const Usuarios = ({nombre,email,id}) => {
+const Usuarios = ({name,email,id}) => {
+  
   return (
-   
+  <>
+  
   <div className='contenedor-usuarios'>
       <Card style={{ width: '18rem',backgroundColor:"violet"}}>
       <Card.Body>
-        <Card.Title>{nombre}</Card.Title>
+        <Card.Title>{name}</Card.Title>
         <Card.Text>
          {email}
         </Card.Text>
@@ -19,7 +22,7 @@ const Usuarios = ({nombre,email,id}) => {
       </Card.Body>
     </Card>
   </div>
-    
+  </>
   )
 }
 

@@ -8,14 +8,14 @@ import Usuarios from "../components/usuarios/Usuarios"
 import { useState,useEffect } from "react"
 import axios from "axios"
 const Home = () => {
-  const [estado,setEstado] = useState(0) 
+  const [estado,setEstado] = useState(0)
   const [usuarios,setUsuarios]=useState([])
   const url ="https://jsonplaceholder.typicode.com/users"
   const obteniendoUsuarios = async ()=>{
     try{
       const response = await axios.get(url)
       setUsuarios(response.data)
-      console.log(response)
+      
     }
     catch{
       console.log("error")
@@ -26,24 +26,16 @@ const Home = () => {
       obteniendoUsuarios()
    },
   [])
-
+  console.log(usuarios)
   return (
     <>
-      
-      <Navegador/>
+    
       <Carrousel/>
       <Cards/>
       <Section/>
-      <Contador 
-    estado={estado}
-    sumandoUno={estado >= 0 ? ()=>{setEstado(estado+1)} : ()=>{setEstado(0)}} 
-    restandoUno = {estado >0 ? ()=>{setEstado(estado-1)} : ()=>{setEstado(0)}}
-    />
-    {
-          usuarios.map(u=>{
-           return <Usuarios email ={u.email}nombre={u.name} id={u.id}/>
-          })
-      }
+      <Contador estado={estado} sumandoUno={()=>estado >= 0 ? setEstado(estado + 1) : setEstado(0)} restandoUno={()=>estado>0 ? setEstado(estado-1) : setEstado(0)}/>
+      {usuarios.map(u=>{<Usuarios name={u.name} email={u.email} id={u.id}/>})}
+      <Usuarios/>
       <Footer/>
       
     </>
