@@ -7,8 +7,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 
 function App() {
-  const defaultQty = 1;
-  const [prodQty, setProdQty] = useState(1);
+  const defaultQty = 10;
+  const [prodQty, setProdQty] = useState(defaultQty);
   const [prodArr, setProdArr] = useState([]);
   
   const hookSet = (qty) => {

@@ -14,9 +14,8 @@
 }
 .cardGroup__card {
     /* width: 20vh; */
+    /* width: fit-content */
 }
 .cardGroup__img {
     max-height: 20vh;
-    /* width: fit-content; */
-    
 }
