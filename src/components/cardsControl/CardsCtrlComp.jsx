@@ -1,8 +1,11 @@
 import { Card, Container, Row, Col, Button } from "react-bootstrap";
 import "./styleCardsCtrlComp.css";
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { useContext } from "react";
+import { DataProvider } from '../../context/DataContext';
 
-const CardsCtrlComp = ({hookSet, monitor}) => {
+const CardsCtrlComp = () => {
+  const {hookSet, prodQty} = useContext(DataProvider);
   return (
     <>
       <Card className="text-center col-auto mx-auto">
@@ -13,7 +16,7 @@ const CardsCtrlComp = ({hookSet, monitor}) => {
               <Col className="mx-auto p-0 my-1">
                 <Card className="ctrl__screen col-4 mx-auto">
                   <Card.Text className="fs-5 text-center text-nowrap">
-                    {monitor}
+                    {prodQty}
                   </Card.Text>
                 </Card>
               </Col>
@@ -34,6 +37,6 @@ const CardsCtrlComp = ({hookSet, monitor}) => {
 };
 CardsCtrlComp.propTypes = {
   hookSet: PropTypes.func,
-  monitor: PropTypes.number
+  prodQty: PropTypes.number
 }
 export default CardsCtrlComp;

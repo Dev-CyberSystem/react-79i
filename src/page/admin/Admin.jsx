@@ -1,8 +1,12 @@
 import { Container, Row, Col, Button, Card } from "react-bootstrap";
 import CardsCtrlComp from "../../components/cardsControl/CardsCtrlComp";
-import CardsComp from "../../components/cards/CardsComp.jsx";
+import CardsComp from "../../components/cards/CardsComp";
+import PropTypes from "prop-types"
+import { useContext } from "react";
+import { DataProvider } from "../../context/DataContext"
 
-const Admin = ({ hookSet, monitor, hookReset, prodArr }) => {
+const Admin = () => {
+  const { hookReset } = useContext(DataProvider);
   return (
     <>
       <Container fluid className="admin__body">
@@ -17,12 +21,12 @@ const Admin = ({ hookSet, monitor, hookReset, prodArr }) => {
             <Card.Header className="text-center my-0 py-0">
               <h5 className="py-0 my-0">VISTA PREVIA</h5>
             </Card.Header>
-            <CardsComp prodQty={monitor} prodArr={prodArr}/>
+            <CardsComp />
           </Card>
           </Col>
           <Col className="col-4 mx-auto">
             <Row>
-              <CardsCtrlComp hookSet={hookSet} monitor={monitor} />
+              <CardsCtrlComp />
             </Row>
             <Row>
               <Button
@@ -40,5 +44,7 @@ const Admin = ({ hookSet, monitor, hookReset, prodArr }) => {
     </>
   );
 };
-
+Admin.propTypes = {
+  hookReset: PropTypes.func
+}
 export default Admin;

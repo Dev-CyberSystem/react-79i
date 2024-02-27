@@ -1,8 +1,11 @@
 import { Card, Col, Row } from 'react-bootstrap';
 import './styleCardsComp.css';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
+import { DataProvider } from '../../context/DataContext';
+import { useContext } from 'react';
 
-const CardsComp = ({prodQty, prodArr}) => {
+const CardsComp = () => {
+  const { prodQty, prodArr } = useContext(DataProvider);
   const trimmedArr = [...prodArr]
   trimmedArr.splice(prodQty)
   return (
@@ -44,5 +47,6 @@ const CardsComp = ({prodQty, prodArr}) => {
 };
 CardsComp.propTypes = {
   prodQty: PropTypes.number,
+  prodArr: PropTypes.array
 }
 export default CardsComp;
