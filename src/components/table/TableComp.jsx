@@ -11,7 +11,7 @@ const TableComp = () => {
     // const b = Object.keys(prodA)
     return (
         <>
-            <Table responsive className="border border-success border-opacity-100 text-center align-middle">
+            <Table responsive="md" className="border border-success border-opacity-100 text-center align-middle">
               <thead>
                 <tr>
                   <th className="border border-success border-opacity-50" key={"colA"}>N°</th>
@@ -31,7 +31,7 @@ const TableComp = () => {
                       <td className="border-start border-success border-opacity-25" key={"colD"+userObj.address.zipcode}>{userObj.phone} </td>
                       <td className="border-start border-success border-opacity-25" key={"colE"+userObj.address.zipcode}>{userObj.email} </td>
                       <td className="border-start border-success border-opacity-25" key={"colE"+userObj.address.zipcode}>
-                        <div className="row row-cols-2">
+                        <div className="row row-cols-1 row-cols-lg-2">
                         <div>
                           <Button variant="warning">Editar</Button>
                         </div>

@@ -8,7 +8,7 @@ const CardsCtrlComp = () => {
   const {hookSet, prodQty} = useContext(DataProvider);
   return (
     <>
-      <Card className="text-center col-auto mx-auto">
+      <Card className="text-center col-auto mx-auto px-0">
         <Card.Header>Cantidad de cards a mostrar <br/> (Pág. Productos)</Card.Header>
         <Card.Body>
           <Container>

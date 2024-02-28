@@ -21,6 +21,7 @@ const Admin = () => {
             <TableComp />
           </Col>
         </Row>
+        <hr className="my-4"/>
         <Row>
           <Col className="col-8">
             <Card>
