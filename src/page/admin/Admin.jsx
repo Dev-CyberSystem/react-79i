@@ -6,7 +6,7 @@ import { useContext } from "react";
 import { DataProvider } from "../../context/DataContext"
 
 const Admin = () => {
-  const { hookReset } = useContext(DataProvider);
+  const { hookSet } = useContext(DataProvider);
   return (
     <>
       <Container fluid className="admin__body">
@@ -32,8 +32,8 @@ const Admin = () => {
               <Button
                 className="ctrl__button col-auto mx-auto"
                 onClick={() =>
-                  hookReset() +
-                  console.log("btn 'Restablecer' presionado en página Admin.jsx")
+                  hookSet("=10") +
+                  console.log("Replace btn pressed")
                 }>
                 Restablecer
               </Button>

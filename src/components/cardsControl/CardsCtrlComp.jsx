@@ -23,10 +23,10 @@ const CardsCtrlComp = () => {
             </Row>
             <Row className="row row-cols-1 row-cols-md-2">
               <Col className=" ctrl__buttonCont mt-1">
-                <Button className="ctrl__button" onClick={() => hookSet(1)+console.log("btn 'Aumentar' presionado en componente CardsCtrlComp.jsx")} >Aumentar</Button>
+                <Button className="ctrl__button" onClick={() => hookSet("+1")+console.log("Increase btn pressed")} >Aumentar</Button>
               </Col>
               <Col className=" ctrl__buttonCont mt-1">
-                <Button className="ctrl__button" onClick={() => hookSet(-1)+console.log("btn 'Reducir' presionado en componente CardsCtrlComp.jsx")}>Reducir</Button>
+                <Button className="ctrl__button" onClick={() => hookSet("-1")+console.log("Decrease btn pressed")}>Reducir</Button>
               </Col>
             </Row>
           </Container>
