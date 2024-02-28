@@ -8,9 +8,22 @@ const DataContext = ({children}) => {
     const [prodQty, setProdQty] = useState(defaultQty);
     const [prodArr, setProdArr] = useState([]);
     
+    useEffect(() => {
+      const getData = async () => {
+        try {
+          const serverData = await axios.get("https://jsonplaceholder.typicode.com/users");
+          setProdArr(serverData.data)
+        }
+        catch(ev) {
+          console.warn(`Error==> ${ev}`)
+        }
+      }
+      getData();
+    }, [prodQty]);
+    
     // const hookSet = (qty) => {
-    //     if ((prodQty + qty >= 0) && (prodQty + qty <= prodArr.length)) {
-    //         setProdQty(prodQty + qty)
+        //     if ((prodQty + qty >= 0) && (prodQty + qty <= prodArr.length)) {
+            //         setProdQty(prodQty + qty)
     //         console.log(`hook actualizado en DataContext.jsx, valor:${prodQty+qty}`)
     //     } else {null}
     // }
@@ -42,18 +55,6 @@ const DataContext = ({children}) => {
     };
     
     
-    useEffect(() => {
-      const getData = async () => {
-        try {
-          const serverData = await axios.get("https://jsonplaceholder.typicode.com/users");
-          setProdArr(serverData.data)
-        }
-        catch(ev) {
-          console.warn(`==> ${ev}`)
-        }
-      }
-      getData();
-    }, [prodQty]);
 
   return (
     <DataProvider.Provider value={{prodQty, prodArr, hookSet}}>

@@ -1,5 +1,5 @@
+import "./styleCardsComp.css";
 import { Card, Col, Row } from 'react-bootstrap';
-import './styleCardsComp.css';
 import PropTypes from 'prop-types';
 import { DataProvider } from '../../context/DataContext';
 import { useContext } from 'react';
