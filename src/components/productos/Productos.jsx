@@ -22,7 +22,7 @@ const Productos = () => {
               <>
                 <Col xs={12} lg={3} md={4} sm={6}>
                   <Card style={{ width: "18rem" }} key={producto.id}>
-                    <Card.Img variant="top" />
+                    <Card.Img variant="top" src={producto.imagen} />
                     <Card.Body>
                       <Card.Title>{producto.nombre}</Card.Title>
                       <Card.Text>{producto.precio}</Card.Text>
