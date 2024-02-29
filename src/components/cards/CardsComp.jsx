@@ -11,32 +11,32 @@ const CardsComp = () => {
   return (
     <>
     <div className='m-3 cardGroup text-center'>
-    <Row xs={1} sm={2} md={3} lg={4} xl={5} className="cardGroup__cardRow">
+    <Row xs={1} sm={2} md={3} lg={4} className="cardGroup__cardRow">
       {trimmedArr.map((item, idx) => (
         <Col className='cardGroup__cardCol g-4 mt-0 mb-4 mx-auto' key={idx}>
           <Card className='cardGroup__card h-100'>
-            <Card.Header className='py-1 px-0 fw-bold fs-5'>{item.name}</Card.Header>
-            <Card.Img className='cardGroup__img' variant="top" src={`https://picsum.photos/200?random=${idx}`} />
+            <Card.Header className='py-1 px-0 fw-bold fs-5'>{item.title}</Card.Header>
+            <Card.Img className='cardGroup__img' variant="top" src={item.images} />
             <Card.Body>
-              <article>
-                <p className='lead m-0'>Empresa:</p>
-                <p>{item.company.name}</p>
+              <article className="cardGroup__article">
+                <p className='lead m-0'>Descripcion:</p>
+                <p>{item.description}</p>
               </article>
               <article>
-                <p className='lead m-0'>Area de trabajo</p>
-                <p>{item.company.catchPhrase}</p>
+                <p className='lead m-0'>Disponible hasta:</p>
+                <p>{item.updatedAt}</p>
               </article>
-              <article>
-                <p className='lead'>Mi Especialidad? :</p>
-                <p className="blockquote-footer">{item.company.bs}</p>
+              <article className="">
+                <p className='lead m-0'>Categoria:</p>
+                <p className="m-0">{item.category.name}</p>
               </article>
             </Card.Body>
-            <Card.Footer>
-              <small>{item.email}</small>
+            <Card.Footer className="py-0">
+              <small className="fs-3">{`$ ${item.price},00`}</small>
             </Card.Footer>
-              <Card.Footer className='py-0'>
-                <small>{`www.${item.website}`}</small>
-              </Card.Footer>
+            <Card.Footer className='py-0'>
+              <small>{item.category.creationAt}</small>
+            </Card.Footer>
           </Card>
         </Col>
       ))}

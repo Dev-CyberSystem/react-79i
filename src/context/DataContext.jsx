@@ -11,7 +11,7 @@ const DataContext = ({children}) => {
     useEffect(() => {
       const getData = async () => {
         try {
-          const serverData = await axios.get("https://jsonplaceholder.typicode.com/users");
+          const serverData = await axios.get("https://api.escuelajs.co/api/v1/products");
           setProdArr(serverData.data)
         }
         catch(ev) {
