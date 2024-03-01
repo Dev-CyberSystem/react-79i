@@ -1,12 +1,22 @@
-import Home from "./page/home/Home"
+import Footer from "./components/footer/Footer"
+import Navegador from "./components/navegador/Navegador"
+import Rutas from "./components/routes/Rutas"
+
 
 
 function App() { // Ahora este componente contiene el estado y el controlador de evento 'handleClick'. Ambos pasan como 'props' a c/u de los botones
   
+  // AQUI VAN LOS COMPONENTES QUE SON COMUNES A TODAS LAS PAGES DE MI PAGINA
 
   return (
-    
-    <Home/>
+    <>
+      <Navegador />
+      <Rutas />
+      <Footer /> 
+
+    </>
+
+
 
   )
 }
