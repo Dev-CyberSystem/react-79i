@@ -1,0 +1,24 @@
+{
+  "users": [
+    {
+      "name": "John Doe",
+      "email": "1@1.com",
+      "password": "123456",
+      "id": "b3e8"
+    },
+    {
+      "name": "Jane Doe",
+      "email": "2@2.com",
+      "password": "123456",
+      "id": "021b"
+    }
+  ],
+  "productos": [
+    {
+      "id": "dc13bbb1-fdfd-48cc-a54c-5e1f0eaacf95",
+      "nombre": "Cafe Colombiano",
+      "precio": "15",
+      "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
+    }
+  ]
+}
