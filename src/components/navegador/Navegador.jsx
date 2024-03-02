@@ -22,8 +22,12 @@ export function Navegador() {
           >
             <NavLink className="nav-link" to="/">Home</NavLink>
             <NavLink className="nav-link" to="/link">Link</NavLink>
-            <NavDropdown title="DropDown" id="navbarScrollingDropdown">
-              <NavDropdown.Item href="#action3">DropDown1</NavDropdown.Item>
+            <NavDropdown title="Admin" id="navbarScrollingDropdown">
+              <NavDropdown.Item>
+              <NavLink className="nav-link" to="/admin">
+                Admin
+              </NavLink>
+              </NavDropdown.Item>
               <NavDropdown.Item href="#action4">
                 DropDown2              </NavDropdown.Item>
               <NavDropdown.Divider />

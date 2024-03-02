@@ -13,17 +13,6 @@ const ProductosContext = ({ children }) => {
   // Put para actualizar los datos
   // Delete para eliminar los datos
 
-  //CRUD
-  //Create
-  //Read
-  //Update
-  //Delete
-
-  //ABM
-  //Alta
-  //Baja
-  //Modificacion
-
   // Funcion para obtener los datos de la API GET
   const obtenerDatos = async () => {
     try {
@@ -38,10 +27,7 @@ const ProductosContext = ({ children }) => {
 
   const addProducto = async (producto) => {
     try {
-      const response = await axios.post(
-        "http://localhost:8000/productos",
-        producto
-      );
+      const response = await axios.post("http://localhost:8000/productos",producto);
 
       setProductos([...productos, response.data]);
     } catch (error) {

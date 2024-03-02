@@ -1,7 +1,10 @@
 import { Container, Row, Col } from "react-bootstrap";
 import TablaProductos from "../../components/tablas/TablaProductos";
 import FormProductos from "../../components/formProductos/FormProductos";
-const Admin = () => {
+
+
+export function Admin () {
+  
   return (
     <>
       <h2>Administrador</h2>
@@ -18,5 +21,3 @@ const Admin = () => {
     </>
   );
 };
-
-export default Admin;
