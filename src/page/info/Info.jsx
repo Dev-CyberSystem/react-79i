@@ -2,50 +2,52 @@ import { ListGroup } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { Error } from '../../components/error/Error'
 import Spinner from '../../components/spinner/Spinner'
-import useFetch from '../../hooks/useFetch.hook'
+import useAxios from '../../hooks/useAxios'
+import { moviesAxiosInstance } from '../../services/moviesService'
 
 export const Info = () => {
 	const params = useParams()
-	const url = `https://api.themoviedb.org/3/movie/${params.elementId}?language=en-US`
+	const url = `/3/movie/${params.elementId}?language=en-US`
 
-	const { data, isLoading, error } = useFetch(url)
-
-	if (error) {
-		return <Error errorMsg={error.response.data.status_message}></Error>
-	}
-
-	if (!data.genres || isLoading) {
-		return <Spinner></Spinner>
-	}
+	const [movie, error, isLoading] = useAxios({
+		axiosInstance: moviesAxiosInstance,
+		method: 'GET',
+		url: url,
+	})
 
 	return (
 		<main className='container-md mb-5'>
-			<section className='row '>
-				<div className='col-12 col-md-6'>
-					<img
-						src={`https://image.tmdb.org/t/p/original${data.backdrop_path}`}
-						alt='element image'
-						className='w-100 rounded rounded-2  '
-					/>
-				</div>
-				<div className='col-12 col-md-6 pt-2 pt-md-0   text-white text-center d-flex flex-column align-items-center justify-content-center '>
-					<h1 className='text-info '>{data.title}</h1>
-					<h3>{data.release_date.split('-')[0]}</h3>
-					<p>{data.overview}</p>
-					<ListGroup horizontal className='mb-2 '>
-						{data.genres.map((genre) => {
-							return (
-								<ListGroup.Item key={genre.id} variant='info'>
-									{genre.name}
-								</ListGroup.Item>
-							)
-						})}
-					</ListGroup>
-					<p className='text-warning'>
-						Raing : <span>{data.vote_average}</span>
-					</p>
-				</div>
-			</section>
+			{isLoading && <Spinner />}
+			{!isLoading && error && <Error errorMsg={error} />}
+			{!isLoading && !error && movie && (
+				<section className='row '>
+					<div className='col-12 col-md-6'>
+						<img
+							src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
+							alt='element image'
+							className='w-100 rounded rounded-2  '
+						/>
+					</div>
+					<div className='col-12 col-md-6 pt-2 pt-md-0   text-white text-center d-flex flex-column align-items-center justify-content-center '>
+						<h1 className='text-info '>{movie.title}</h1>
+						<h3>{movie.release_date.split('-')[0]}</h3>
+						<p>{movie.overview}</p>
+						<ListGroup horizontal className='mb-2 '>
+							{movie.genres.map((genre) => {
+								return (
+									<ListGroup.Item key={genre.id} variant='info'>
+										{genre.name}
+									</ListGroup.Item>
+								)
+							})}
+						</ListGroup>
+						<p className='text-warning'>
+							Raing : <span>{movie.vote_average}</span>
+						</p>
+					</div>
+				</section>
+			)}
+			{!isLoading && !error && !movie && <p>No Movie info to show</p>}
 		</main>
 	)
 }
