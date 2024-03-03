@@ -6,17 +6,17 @@ export const UsersProvider = createContext();
 const UsersContext = ({children}) => {
     const [usersArr, setUsersArr] = useState([]);
 
-    useEffect(() => {
-        const getUsers = async () => {
-            try {
-                const serverRequest = await axios.get("https://jsonplaceholder.typicode.com/users")
-                setUsersArr(serverRequest.data)
-                console.log(serverRequest.data)
-            }
-            catch(ev) {
-                console.warn(`Error==>${ev}`)
-            }
+    const getUsers = async () => {
+        try {
+            const serverReply = await axios.get("https://jsonplaceholder.typicode.com/users")
+            setUsersArr(serverReply.data)
         }
+        catch(ev) {
+            console.warn(`Users server reply server fail==> ${ev}`)
+        }
+    }
+
+    useEffect(() => {
         getUsers();
     }, []);
 

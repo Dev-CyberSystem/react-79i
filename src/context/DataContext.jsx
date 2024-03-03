@@ -50,7 +50,7 @@ const DataContext = ({children}) => {
                     break;
             }
         } else {
-            return console.warn("Sintaxis erronea, ingrese un operador (-,+,=) seguido de hasta 3 digitos")
+            return console.warn("Syntax error, 1 operator is expected followed by up to 3 digits")
         }
     };
     
