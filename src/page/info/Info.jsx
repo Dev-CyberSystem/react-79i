@@ -20,7 +20,7 @@ export const Info = () => {
 			{isLoading && <Spinner />}
 			{!isLoading && error && <Error errorMsg={error} />}
 			{!isLoading && !error && movie && (
-				<section className='row '>
+				<section className='row d-flex justify-content-center align-items-center  '>
 					<div className='col-12 col-md-6'>
 						<img
 							src={`https://image.tmdb.org/t/p/original${movie.backdrop_path}`}
@@ -42,7 +42,7 @@ export const Info = () => {
 							})}
 						</ListGroup>
 						<p className='text-warning'>
-							Raing : <span>{movie.vote_average}</span>
+							Raiting : <span>{movie.vote_average}</span>
 						</p>
 					</div>
 				</section>

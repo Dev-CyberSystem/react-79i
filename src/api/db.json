@@ -1,3 +1,19 @@
 {
-  "users": []
+  "users": [
+    {
+      "id": "1709463889539",
+      "name": "eze",
+      "email": "eze@gm.com"
+    },
+    {
+      "id": "1709463957803",
+      "name": "eze",
+      "email": "eze@gm.com"
+    },
+    {
+      "id": "1709464028749",
+      "name": "kjjlk",
+      "email": "massa@gmail"
+    }
+  ]
 }
