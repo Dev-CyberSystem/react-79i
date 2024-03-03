@@ -1,9 +1,12 @@
 import PropTypes from "prop-types";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import { useContext } from "react";
+import { productosProvider } from '../../context/ProductosContext'
 
-function Productos({ productos }) {
-    console.log(productos, "productos geor");
+function Productos() {
+    const { productos } = useContext(productosProvider);
+
     return (
         <>
             <h3 className="text-center mt-3 mb-3">Productos</h3>
