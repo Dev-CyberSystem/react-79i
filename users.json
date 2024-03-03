@@ -1,0 +1,52 @@
+{
+  "users": [
+    {
+      "id": "65e2355a73c57ba98cd51aa8",
+      "age": 22,
+      "name": "Candy Rogers",
+      "company": "XLEEN",
+      "email": "candyrogers@xleen.com",
+      "phone": "+1 (884) 422-2749"
+    },
+    {
+      "id": "65e2355a93fd91021554e30c",
+      "age": 29,
+      "name": "Ronda Mcclain",
+      "company": "GENEKOM",
+      "email": "rondamcclain@genekom.com",
+      "phone": "+1 (916) 454-3047"
+    },
+    {
+      "id": "65e2355a78277a77c09f4942",
+      "age": 32,
+      "name": "Ayers Barrera",
+      "company": "MAXIMIND",
+      "email": "ayersbarrera@maximind.com",
+      "phone": "+1 (838) 440-3021"
+    },
+    {
+      "id": "65e2355a4462dec16a55ed51",
+      "age": 20,
+      "name": "Frances Bartlett",
+      "company": "QABOOS",
+      "email": "francesbartlett@qaboos.com",
+      "phone": "+1 (938) 479-3580"
+    },
+    {
+      "id": "65e2355a345bbdfb583f3091",
+      "age": 32,
+      "name": "Cruz Golden",
+      "company": "XYMONK",
+      "email": "cruzgolden@xymonk.com",
+      "phone": "+1 (850) 565-3204"
+    },
+    {
+      "id": "65e2355a9f369a68c5eb375d",
+      "age": 34,
+      "name": "Rodriguez Hodge",
+      "company": "GINKOGENE",
+      "email": "rodriguezhodge@ginkogene.com",
+      "phone": "+1 (988) 528-4000"
+    }
+  ]
+}

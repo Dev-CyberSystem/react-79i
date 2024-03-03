@@ -27,7 +27,7 @@ const ProductosContext = ({ children }) => {
   // Funcion para obtener los datos de la API GET
   const obtenerDatos = async () => {
     try {
-      const response = await axios.get("http://localhost:8000/productos");
+      const response = await axios.get("https://api.escuelajs.co/api/v1/products");
       setProductos(response.data);
     } catch (error) {
       console.error(error);
@@ -39,7 +39,7 @@ const ProductosContext = ({ children }) => {
   const addProducto = async (producto) => {
     try {
       const response = await axios.post(
-        "http://localhost:8000/productos",
+        "https://api.escuelajs.co/api/v1/products",
         producto
       );
 
@@ -53,7 +53,7 @@ const ProductosContext = ({ children }) => {
 
   const deleteProductos = async (id) => {
     try {
-      await axios.delete(`http://localhost:8000/productos/${id}`);
+      await axios.delete(`https://api.escuelajs.co/api/v1/products/${id}`);
 
       setProductos(productos.filter((producto) => producto.id !== id));
     } catch (error) {
@@ -66,7 +66,7 @@ const ProductosContext = ({ children }) => {
   const updateProductos = async (producto) => {
     try {
       await axios.put(
-        `http://localhost:8000/productos/${producto.id}`,
+        `https://api.escuelajs.co/api/v1/products/${producto.id}`,
         producto
       );
 
@@ -80,7 +80,6 @@ const ProductosContext = ({ children }) => {
     obtenerDatos();
   }, []);
 
-  console.log(productos, "productos desde el context");
 
   return (
     <ProductsProvider.Provider

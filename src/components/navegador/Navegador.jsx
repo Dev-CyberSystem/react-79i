@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom"
 
 
 import "./styleNavegador.css"
-import { Link } from "react-router-dom";
+
 const Navegador = () => {
 
   const navigate = useNavigate()
@@ -19,6 +19,8 @@ const Navegador = () => {
             <Nav className="me-auto">
               <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
               <Nav.Link onClick={() => navigate("/admin")}>Administrador</Nav.Link>
+              <Nav.Link onClick={() => navigate("/adminUsers")}>Administrador de usuarios</Nav.Link>
+
               <NavDropdown title="Dropdown" id="basic-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">

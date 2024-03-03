@@ -35,10 +35,10 @@ const TablaProductos = () => {
                 <>
                   <tr>
                     <td>{producto.id}</td>
-                    <td>{producto.nombre}</td>
-                    <td>{producto.precio}</td>
+                    <td>{producto.title}</td>
+                    <td>{producto.price}</td>
                     <td>
-                      <Button variant="warning" onClick={() => handleEdit(producto)}>Editar</Button>
+                      <Button variant="warning" onClick={() => handleEdit(producto.id)}>Editar</Button>
                       <Button variant="danger" onClick={() => deleteProductos(producto.id)}>Eliminar</Button>
                     </td>
                   </tr>
@@ -46,7 +46,7 @@ const TablaProductos = () => {
               ))}
             </tbody>
           </Table>
-          <Modal show={show} onHide={handleClose}>
+        <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Formulario de edicion</Modal.Title>
         </Modal.Header>

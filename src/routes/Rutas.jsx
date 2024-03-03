@@ -1,20 +1,19 @@
-import React from 'react'
-import {Routes,Route} from "react-router-dom"
-import Home from '../page/Home.jsx'
-import Error from '../page/Error.jsx'
-import About from '../page/About.jsx'
-import Contador from '../components/contador/Contador.jsx'
-import Usuarios from '../components/usuarios/Usuarios.jsx'
+import { Routes, Route } from "react-router-dom";
+import Home from "../page/home/Home";
+import Admin from "../page/admin/Admin";
+import AdminUsers from "../page/adminUsers/AdminUsers";
+
 const Rutas = () => {
   return (
-    <Routes>
-      <Route path='/' element={<Home/>}/>
-      <Route path='*' element={<Error/>}/>
-      <Route path='/contador' element={<Contador/>}/>
-      <Route path='/usuarios' element={<Usuarios/>}/>
-      <Route path='/about' element={<About/>}/>
-    </Routes>
-  )
-}
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/admin" element={<Admin />} />
+        <Route path="/adminUsers" element={<AdminUsers />} />
+        <Route path="*" element={<h1>Not Found</h1>} />
+      </Routes>
+    </>
+  );
+};
 
-export default Rutas
+export default Rutas;

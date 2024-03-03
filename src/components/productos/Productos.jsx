@@ -17,22 +17,22 @@ const Productos = () => {
         {productos.length === 0 ? (
           <h2>Aqui no hay nada patron</h2>
         ) : (
-          <Row>
+          <Row key={productos}>
             {productos.map((producto) => (
               <>
                 <Col xs={12} lg={3} md={4} sm={6}>
                   <Card style={{ width: "18rem" }} key={producto.id}>
-                    <Card.Img variant="top" src={producto.imagen} />
+                    <Card.Img variant="top" src={producto.images[0]} />
                     <Card.Body>
-                      <Card.Title>{producto.nombre}</Card.Title>
-                      <Card.Text>{producto.precio}</Card.Text>
+                      <Card.Title>{producto.title}</Card.Title>
+                      <Card.Text>{producto.price}</Card.Text>
                       <Button variant="primary">Go somewhere</Button>
                     </Card.Body>
                   </Card>
                 </Col>
               </>
             ))}
-          </Row>
+        </Row>
         )}
       </Container>
     </>
