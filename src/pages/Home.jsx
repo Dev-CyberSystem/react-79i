@@ -1,11 +1,11 @@
 /* eslint-disable no-unused-vars */
-import Carousel from '../../components/carrousel/Carousel';
+import Carousel from '../components/carrousel/Carousel';
 import { Container, Row, Col } from 'react-bootstrap';
-import Cards from '../../components/cards/Cards';
-import SectionReact from '../../components/section/section';
-import Footer from '../../components/footer/Footer';
-import { obtenerDatos, formatearDinero } from '../../utils/funcionesUtiles';
-import CardComponent from '../../components/cardFetch/Card';
+import Cards from '../components/cards/Cards';
+import SectionReact from '../components/section/section';
+import Footer from '../components/footer/Footer';
+import { obtenerDatos, formatearDinero } from '../utils/funcionesUtiles';
+import CardComponent from '../components/cardFetch/Card';
 import { useState, useEffect } from 'react';
 
 const Home = () => {

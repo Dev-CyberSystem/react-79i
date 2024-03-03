@@ -34,6 +34,12 @@ function NavbarComponent() {
               Productos
             </Nav.Link>
             <Nav.Link
+              onClick={() => navigate('/Usuarios')}
+              className="text-light"
+            >
+              Usuarios
+            </Nav.Link>
+            <Nav.Link
               onClick={() => navigate('/NuevaPagina')}
               className="text-light"
             >
