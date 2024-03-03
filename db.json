@@ -1,0 +1,19 @@
+{
+    "users" :[
+        {
+            "name": "Nicolas Molina",
+            "email": "nico@gmail.com",
+            "password": "123456"
+        },
+        {
+            "name": "John Doe",
+            "email": "john@gmail.com",
+            "password": "123456"
+        },
+        {
+            "name": "Daniela Lagos",
+            "email": "daniela@gmail.com",
+            "password": "123456"
+        }
+    ]
+}
