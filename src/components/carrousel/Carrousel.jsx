@@ -1,45 +1,22 @@
-import React from 'react';
-import { Carousel } from 'react-bootstrap';
 import './styleCarrousel.css'
+import imgUno from '../../../src/img/html.png';
+import imgDos from '../../../src/img/css.jpeg';
+import imgTres from '../../../src/img/bootstrap.png';
+import imgCuatro from '../../../src/img/js.png';
+import imgCinco from '../../../src/img/react.jpg';
 
 const Carrousel = () => {
     return (
         <>
-            <Carousel>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src="https://via.placeholder.com/800x400"
-                            alt="First slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>First slide label</h3>
-                            <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src="https://via.placeholder.com/800x400"
-                            alt="Second slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>Second slide label</h3>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                    <Carousel.Item>
-                        <img
-                            className="d-block w-100"
-                            src="https://via.placeholder.com/800x400"
-                            alt="Third slide"
-                        />
-                        <Carousel.Caption>
-                            <h3>Third slide label</h3>
-                            <p>Praesent commodo cursus magna, vel scelerisque nisl consectetur.</p>
-                        </Carousel.Caption>
-                    </Carousel.Item>
-                </Carousel>
+            <div className='containerDiseno'>
+                <div className='disenoImg mt-3 mb-5'>
+                    <img src={imgUno} alt="logo de html" />
+                    <img src={imgDos} alt="logo de css" />
+                    <img src={imgTres} alt="logo de bootstrap" />
+                    <img src={imgCuatro} alt="logo de JS" />
+                    <img src={imgCinco} alt="logo de react" />
+                </div>
+            </div>
         </>
     )
 }

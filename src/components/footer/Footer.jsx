@@ -5,11 +5,11 @@ import logoRolling from '../../img/logoRolling.png';
 const Footer = () => {
   return (
     <>
-      <footer className="p-5 fondoColor">
-        <div className="container text-center">
-          <div className="row">
-            <div className="col-md-4">
-              <img src={logoRolling} className="w-100" alt="Logo" />
+      <footer className="p-5 text-center">
+        <div className='container'>
+          <div className='row'>
+            <div className="col-md-4 mt-5">
+              <img src={logoRolling} className="w-50" alt="Logo" />
             </div>
             <div className="col-md-4 mt-5 colorLetra">
               <h4>Información</h4>

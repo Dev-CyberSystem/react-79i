@@ -16,6 +16,7 @@ const Navegador = () => {
             <Nav className="me-auto">
               <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
               <Nav.Link onClick={() => navigate("Contador")}>Contador</Nav.Link>
+              <Nav.Link onClick={() => navigate("Administrador")}>Administrador</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
