@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { userContext } from '../context/UsuariosContext';
+import { userProvider } from '../context/UsersContext';
 import { Table } from 'react-bootstrap';
 
 const Usuarios = () => {
-  const users = useContext(userContext);
+  const users = useContext(userProvider);
 
   console.log(users);
 
