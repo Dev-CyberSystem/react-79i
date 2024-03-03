@@ -1,25 +1,26 @@
+/* eslint-disable react-refresh/only-export-components */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import { createContext } from 'react';
-import { useState, useEffect } from 'react';
+import { createContext, useState, useEffect } from 'react';
+import axios from 'axios';
 
 export const userContext = createContext();
 
 const UsuariosContext = ({ children }) => {
   const [usuarios, setUsuarios] = useState([]);
 
+  const getUsers = async () => {
+    try {
+      const response = await axios.get('/src/database/juegos.json');
+      const resultado = response.data;
+      console.log(resultado);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const url = 'https://jsonplaceholder.typicode.com/users';
-        const respuesta = await fetch(url);
-        const resultado = await respuesta.json();
-        setUsuarios(resultado);
-      } catch (error) {
-        console.log('Ocurrió un error');
-      }
-    };
-    fetchData();
+    getUsers();
   }, []);
 
   return (
