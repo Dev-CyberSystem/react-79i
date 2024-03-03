@@ -16,8 +16,8 @@
     "productos": [
         {
             "id": 1,
-            "nombre": "Cafe Colombiano",
-            "precio": "15",
+            "nombre": "Café Colombiano",
+            "precio": "$15",
             "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
         }
     ]
