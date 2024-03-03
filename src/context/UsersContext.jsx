@@ -6,19 +6,25 @@ export const UserContext = createContext()
 
 export const UserContextProvider = ({ children }) => {
 	const [users, setUsers] = useState([])
-
-	const [data, error, isLoading] = useAxios({
+	const [data, error, isLoading, refetch] = useAxios({
 		axiosInstance: usersAxiosInstance,
 		method: 'GET',
 		url: '/users',
 	})
 
 	const addUser = async (user) => {
-		const response = await usersAxiosInstance.post(
-			'http://localhost:5000/users',
-			user
-		)
-		setUsers([...users, response.data])
+		await usersAxiosInstance.post('/users', user)
+		refetch()
+	}
+
+	const deleteUser = async (userId) => {
+		await usersAxiosInstance.delete(`/users/${userId}`)
+		refetch()
+	}
+
+	const editUser = async (userId, updatedUser) => {
+		await usersAxiosInstance.put(`/users/${userId}`, updatedUser)
+		refetch()
 	}
 
 	useEffect(() => {
@@ -26,7 +32,8 @@ export const UserContextProvider = ({ children }) => {
 	}, [data])
 
 	return (
-		<UserContext.Provider value={{ users, isLoading, error, addUser }}>
+		<UserContext.Provider
+			value={{ users, isLoading, error, addUser, deleteUser, editUser }}>
 			{children}
 		</UserContext.Provider>
 	)

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react'
 
 const useAxios = (configObj) => {
 	const { axiosInstance, method, url, requestConfig = {} } = configObj
-   console.log('useAxios')
 	const [response, setResponse] = useState([])
 	const [error, setError] = useState('')
 	const [loading, setLoading] = useState(true)
