@@ -9,21 +9,61 @@ export const userProvider = createContext();
 const UsersContext = ({ children }) => {
   const [users, setUsuarios] = useState([]);
 
+  //Obtener los datos de Usuarios
+  const getUsers = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/users');
+      const result = response.data;
+      return setUsuarios(result);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Post para alimentar nuestra base de datos de Usuarios
+
+  const addUser = async (producto) => {
+    try {
+      const response = await axios.post(
+        'http://localhost:3000/users',
+        producto
+      );
+
+      setUsuarios([...users, response.data]);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Delete para eliminar un usuario de la base de datos.
+  const deleteUser = async (id) => {
+    try {
+      await axios.delete(`http://localhost:3000/users/${id}`);
+      return setUsuarios(users.filter((user) => user.id !== id));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  // Put para actualizar un producto de la base de datos.
+  const updateUser = async (user) => {
+    try {
+      await axios.put(`http://localhost:3000/users/${user.id}`, user);
+
+      await getUsers();
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    const getUsers = async () => {
-      try {
-        const response = await axios.get('http://localhost:3000/users');
-        const result = response.data;
-        return setUsuarios(result);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getUsers();
   }, []);
 
   return (
-    <userProvider.Provider value={users}>{children}</userProvider.Provider>
+    <userProvider.Provider value={{ users, addUser, deleteUser, updateUser }}>
+      {children}
+    </userProvider.Provider>
   );
 };
 

@@ -1,48 +1,25 @@
+/* eslint-disable no-unused-vars */
+import { Col, Row, Container } from 'react-bootstrap';
 import { useContext } from 'react';
 import { userProvider } from '../context/UsersContext';
-import { Table } from 'react-bootstrap';
+import FormContext from '../components/formUsers/FormContext';
+import TableUsers from '../components/tablas/TableUsers';
+import '../pages/css/usuarios.css';
 
 const Usuarios = () => {
-  const users = useContext(userProvider);
-
-  console.log(users);
+  const { users } = useContext(userProvider);
 
   return (
-    <div>
-      {!users ? (
-        <h1>No hay Usuarios</h1>
-      ) : (
-        <Table striped bordered hover>
-          <thead>
-            <tr>
-              <th>#</th>
-              <th>First Name</th>
-              <th>Last Name</th>
-              <th>Username</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>1</td>
-              <td>Mark</td>
-              <td>Otto</td>
-              <td>@mdo</td>
-            </tr>
-            <tr>
-              <td>2</td>
-              <td>Jacob</td>
-              <td>Thornton</td>
-              <td>@fat</td>
-            </tr>
-            <tr>
-              <td>3</td>
-              <td colSpan={2}>Larry the Bird</td>
-              <td>@twitter</td>
-            </tr>
-          </tbody>
-        </Table>
-      )}
-    </div>
+    <Container>
+      <Row className="mt-3">
+        <Col className="col-6">
+          <FormContext />
+        </Col>
+        <Col className="col-6">
+          <TableUsers />
+        </Col>
+      </Row>
+    </Container>
   );
 };
 
