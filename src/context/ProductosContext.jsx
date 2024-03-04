@@ -22,7 +22,7 @@ const ProductosContext = ({ children }) => {
   const addProductos = async (producto) => {
     try {
       const respuestaTres = await axios.post("http://localhost:8000/productos", producto)
-      // setProductos (respuestaTres.data);
+      setProductos ([...producto, respuestaTres.data]);
     }
     catch (error) {
       console.log(error)
