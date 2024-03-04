@@ -5,7 +5,7 @@ import { useContext } from "react";
 import { UsersProvider } from "../../context/UsersContext";
 
 const TableComp = () => {
-  const { usersArr } = useContext(UsersProvider);
+  const { usersArr, suprUser } = useContext(UsersProvider);
   return (
     <>
       <Table
@@ -49,7 +49,7 @@ const TableComp = () => {
                     </Button>
                   </div>
                   <div>
-                    <Button className="my-1" variant="danger">
+                    <Button onClick={() => suprUser(userObj.id)} className="my-1" variant="danger">
                       Eliminar
                     </Button>
                   </div>
