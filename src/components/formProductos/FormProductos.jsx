@@ -8,6 +8,7 @@ import Swal from "sweetalert2";
 // eslint-disable-next-line react/prop-types
 const FormProductos = ({ editarProductos, handleClose }) => {
   const { addProducto, updateProductos } = useContext(ProductsProvider);
+  console.log(addProducto);
 
   console.log(editarProductos, "editar Producto");
 

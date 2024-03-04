@@ -32,8 +32,7 @@ const TablaProductos = () => {
             </thead>
             <tbody>
               {productos.map((producto) => (
-                <>
-                  <tr>
+                  <tr key={producto.id}>
                     <td>{producto.id}</td>
                     <td>{producto.nombre}</td>
                     <td>{producto.precio}</td>
@@ -42,7 +41,6 @@ const TablaProductos = () => {
                       <Button variant="danger" onClick={() => deleteProductos(producto.id)}>Eliminar</Button>
                     </td>
                   </tr>
-                </>
               ))}
             </tbody>
           </Table>

@@ -3,14 +3,19 @@ import "./App.css";
 import { Navegador } from "./components/navegador/Navegador";
 import { Footer } from "./components/footer/Footer";
 import { Rutas } from "./components/rutas/Rutas";
+import ProductosContext from "./context/ProductosContext";
 
 
 function App() {
   return (
     <>
-      <Navegador/>
+  {/* Agregar el context de usuarios */}
+    <ProductosContext>
+    <Navegador/>
       <Rutas/>
       <Footer/>
+    </ProductosContext>
+  {/* Agregar el context de usuarios */}
     </>
   );
 }
