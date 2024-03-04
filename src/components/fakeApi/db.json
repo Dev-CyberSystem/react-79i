@@ -1,16 +1,16 @@
 {
-    "users": [
+    "usuarios": [
         {
             "id": 1,
-            "name": "John Doe",
-            "email": "1@1.com",
-            "password": "123456"
+            "nombre": "Georgina Costilla",
+            "email": "geo@01.com",
+            "contrasena": "123456"
         },
         {
             "id": 2,
-            "name": "Jane Doe",
-            "email": "2@2.com",
-            "password": "123456"
+            "nombre": "Juan Lasalle",
+            "email": "juancho@02.com",
+            "contrasena": "123456"
         }
     ],
     "productos": [
@@ -19,6 +19,18 @@
             "nombre": "Café Colombiano",
             "precio": "$15",
             "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
+        },
+        {
+            "id": 2,
+            "nombre": "Té",
+            "precio": "$20",
+            "imagen": "http://secretocaffe.com/wp-content/uploads/2013/01/T%C3%A91-1024x605.jpg"
+        },
+        {
+            "id": 3,
+            "nombre": "Yerba",
+            "precio": "$10",
+            "imagen": "https://jwalimentos.com.br/wp-content/uploads/2022/03/PCTP578-768x768.jpg"
         }
     ]
 }
