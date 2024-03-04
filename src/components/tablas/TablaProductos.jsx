@@ -22,7 +22,7 @@ const TablaProductos = () => {
                     </thead>
                     <tbody>
                         {productos.map((producto) => (
-                            <tr key={producto.id}>
+                            <tr>
                                 <td>{producto.id}</td>
                                 <td>{producto.nombre}</td>
                                 <td>{producto.precio}</td>

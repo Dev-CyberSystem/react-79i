@@ -1,13 +1,29 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Form, Button }  from "react-bootstrap";
+import { productosProvider } from "../../context/ProductosContext";
 
 const FormProductos = () => {
 
-    const [nombre, setNombre] = useState()
-    const [precio, setPrecio] = useState()
+    const { addProductos } = useContext(productosProvider)
+
+    const [producto, setProducto] = useState({
+        id:"",
+        nombre:"",
+        precio:""
+    })
+
+    const handleChange = (e) => {
+       setProducto({
+        ...producto,
+        [e.target.name]: e.target.value,
+       });
+    }
+
+    console.log(producto, "aquiiiiiiiiiiiiiiiiiii")
 
     const handleSubmit = (e) => {
         e.preventDefault();
+        addProductos(producto);
     }
 
     return (
@@ -16,16 +32,16 @@ const FormProductos = () => {
                 <Form.Group className="mb-3">
                     <Form.Label>Nombre</Form.Label>
                     <Form.Control type="text" 
-                    value={nombre} 
-                    onChange={(e) =>{setNombre (e.target.value)}}
+                    value={producto.nombre} 
+                    onChange={handleChange}
                     name="nombre" 
                     placeholder="nombre del producto" />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label>Precio</Form.Label>
                     <Form.Control type='number' 
-                    value={precio} 
-                    onChange={(e) =>{setPrecio (e.target.value)}}
+                    value={producto.precio} 
+                    onChange={handleChange}
                     name="precio" 
                     placeholder="precio del producto" />
                 </Form.Group>

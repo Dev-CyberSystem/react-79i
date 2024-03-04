@@ -9,13 +9,13 @@ import UsuariosContext from "./context/UsuariosContext.jsx";
 function App() {
   return (
     <>
-      <ProductosContext>
       <UsuariosContext>
-      <Navegador />
-      <Rutas contador={0} />
-      <Footer />
+        <ProductosContext>
+          <Navegador />
+          <Rutas contador={0} />
+          <Footer />
+        </ProductosContext>
       </UsuariosContext>
-      </ProductosContext>
     </>
   );
 }
