@@ -49,7 +49,7 @@ const FormComp = () => {
     Swal.fire({
         postion: "center",
         icon: "success",
-        title: "El producto fue almacenado",
+        title: "El usuario fue almacenado",
         showConfirmButton: false,
         timer: 3000
     })
