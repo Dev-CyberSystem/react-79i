@@ -80,7 +80,7 @@ const ProductosContext = ({ children }) => {
     obtenerDatos();
   }, []);
 
-  console.log(productos, "productos desde el context");
+  // console.log(productos, "productos desde el context");
 
   return (
     <ProductsProvider.Provider

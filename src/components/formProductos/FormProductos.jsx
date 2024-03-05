@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const FormProductos = ({ editarProductos, handleClose }) => {
   const { addProducto, updateProductos } = useContext(ProductsProvider);
 
-  console.log(editarProductos, "editar Producto");
+  // console.log(editarProductos, "editar Producto");
 
   const [producto, setProducto] = useState({
     id: editarProductos ? editarProductos.id : uuidv4(),

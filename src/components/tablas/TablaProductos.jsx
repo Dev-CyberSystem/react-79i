@@ -5,15 +5,15 @@ import FormProductos from "../formProductos/FormProductos";
 
 const TablaProductos = () => {
   const { productos, deleteProductos } = useContext(ProductsProvider);
-  const [editarProductos, setEditarProductos] = useState(null)
+  const [editarProductos, setEditarProductos] = useState(null);
   const [show, setShow] = useState(false);
 
   const handleClose = () => setShow(false);
 
   const handleEdit = (producto) => {
-    setEditarProductos(producto)
-    setShow(true)
-  }
+    setEditarProductos(producto);
+    setShow(true);
+  };
 
   return (
     <>
@@ -38,8 +38,18 @@ const TablaProductos = () => {
                     <td>{producto.nombre}</td>
                     <td>{producto.precio}</td>
                     <td>
-                      <Button variant="warning" onClick={() => handleEdit(producto)}>Editar</Button>
-                      <Button variant="danger" onClick={() => deleteProductos(producto.id)}>Eliminar</Button>
+                      <Button
+                        variant="warning"
+                        onClick={() => handleEdit(producto)}
+                      >
+                        Editar
+                      </Button>
+                      <Button
+                        variant="danger"
+                        onClick={() => deleteProductos(producto.id)}
+                      >
+                        Eliminar
+                      </Button>
                     </td>
                   </tr>
                 </>
@@ -47,12 +57,17 @@ const TablaProductos = () => {
             </tbody>
           </Table>
           <Modal show={show} onHide={handleClose}>
-        <Modal.Header closeButton>
-          <Modal.Title>Formulario de edicion</Modal.Title>
-        </Modal.Header>
-        <Modal.Body> <FormProductos  editarProductos={editarProductos} handleClose = {handleClose}/> </Modal.Body>
-       
-      </Modal>
+            <Modal.Header closeButton>
+              <Modal.Title>Formulario de edicion</Modal.Title>
+            </Modal.Header>
+            <Modal.Body>
+              {" "}
+              <FormProductos
+                editarProductos={editarProductos}
+                handleClose={handleClose}
+              />{" "}
+            </Modal.Body>
+          </Modal>
         </>
       )}
     </>
