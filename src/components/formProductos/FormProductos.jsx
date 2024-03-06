@@ -2,23 +2,34 @@ import { Button, Form } from "react-bootstrap";
 import { useState } from "react";
 
 const FormProductos = () => {
-    const [nombre, setNombre] = useState()
-    const [precio, setPrecio] = useState()
+    
+  const [producto, setProducto] = useState({
+    id: "",
+    nombre: "",
+    precio: "",
+  });
+
+   const handleChange = (e) => {  /* el handleChange ACTUALIZA el estado de producto */
+     setProducto({
+      ...producto, /*Recupera los datos del estado inicial de productos*/
+      [e.target.name]: e.target.value,
+     });
+   }
 
     const handleSubmit = (e) => { 
         e.preventDefoult();
     }
 
 
-  return (
+  return (                                   /* siempre una funciion se va a llamar handle...*/
    <>
-   <Form onSubmit={handleSubmit}>
+   <Form onSubmit={handleSubmit}> 
       <Form.Group className="mb-3" >
         <Form.Label>Nombre</Form.Label>
         <Form.Control 
          type="text"
-         value={nombre} 
-         onChange ={(e) => { setNombre(e.target.value) }}/*Capturamos todos los datos que estan en el value nombre*/
+         value={producto.nombre} 
+         onChange ={handleChange}/*Onchange hace el envio de los datos y empezar a guardarlo*/
          name="nombre" 
          placeholder="Nombre del producto" />
       </Form.Group>
@@ -26,8 +37,8 @@ const FormProductos = () => {
         <Form.Label>Precio</Form.Label>
         <Form.Control 
         type="number" 
-        value={precio}
-        onChange={(e) => { setPrecio(e.target.value) }} /*Capturamos todos los datos que estan en el value precio*/
+        value={producto.precio}
+        onChange={handleChange} 
         name="precio" 
         placeholder="Precio del producto" />
       </Form.Group>

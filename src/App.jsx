@@ -4,15 +4,19 @@ import { Navegador } from "./components/navegador/Navegador";
 import { Footer } from "./components/footer/Footer";
 import Rutas from "./components/rutas/Rutas";
 import ProductosContext from "./context/ProductosContext";
+import UsersContext from "./context/UsersContext";
 
 function App() {
-  return (              /* Estos son los children de mi context ProductosContext */
+  return (
+    /* Estos son los children de mi context ProductosContext */
     <>
-      <ProductosContext>
-      <Navegador /> 
-      <Rutas />
-      <Footer />
-      </ProductosContext>
+      <UsersContext>
+        <ProductosContext>
+          <Navegador />
+          <Rutas />
+          <Footer />
+        </ProductosContext>
+      </UsersContext>
     </>
   );
 }
