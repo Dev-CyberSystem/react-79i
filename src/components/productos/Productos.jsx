@@ -1,8 +1,13 @@
+import { useContext } from "react";
 import Proptypes from "prop-types";
-import { Card, Button } from "react-bootstrap";
+import { Card, Button, Container, Row, Col } from "react-bootstrap";
+import { ProductsProvider } from "../../context/ProductosContext";
 
-const Productos = ({ productos }) => {
-  return (
+const Productos = () => {
+    const { productos } = useContext(ProductsProvider);
+
+return (
+
     <>
       <h1>Componente de Productos</h1>
 
@@ -36,8 +41,6 @@ const Productos = ({ productos }) => {
   );
 };
 
-Productos.prototype = {
-  productos: Proptypes.array,
-};
+Productos.prototype = {  productos: Proptypes.array};
 
 export default Productos;

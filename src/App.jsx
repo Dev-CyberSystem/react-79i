@@ -3,14 +3,16 @@ import "./App.css";
 import { Navegador } from "./components/navegador/Navegador";
 import { Footer } from "./components/footer/Footer";
 import Rutas from "./components/rutas/Rutas";
+import ProductosContext from "./context/ProductosContext";
 
 function App() {
-  return (
+  return (              /* Estos son los children de mi context ProductosContext */
     <>
-      <Navegador />
+      <ProductosContext>
+      <Navegador /> 
       <Rutas />
       <Footer />
-      
+      </ProductosContext>
     </>
   );
 }
