@@ -1,20 +1,17 @@
-import { useContext } from "react"
+import { useContext } from "react";
 import { ProductsProvider } from "../../context/ProductosContext";
-import { Button, Table } from "react-bootstrap"
-
-
-
+import { Button, Table } from "react-bootstrap";
 
 const TablaProductos = () => {
-
-    const{ productos } = useContext(ProductsProvider)
+  const { productos } = useContext(ProductsProvider);
 
   return (
     <>
-    {productos.length === 0 ? (
-        "No hay productos") : (
-
-            <Table striped bordered hover>
+      {productos.length === 0 ? (
+        "No hay productos"
+      ) : (
+        <>
+          <Table striped bordered hover>
             <thead>
               <tr>
                 <th>#</th>
@@ -24,29 +21,25 @@ const TablaProductos = () => {
               </tr>
             </thead>
             <tbody>
-                {productos.map ((producto) => (
-                  <>
+              {productos.map((producto) => (
+                <>
                   <tr>
                     <td>{producto.id}</td>
                     <td>{producto.nombre}</td>
                     <td>{producto.precio}</td>
                     <td>
-                        <Button variant="warning">Editar</Button>
-                        <Button variant="danger">Eliminar</Button>
+                      <Button variant="warning">Editar</Button>
+                      <Button variant="danger">Eliminar</Button>
                     </td>
-                </tr>
-                  
-                  </>      
-                ))}
-              
-             
+                  </tr>
+                </>
+              ))}
             </tbody>
           </Table>
-
-        )
-    }
+        </>
+      )}
     </>
-  )
-}
+  );
+};
 
-export default TablaProductos
+export default TablaProductos;

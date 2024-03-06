@@ -1,5 +1,6 @@
 import { Container, Row, Col } from "react-bootstrap"
 import TablaProductos from "../../components/tablas/TablaProductos"
+import FormProductos from "../../components/formProductos/FormProductos"
 
 const Admin = () => {
   return (
@@ -8,7 +9,7 @@ const Admin = () => {
     <Container>
         <Row>
             <Col>
-            Formulario
+            <FormProductos />
             </Col>
             <Col>
             <TablaProductos />
