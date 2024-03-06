@@ -12,7 +12,7 @@ const FormProductos = ({ editarProductos, handleClose }) => {
 
   console.log(editarProductos, "editar Producto");
 
-  const [producto, setProducto] = useState({
+  const [producto, setProducto] = useState({            /*Aqui estamos generando un estado (hasta la linea 20)*/
     id: editarProductos ? editarProductos.id : uuidv4(),
     nombre: editarProductos ? editarProductos.nombre : "",
     precio: editarProductos ? editarProductos.precio : "",
