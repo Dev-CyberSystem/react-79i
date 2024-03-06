@@ -1,7 +1,25 @@
+import { Container, Row, Col } from "react-bootstrap"
+import TablaProductos from "../../components/tablas/TablaProductos"
 
 const Admin = () => {
   return (
-    <>administrador</>
+    <>
+    <h2>Administrador</h2>
+    <Container>
+        <Row>
+            <Col>
+            Formulario
+            </Col>
+            <Col>
+            <TablaProductos />
+            </Col>
+        </Row>
+    </Container>
+
+
+
+</>
+
   )
 }
 
