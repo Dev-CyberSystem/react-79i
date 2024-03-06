@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
@@ -40,9 +41,9 @@ const FormUsers = ({ editarProductos, handleClose }) => {
       });
       setProducto({
         id: uuidv4(),
-        nombre: '',
-        precio: '',
-        imagen: '',
+        name: '',
+        email: '',
+        company: '',
       });
     } else {
       addUser(user);
@@ -55,9 +56,9 @@ const FormUsers = ({ editarProductos, handleClose }) => {
       });
       setProducto({
         id: uuidv4(),
-        nombre: '',
-        precio: '',
-        imagen: '',
+        name: '',
+        email: '',
+        company: '',
       });
     }
   };
@@ -70,9 +71,9 @@ const FormUsers = ({ editarProductos, handleClose }) => {
           <Form.Control
             type="text"
             value={user.name}
+            name="name"
             onChange={handleChange}
-            name="nombre"
-            placeholder="Nombre del Usuario"
+            placeholder="Email del Usuario"
           />
         </Form.Group>
         <Form.Group className="mb-3">

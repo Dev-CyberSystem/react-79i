@@ -19,6 +19,7 @@ function TableUsers() {
                 <th>Id</th>
                 <th>Nombre</th>
                 <th>Email</th>
+                <th>Company</th>
               </tr>
             </thead>
             <tbody>
@@ -27,6 +28,7 @@ function TableUsers() {
                   <td>{user.id}</td>
                   <td>{user.name}</td>
                   <td>{user.email}</td>
+                  <td>{user.company}</td>
                 </tr>
               ))}
             </tbody>
