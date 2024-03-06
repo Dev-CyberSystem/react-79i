@@ -4,19 +4,19 @@
             "id": "10",
             "name": "Nicolas Molina",
             "email": "nico@gmail.com",
-            "password": "123456"
+            "company": "ico SA"
         },
         {
             "id": "20",
             "name": "John Doe",
             "email": "john@gmail.com",
-            "password": "123456"
+            "company": "John SA"
         },
         {
             "id": "30",
             "name": "Daniela Lagos",
             "email": "daniela@gmail.com",
-            "password": "123456"
+            "company": "Daniela SA"
         }
     ]
 }
