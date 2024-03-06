@@ -1,34 +1,117 @@
 /* eslint-disable no-unused-vars */
-import { useState } from 'react';
+import { useState, useContext } from 'react';
 import { Form, Button } from 'react-bootstrap';
+import { userProvider } from '../../context/UsersContext';
+import { v4 as uuidv4 } from 'uuid';
+import PropTypes from 'prop-types';
+import Swal from 'sweetalert2';
 
-function FormContext() {
-  const [usuarios, setUsuarios] = useState({
-    name: '',
-    email: '',
-    password: '',
-    id: '',
+const FormUsers = ({ editarProductos, handleClose }) => {
+  const { addUser, updateUser } = useContext(userProvider);
+
+  // console.log(editarProductos, "editar Producto");
+
+  const [user, setProducto] = useState({
+    id: editarProductos ? editarProductos.id : uuidv4(),
+    name: editarProductos ? editarProductos.name : '',
+    email: editarProductos ? editarProductos.email : '',
+    company: editarProductos ? editarProductos.company : '',
   });
 
-  return (
-    <Form>
-      <Form.Group className="mb-3" controlId="formBasicEmail">
-        <Form.Label>Email address</Form.Label>
-        <Form.Control type="email" placeholder="Enter email" />
-        <Form.Text className="text-muted ms-1">Ingresa tu Email</Form.Text>
-      </Form.Group>
+  const handleChange = (e) => {
+    setProducto({
+      ...user,
+      [e.target.name]: e.target.value,
+    });
+  };
 
-      <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Password</Form.Label>
-        <Form.Control type="password" placeholder="Password" />
-      </Form.Group>
-      <Form.Group className="mb-3" controlId="formBasicCheckbox">
-        <Form.Check type="checkbox" label="Check me out" />
-      </Form.Group>
-      <Button variant="primary" type="submit">
-        Submit
-      </Button>
-    </Form>
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (editarProductos) {
+      updateUser(user);
+      handleClose();
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto editado',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setProducto({
+        id: uuidv4(),
+        nombre: '',
+        precio: '',
+        imagen: '',
+      });
+    } else {
+      addUser(user);
+      Swal.fire({
+        position: 'center',
+        icon: 'success',
+        title: 'Producto agregado',
+        showConfirmButton: false,
+        timer: 1500,
+      });
+      setProducto({
+        id: uuidv4(),
+        nombre: '',
+        precio: '',
+        imagen: '',
+      });
+    }
+  };
+
+  return (
+    <>
+      <Form onSubmit={handleSubmit}>
+        <Form.Group className="mb-3">
+          <Form.Label>Nombre</Form.Label>
+          <Form.Control
+            type="text"
+            value={user.name}
+            onChange={handleChange}
+            name="nombre"
+            placeholder="Nombre del Usuario"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Email</Form.Label>
+          <Form.Control
+            type="email"
+            value={user.email}
+            name="email"
+            onChange={handleChange}
+            placeholder="Email del Usuario"
+          />
+        </Form.Group>
+        <Form.Group className="mb-3">
+          <Form.Label>Compañía</Form.Label>
+          <Form.Control
+            type="text"
+            value={user.company}
+            name="company"
+            onChange={handleChange}
+            placeholder="Compañía del Usuario"
+          />
+        </Form.Group>
+
+        {editarProductos ? (
+          <Button type="submit" variant="warning">
+            Editar Usuario
+          </Button>
+        ) : (
+          <Button type="submit" variant="success">
+            Agregar Usuario
+          </Button>
+        )}
+      </Form>
+    </>
   );
-}
-export default FormContext;
+};
+
+FormUsers.propTypes = {
+  editarProductos: PropTypes.object,
+};
+
+export default FormUsers;

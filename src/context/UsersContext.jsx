@@ -12,7 +12,7 @@ const UsersContext = ({ children }) => {
   //Obtener los datos de Usuarios
   const getUsers = async () => {
     try {
-      const response = await axios.get('http://localhost:3000/users');
+      const response = await axios.get('http://localhost:8000/users');
       const result = response.data;
       return setUsuarios(result);
     } catch (error) {
@@ -25,7 +25,7 @@ const UsersContext = ({ children }) => {
   const addUser = async (producto) => {
     try {
       const response = await axios.post(
-        'http://localhost:3000/users',
+        'http://localhost:8000/users',
         producto
       );
 
@@ -38,7 +38,7 @@ const UsersContext = ({ children }) => {
   // Delete para eliminar un usuario de la base de datos.
   const deleteUser = async (id) => {
     try {
-      await axios.delete(`http://localhost:3000/users/${id}`);
+      await axios.delete(`http://localhost:8000/users/${id}`);
       return setUsuarios(users.filter((user) => user.id !== id));
     } catch (error) {
       console.log(error);
@@ -48,7 +48,7 @@ const UsersContext = ({ children }) => {
   // Put para actualizar un producto de la base de datos.
   const updateUser = async (user) => {
     try {
-      await axios.put(`http://localhost:3000/users/${user.id}`, user);
+      await axios.put(`http://localhost:8000/users/${user.id}`, user);
 
       await getUsers();
     } catch (error) {
