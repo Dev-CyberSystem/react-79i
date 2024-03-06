@@ -24,6 +24,8 @@ export function Navegador(){
             navbarScroll
           >
             <Nav.Link className="nav-link letraNavbar" onClick={ ()=> navigate("/") } >Inicio</Nav.Link>
+            <Nav.Link className="nav-link letraNavbar" onClick={ ()=> navigate("/admin") } >Administrador</Nav.Link>
+            
             <NavLink className="nav-link letraNavbar" to="/nosotros" >Nosotros</NavLink>
             <NavDropdown className="letraNavbar" title="Asesoria Laboral" id="navbarScrollingDropdown">
               <NavDropdown.Item to="/asesoriasEmpresas" >Empresas </NavDropdown.Item>
