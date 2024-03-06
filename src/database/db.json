@@ -7,12 +7,6 @@
       "company": "ico SA"
     },
     {
-      "id": "6edd325c-360c-4de5-b77d-62bf3078d2d3",
-      "name": "John Doe",
-      "email": "john@gmail.com",
-      "company": "John SA"
-    },
-    {
       "id": "c77083bb-083f-47ba-b7b1-d44f3c9977cb",
       "name": "Daniela Lagos",
       "email": "daniela@gmail.com",
@@ -24,6 +18,12 @@
       "email": "alfa@jores.com",
       "company": "alfajores SA",
       "nombre": "dd"
+    },
+    {
+      "id": "9c3e1566-627d-42f8-b8fd-05fffc6c5ec8",
+      "name": "Eminem",
+      "email": "eminem@rap.com",
+      "company": "Eminem SA"
     }
   ]
 }

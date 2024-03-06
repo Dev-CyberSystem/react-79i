@@ -112,7 +112,7 @@ const FormUsers = ({ editarProductos, handleClose }) => {
 };
 
 FormUsers.propTypes = {
-  editarProductos: PropTypes.object,
+  editarUsuario: PropTypes.object,
 };
 
 export default FormUsers;
