@@ -4,12 +4,16 @@ import Admin from "../../page/admin/Admin";
 import FormRegistro from "../registro/FormRegistro";
 
 const Rutas = () => {
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/admin" element={<Admin />} />
         <Route path="/registro" element={<FormRegistro />} />
+        {user && user.isAdmin ? (
+          <Route path="/admin" element={<Admin />} />
+        ) : null}
 
         <Route path="*" element={<h1>Not Found</h1>} />
       </Routes>

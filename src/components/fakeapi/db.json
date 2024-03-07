@@ -5,7 +5,7 @@
       "nombre": "Lionel ",
       "email": "a@a.com",
       "password": "123",
-      "isAdmin": false
+      "isAdmin": true
     },
     {
       "id": "6edd325c-360c-4de5-b77d-62bf3078d2d3",

@@ -45,7 +45,7 @@ const Login = ({ handleClose }) => {
         });
       }
     } catch (error) {
-      console.log(error)
+      console.log(error);
     }
   };
 
