@@ -1,22 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { CardGeneric } from '../../components/card/CardGeneric'
 import { Error } from '../../components/error/Error'
 import Spinner from '../../components/spinner/Spinner'
-import useAxios from '../../hooks/useAxios'
-import { moviesAxiosInstance } from '../../services/moviesService'
+import { useGetPopularMoviesByPageQuery } from '../../redux/services/moviesApi'
 
 export const Movies = () => {
 	const [page, setPage] = useState(1)
-	const [url, setUrl] = useState('/3/movie/popular?language=en-US&page=1')
-	const [movies, error, isLoading] = useAxios({
-		axiosInstance: moviesAxiosInstance,
-		method: 'GET',
-		url: url,
-	})
-
-	useEffect(() => {
-		setUrl(`/3/movie/popular?language=en-US&page=${page}`)
-	}, [page])
+	const {
+		data: movies,
+		isError: error,
+		isLoading,
+	} = useGetPopularMoviesByPageQuery(page)
 
 	function nextPage() {
 		setPage((prev) => prev + 1)

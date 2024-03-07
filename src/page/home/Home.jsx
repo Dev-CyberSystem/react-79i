@@ -3,17 +3,11 @@ import { CarouselHome } from '../../components/carousel/Carousel'
 import { Error } from '../../components/error/Error'
 import { InfoSection } from '../../components/info/Info'
 import Spinner from '../../components/spinner/Spinner'
-import useAxios from '../../hooks/useAxios'
-import { moviesAxiosInstance } from '../../services/moviesService'
+import { useGetPopularMoviesQuery } from '../../redux/services/moviesApi'
 import './Home.css'
 
-const url = '/3/movie/popular?language=en-US&page=2'
 const Home = () => {
-	const [movies, error, isLoading] = useAxios({
-		axiosInstance: moviesAxiosInstance,
-		method: 'GET',
-		url: url,
-	})
+	const { data: movies, isError: error, isLoading } = useGetPopularMoviesQuery()
 
 	if (error) {
 		return <Error errorMsg={error.response.data.status_message}></Error>

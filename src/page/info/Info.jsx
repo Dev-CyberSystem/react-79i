@@ -2,18 +2,16 @@ import { ListGroup } from 'react-bootstrap'
 import { useParams } from 'react-router-dom'
 import { Error } from '../../components/error/Error'
 import Spinner from '../../components/spinner/Spinner'
-import useAxios from '../../hooks/useAxios'
-import { moviesAxiosInstance } from '../../services/moviesService'
+import { useGetMovieInfoQuery } from '../../redux/services/moviesApi'
 
 export const Info = () => {
-	const params = useParams()
-	const url = `/3/movie/${params.elementId}?language=en-US`
+	const { elementId } = useParams()
 
-	const [movie, error, isLoading] = useAxios({
-		axiosInstance: moviesAxiosInstance,
-		method: 'GET',
-		url: url,
-	})
+	const {
+		data: movie,
+		isError: error,
+		isLoading,
+	} = useGetMovieInfoQuery(elementId)
 
 	return (
 		<main className='container-md mb-5'>
