@@ -1,25 +1,27 @@
 import { Button } from 'react-bootstrap'
+import { useDispatch } from 'react-redux'
+import {
+	decrement,
+	increment,
+} from '../../../redux/features/counter/counterSlice'
 
-const CounterControls = ({ setCounter }) => {
-	const increment = () => {
-		setCounter((prev) => prev + 1)
+const CounterControls = () => {
+	const dispatch = useDispatch()
+
+	const handleIncrement = () => {
+		dispatch(increment())
 	}
 
-	const decrease = () => {
-		setCounter((prev) => {
-			if (prev > 0) {
-				return prev - 1
-			}
-			return prev
-		})
+	const handleDecrement = () => {
+		dispatch(decrement())
 	}
 
 	return (
 		<div className='d-flex gap-5 '>
-			<Button variant='success' onClick={increment}>
+			<Button variant='success' onClick={handleIncrement}>
 				+
 			</Button>
-			<Button variant='danger' onClick={decrease}>
+			<Button variant='danger' onClick={handleDecrement}>
 				-
 			</Button>
 		</div>
