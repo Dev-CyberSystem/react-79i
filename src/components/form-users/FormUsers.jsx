@@ -1,6 +1,9 @@
 import { useState } from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
-import { useUserContext } from '../../context/UsersContext'
+import {
+	useAddNewUserMutation,
+	useUpdateUserMutation,
+} from '../../redux/services/usersApi'
 
 const initialForm = {
 	name: '',
@@ -8,7 +11,8 @@ const initialForm = {
 }
 
 const FormUsers = ({ formType, user, handleClose }) => {
-	const { addUser, editUser } = useUserContext()
+	const [addNewUser] = useAddNewUserMutation()
+	const [updateUser] = useUpdateUserMutation()
 	const defaultValue = !user ? initialForm : user
 	const [form, setform] = useState(defaultValue)
 
@@ -23,7 +27,7 @@ const FormUsers = ({ formType, user, handleClose }) => {
 				alert('los campos estan vacios')
 			} else {
 				const userId = Date.now().toString()
-				addUser({ ...form, id: userId })
+				addNewUser({ ...form, id: userId })
 				setform(initialForm)
 			}
 		}
@@ -31,7 +35,7 @@ const FormUsers = ({ formType, user, handleClose }) => {
 			if (!form.name || !form.email) {
 				alert('los campos estan vacios')
 			} else {
-				editUser(user.id, form)
+				updateUser(form)
 				setform(initialForm)
 				handleClose()
 			}

@@ -4,10 +4,14 @@ import { Error } from '../../components/error/Error'
 import FormUsers from '../../components/form-users/FormUsers'
 import { CustomModal } from '../../components/modal/Modal'
 import Spinner from '../../components/spinner/Spinner'
-import { useUserContext } from '../../context/UsersContext'
+import {
+	useDeleteUserMutation,
+	useGetAllUsersQuery,
+} from '../../redux/services/usersApi'
 
-export const Users = () => {
-	const { users, isLoading, error, deleteUser } = useUserContext()
+export const Admin = () => {
+	const { data: users, isError: error, isLoading } = useGetAllUsersQuery()
+	const [deleteUser] = useDeleteUserMutation()
 	const [show, setShow] = useState(false)
 	const [user, setUser] = useState(null)
 

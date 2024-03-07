@@ -5,12 +5,12 @@ import { Provider } from 'react-redux'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from './components/layout/Layout.jsx'
 import './index.css'
+import { Admin } from './page/admin/Admin.jsx'
 import Counter from './page/counter/Counter.jsx'
 import Home from './page/home/Home.jsx'
 import { Info } from './page/info/Info.jsx'
 import { Movies } from './page/movies/Movies.jsx'
 import NotFound from './page/not-found/PageNotFound.jsx'
-import { Users } from './page/users/Users.jsx'
 import { store } from './redux/store.js'
 
 const router = createBrowserRouter([
@@ -34,8 +34,8 @@ const router = createBrowserRouter([
 				element: <Counter />,
 			},
 			{
-				path: 'users',
-				element: <Users />,
+				path: 'admin',
+				element: <Admin />,
 			},
 		],
 		errorElement: <NotFound></NotFound>,

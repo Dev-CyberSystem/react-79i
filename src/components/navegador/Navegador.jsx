@@ -30,8 +30,8 @@ const Navegador = () => {
 							<NavLink to='/counter' className='nav-link '>
 								Counter
 							</NavLink>
-							<NavLink to='/users' className='nav-link '>
-								Users
+							<NavLink to='/admin' className='nav-link '>
+								Admin
 							</NavLink>
 						</Nav>
 					</Navbar.Collapse>
