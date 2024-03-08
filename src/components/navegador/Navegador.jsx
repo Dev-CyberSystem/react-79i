@@ -21,7 +21,7 @@ const Navegador = () => {
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="me-auto mb-2 mb-lg-0">                     
                         <Nav.Link onClick={()=> navigate("/")} active>Home</Nav.Link>
-                        <Nav.Link onClick={()=>navigate("/productos")}>Productos</Nav.Link>
+                        <Nav.Link onClick={()=>navigate("/admin")}>Administrador</Nav.Link>
                         <Nav.Link href='https://rollingcode.co/#RollingCodeLabs' target='blank'>Labs</Nav.Link>
                         <Nav.Link href='https://rollingcode.co/#RollingCodeStudio' target='blank'>Studio</Nav.Link>
                         <Nav.Link href='https://rollingcode.co/#RollingCodeSchool' target='blank'>School</Nav.Link>

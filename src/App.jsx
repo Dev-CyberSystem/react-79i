@@ -1,6 +1,8 @@
 import Footer from "./components/footer/Footer"
 import Navegador from "./components/navegador/Navegador"
 import Rutas from "./components/routes/Rutas"
+import ProductosContext from "./context/ProductosContext"
+import UsuariosContext from "./context/UsuariosContext"
 
 
 
@@ -10,10 +12,13 @@ function App() { // Ahora este componente contiene el estado y el controlador de
 
   return (
     <>
-      <Navegador />
-      <Rutas />
-      <Footer /> 
-
+      <UsuariosContext>
+      <ProductosContext>
+        <Navegador />
+        <Rutas />
+        <Footer /> 
+      </ProductosContext>
+      </UsuariosContext>
     </>
 
 
