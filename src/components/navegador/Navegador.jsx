@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import {
   Button,
   Container,
@@ -5,72 +6,66 @@ import {
   Nav,
   Navbar,
   NavDropdown,
+  Modal,
 } from 'react-bootstrap';
-
+import { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { userProvider } from '../../context/UsersContext';
+import Login from '../login/Login';
 
 import './styleNavegador.css';
 
 function NavbarComponent() {
+  const [show, setShow] = useState(false);
+
+  const { logOut } = useContext(userProvider);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const user = JSON.parse(localStorage.getItem('user'));
+
   const navigate = useNavigate();
 
   return (
-    <Navbar expand="lg" className="bg-navbar">
-      <Container fluid className="text-white">
-        <Navbar.Brand onClick={() => navigate('/')} className="text-light">
-          Nav React
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
-        <Navbar.Collapse id="navbarScroll">
-          <Nav
-            className="me-auto my-2 my-lg-0"
-            style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav.Link
-              onClick={() => navigate('/Productos')}
-              className="text-light"
-            >
-              Productos
-            </Nav.Link>
-            <Nav.Link
-              onClick={() => navigate('/Usuarios')}
-              className="text-light"
-            >
-              Usuarios
-            </Nav.Link>
-            <Nav.Link
-              onClick={() => navigate('/NuevaPagina')}
-              className="text-light"
-            >
-              Nueva Pagina
-            </Nav.Link>
-            <NavDropdown
-              title="Options"
-              id="navbarScrollingDropdown"
-              className="dropdown-text"
-            >
-              <NavDropdown.Item>Error404</NavDropdown.Item>
-              <NavDropdown.Item href="#action4">Nueva Pagina</NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">Split option</NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Link
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Start your search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button className="btn btn-dark border-0 fw-bold">Search</Button>
-          </Form>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+    <>
+      <Navbar expand="lg" className="bg-body-tertiary">
+        <Container>
+          <Navbar.Brand onClick={() => navigate('/')}>HOME</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+            <Nav className="me-auto">
+              {user ? 'Bienvenido' + user.nombre : 'No hay usuario'}
+              <Nav.Link onClick={() => navigate('/')}>Home</Nav.Link>
+
+              {user?.isAdmin ? (
+                <Nav.Link onClick={() => navigate('/admin')}>
+                  Administrador
+                </Nav.Link>
+              ) : null}
+
+              {user ? (
+                <Button variant="danger" onClick={() => logOut()}>
+                  Cerrar Sesión
+                </Button>
+              ) : (
+                <Button variant="success" onClick={handleShow}>
+                  Iniciar Sesión
+                </Button>
+              )}
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Inicio de sesión</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Login handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
+    </>
   );
 }
 

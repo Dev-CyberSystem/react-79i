@@ -3,27 +3,27 @@
     {
       "id": "e9284ea7-2fc8-4d02-9adc-140cfaab7d2c",
       "name": "Nicolas Molina",
-      "email": "nico@gmail.com",
-      "company": "ico SA"
+      "email": "c",
+      "password": "123",
+      "company": "ico SA",
+      "isAdmin": true
     },
     {
       "id": "c77083bb-083f-47ba-b7b1-d44f3c9977cb",
       "name": "Daniela Lagos",
       "email": "daniela@gmail.com",
-      "company": "Daniela SA"
+      "password": "123",
+      "company": "Daniela SA",
+      "isAdmin": false
     },
     {
       "id": "d7eafb63-79c8-4d75-b96a-ee675688456a",
       "name": "Alfredo",
       "email": "alfa@jores.com",
+      "password": "123",
       "company": "alfajores SA",
-      "nombre": "dd"
-    },
-    {
-      "id": "9c3e1566-627d-42f8-b8fd-05fffc6c5ec8",
-      "name": "Eminem",
-      "email": "eminem@rap.com",
-      "company": "Eminem SA"
+      "nombre": "dd",
+      "isAdmin": false
     }
   ]
 }
