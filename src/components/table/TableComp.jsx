@@ -1,11 +1,20 @@
 import "./styleTableComp.css";
-import { Table, Button } from "react-bootstrap";
+import { Table, Button, Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { UsersProvider } from "../../context/UsersContext";
 
 const TableComp = () => {
   const { usersArr, suprUser } = useContext(UsersProvider);
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  
+  const handleEdit = () => {
+    setShow(true)
+  }
+
   return (
     <>
       <Table
@@ -24,10 +33,10 @@ const TableComp = () => {
           </tr>
         </thead>
         <tbody>
-          {usersArr.map((userObj) => (
+          {usersArr.map((userObj, idx) => (
             <tr key={userObj.id}>
               <td key={"id"+userObj.id} className="border border-success border-opacity-50">
-                {userObj.id}
+                {idx+1}
               </td>
               <td key={"name"+userObj.id} className="border-start border-success border-opacity-25">
                 {userObj.name}
@@ -44,12 +53,12 @@ const TableComp = () => {
               <td key={"buttons"+userObj.id} className="border-start border-success border-opacity-25">
                 <div className="row row-cols-1 row-cols-lg-2">
                   <div>
-                    <Button className="my-1" variant="warning">
+                    <Button onClick={() => handleEdit()} className="my-1" variant="warning">
                       Editar
                     </Button>
                   </div>
                   <div>
-                    <Button onClick={() => suprUser(userObj.id)} className="my-1" variant="danger">
+                    <Button onClick={() => suprUser(userObj)} className="my-1" variant="danger">
                       Eliminar
                     </Button>
                   </div>
@@ -59,6 +68,20 @@ const TableComp = () => {
           ))}
         </tbody>
       </Table>
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Modal heading</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Close
+          </Button>
+          <Button variant="primary" onClick={handleClose}>
+            Save Changes
+          </Button>
+        </Modal.Footer>
+      </Modal>
     </>
   );
 };

@@ -1,5 +1,6 @@
 import { createContext, useState, useEffect } from "react";
 import axios from "axios";
+import Swal from "sweetalert2";
 
 export const UsersProvider = createContext();
 
@@ -27,13 +28,32 @@ const UsersContext = ({children}) => {
         }
     }
 
-    const suprUser = async (id) => {
-        try {
-            await axios.delete(`http://localhost:8000/users/${id}`);
-            setUsersArr(usersArr.filter((user) => user.id !== id))
-        } catch (ev) {
-            console.error(ev)
-        }
+    const suprUser = async (userObj) => {
+        await Swal.fire({
+            title: `Confirma eliminación de usuario "${userObj.username}"?`,
+            text: "Esta acción no podrá revertirse.",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            cancelButtonText: "Cancelar",
+            confirmButtonText: "Si, borrar!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                try {
+                    axios.delete(`http://localhost:8000/users/${userObj.id}`);
+                    setUsersArr(usersArr.filter((user) => user.id !== userObj.id))
+                } catch (ev) {
+                    console.error(ev)
+                }
+              Swal.fire({
+                title: `Usuario "${userObj.username}" eliminado`,
+                icon: "success",
+                showConfirmButton: false,
+                timer: 2500
+              });
+            }
+          });
     }
 
     useEffect(() => {
