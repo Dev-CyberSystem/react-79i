@@ -6,8 +6,25 @@ import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
 import { NavLink } from 'react-router-dom';
+import Login from '../login/Login';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
+import { UsersProvider } from '../../context/UsersContext';
+import { Modal } from 'react-bootstrap';
 
 export function Navegador() {
+
+  const [show, setShow] = useState(false);
+
+  const { logOut } = useContext(UsersProvider);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+  const navigate = useNavigate();
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
   return (
     <>
     <Navbar expand="lg" className="bg-body-tertiary p-2 m-1">
@@ -20,6 +37,26 @@ export function Navegador() {
             style={{ maxHeight: '100px' }}
             navbarScroll
           >
+            <Nav className="me-auto">
+            {user ? "Bienvenido" + user.nombre : "NO ESTAS LOGEADO"}
+              <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
+
+              {user?.isAdmin ? (
+                <Nav.Link onClick={() => navigate("/admin")}>
+                  Administrador
+                </Nav.Link>
+              ) : null}
+
+              {user ? (
+                <Button variant="danger" onClick={() => logOut()}>
+                  Cerrar Sesión
+                </Button>
+              ) : (
+                <Button variant="success" onClick={handleShow}>
+                  Iniciar Sesión
+                </Button>
+              )}
+            </Nav>
             <NavLink className="nav-link" to="/">Home</NavLink>
             <NavLink className="nav-link" to="/link">Link</NavLink>
             <NavDropdown title="Admin" id="navbarScrollingDropdown">
@@ -50,6 +87,16 @@ export function Navegador() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
+
+    <Modal show={show} onHide={handleClose}>
+        <Modal.Header>
+          <Modal.Title>Inicio de sesión</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Login handleClose={handleClose} />
+        </Modal.Body>
+      </Modal>
+
     </>
   );
 };

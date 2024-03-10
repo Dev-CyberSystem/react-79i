@@ -4,18 +4,20 @@ import { Navegador } from "./components/navegador/Navegador";
 import { Footer } from "./components/footer/Footer";
 import { Rutas } from "./components/rutas/Rutas";
 import ProductosContext from "./context/ProductosContext";
-
+import UsersContext from "./context/UsersContext";
 
 function App() {
   return (
     <>
-  {/* Agregar el context de usuarios */}
+
+    <UsersContext>
     <ProductosContext>
     <Navegador/>
       <Rutas/>
       <Footer/>
     </ProductosContext>
-  {/* Agregar el context de usuarios */}
+    </UsersContext>
+
     </>
   );
 }

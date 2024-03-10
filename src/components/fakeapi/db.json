@@ -1,23 +1,38 @@
 {
   "users": [
     {
-      "name": "John Doe",
-      "email": "1@1.com",
-      "password": "123456",
-      "id": "b3e8"
+      "id": "e9284ea7-2fc8-4d02-9adc-140cfaab7d2c",
+      "nombre": "Admin",
+      "email": "admin@admin.com",
+      "password": "admin",
+      "isAdmin": true
     },
     {
-      "name": "Jane Doe",
-      "email": "2@2.com",
-      "password": "123456",
-      "id": "021b"
+      "id": "6edd325c-360c-4de5-b77d-62bf3078d2d3",
+      "nombre": "User2",
+      "email": "user2@user2.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "c77083bb-083f-47ba-b7b1-d44f3c9977cb",
+      "nombre": "User3",
+      "email": "user3@user3.com",
+      "password": "123",
+      "isAdmin": false
     }
   ],
   "productos": [
     {
-      "id": "dc13bbb1-fdfd-48cc-a54c-5e1f0eaacf95",
+      "id": "22b0d1f2-1008-481d-8759-d359303b1fca",
       "nombre": "Cafe Colombiano",
-      "precio": "15",
+      "precio": "22222",
+      "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
+    },
+    {
+      "id": "8d667679-e512-4bc8-91d6-a2c23dd6ac75",
+      "nombre": "Cafe Ecuatoriano",
+      "precio": "200",
       "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
     }
   ]
