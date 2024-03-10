@@ -56,6 +56,15 @@ const UsersContext = ({ children }) => {
     }
   };
 
+  const editUser = async (user) => {
+    try {
+      await axios.put(`http://localhost:8000/users/${user.id}`, user);
+      await getUsers();
+    } catch (error) {
+      console.log('Error al Editar Usuario', error);
+    }
+  };
+
   const logOut = () => {
     localStorage.removeItem('user');
     window.location.href = '/';
@@ -67,7 +76,7 @@ const UsersContext = ({ children }) => {
 
   return (
     <userProvider.Provider
-      value={{ users, addUser, deleteUser, updateUser, logOut }}
+      value={{ users, addUser, deleteUser, updateUser, logOut, editUser }}
     >
       {children}
     </userProvider.Provider>
