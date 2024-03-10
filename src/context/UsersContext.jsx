@@ -32,6 +32,28 @@ const UsersContext = ({children}) => {
     const logOut = () =>{
         localStorage.removeItem("user");
         window.location.href= "/";
+    };
+
+
+    const deleteUsuario = async (id) => {
+        try {
+            await axios.delete(`http://localhost:8000/users/${id}`);
+
+            await getUsers();
+
+        } catch (error) {
+            
+        }
+    };
+    
+    const editUsuario = async (usuario) => {
+        try {
+            await axios.put(`http://localhost:8000/users/${usuario.id}`, usurario);
+            await getUsers();
+        
+        } catch (error) {
+            
+        }
     }
 
 
@@ -40,7 +62,7 @@ useEffect(() => {
 }, []);
 
 return (
-    <UsersProvider.Provider value={{usuarios, getUsers, addUSer,logOut}}>
+    <UsersProvider.Provider value={{usuarios, getUsers, addUSer,logOut, deleteUsuario, editUsuario}}>
 
         {children}
 

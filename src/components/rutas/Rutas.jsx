@@ -12,13 +12,17 @@ import FormRegistro from '../registro/FormRegistro';
 
 
 const Rutas = () => {
+
+  const user = JSON.parse(localStorage.getItem("user"));
+
+
   return (
     <>
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/nosotros" element={<Nosotros />} />
     <Route path="/login" element={<Login />} />
-    <Route path="/admin" element={<Admin />} />
+    {user && user.isAdmin ? <Route path="/admin" element={<Admin />} /> : null }    
     <Route path="/registro" element={<FormRegistro />} />
     <Route path="/asesoriaEmpresas" element={<Empresas />} />
     <Route path="/asesoriaPersonal" element={<Personal />} />

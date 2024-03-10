@@ -44,45 +44,21 @@ export function Navegador() {
               className="me-auto my-2 my-lg-0"
             >
               {user? "Bienvenido" + user.nombre : "No hay usuario"}
-              <Nav.Link
-                className="nav-link letraNavbar"
-                onClick={() => navigate("/")}
-              >
-                Inicio
-              </Nav.Link>
-              <Nav.Link
-                className="nav-link letraNavbar"
-                onClick={() => navigate("/login")}
-              >
-                login
-              </Nav.Link>
-              <Nav.Link
-                className="nav-link letraNavbar"
-                onClick={() => navigate("/admin")}
-              >
-                Administrador
-              </Nav.Link>
+              <Nav.Link className="nav-link letraNavbar" onClick={() => navigate("/")}>Inicio</Nav.Link>
 
-              <NavLink className="nav-link letraNavbar" to="/nosotros">
-                Nosotros
-              </NavLink>
-              <NavDropdown
-                className="letraNavbar"
-                title="Asesoria Laboral"
-                id="navbarScrollingDropdown"
-              >
-                <NavDropdown.Item to="/asesoriasEmpresas">
-                  Empresas{" "}
-                </NavDropdown.Item>
-                <NavDropdown.Item to="/asesoriasPersonal">
-                  {" "}
-                  Personal{" "}
-                </NavDropdown.Item>
+              {user?.isAdmin  ? (
+
+                <Nav.Link className="nav-link letraNavbar" onClick={() => navigate("/admin")}>Administrador</Nav.Link>
+              ) : null}
+
+              <Nav.Link className="nav-link letraNavbar" onClick={() => navigate("/login")}>login</Nav.Link>
+              
+              <NavLink className="nav-link letraNavbar" to="/nosotros">Nosotros</NavLink>
+              <NavDropdown className="letraNavbar" title="Asesoria Laboral" id="navbarScrollingDropdown"              >
+                <NavDropdown.Item to="/asesoriasEmpresas">Empresas{" "}</NavDropdown.Item>
+                <NavDropdown.Item to="/asesoriasPersonal">{" "}Personal{" "}</NavDropdown.Item>
                 <NavDropdown.Divider />
-                <NavDropdown.Item to="/asesoriasCurriculum">
-                  {" "}
-                  Cargá tu curriculum{" "}
-                </NavDropdown.Item>
+                <NavDropdown.Item to="/asesoriasCurriculum">{" "}Cargá tu curriculum{" "}</NavDropdown.Item>
               </NavDropdown>
               {user ? (
                 <Button variant="danger" onClick={() => logOut()}>
@@ -94,15 +70,6 @@ export function Navegador() {
                 </Button>
               )}
             </Nav>
-            <Form className="d-flex">
-              <Form.Control
-                type="search"
-                placeholder="Search"
-                className="me-2"
-                aria-label="Search"
-              />
-            </Form>
-            <Button variant="outline-light">Buscar</Button>
           </Navbar.Collapse>
         </Container>
       </Navbar>

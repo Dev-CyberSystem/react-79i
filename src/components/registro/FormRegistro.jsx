@@ -3,35 +3,54 @@ import { Button, Form, Container, Row, Col } from "bootstrap";
 import { Row } from "react-bootstrap";
 import { UsersProvider } from "../../context/UsersContext";
 import Swal from "sweetalert2";
-import { v4 as uuidv4} from "uuid";
+import { v4 as uuidv4 } from "uuid";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-
-
-
-const FormRegistro = () => {
-  const { addUSer } = useContext(UsersProvider);
+const FormRegistro = ({ editarUsuarios, handleClose }) => {
+  const { addUSer, editUsuario } = useContext(UsersProvider);
 
   const navigate = useNavigate();
 
   const [usuario, setUsuario] = useState({
-    id: uuidv4(),
-    nombre: "",
-    email: "",
-    password: "",
-    isAdmin: false,
+    id: editarUsuarios ? editarUsuarios.id : uuidv4(),
+    nombre: editarUsuarios ? editarUsuarios.nombre : "",
+    email: editarUsuarios ? editarUsuarios.email : "",
+    password: editarUsuarios ? editarUsuarios.password : "",
+    isAdmin: editarUsuarios ? editarUsuarios.isAdmin : false,
   });
 
   const handleChange = (e) => {
-    setUsuario({
-      ...usuario,
-      [e.target.name]: e.target.value,
-    });
+    const { name, value, type, checked } = e.target;
+
+    if (type === "checkbox") {
+      setUsuario({
+        ...usuario,
+        [name]: checked,
+      });
+    } else {
+      setUsuario({
+        ...usuario,
+        [name]: value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    addUSer(usuario);
+
+    if (editarUsuarios) {
+      editUsuario(usuario);
+      Swal.fire({
+        position: "center",
+      icon: "success",
+      title: "Usuario editado",
+      showConfirmButton: false,
+      timer: 1500,
+      });
+      handleClose();
+    } else {
+      addUSer(usuario);
     Swal.fire({
       position: "center",
       icon: "success",
@@ -46,6 +65,7 @@ const FormRegistro = () => {
       password: "",
       isAdmin: false,
     });
+    }    
   };
 
   return (
@@ -84,15 +104,39 @@ const FormRegistro = () => {
                   placeholder="Contraseña"
                 />
               </Form.Group>
-              <Button type="submit" variant="success">
-                Registrarse
-              </Button>
+              {editarUsuarios ? (
+                <Form.Group>
+                  <Form.Label>Admin</Form.Label>
+                  <Form.Check
+                    type="checkbox"
+                    label="Admin"
+                    checked={usuario.isAdmin}
+                    onChange={handleChange}
+                    name="isAdmin"
+                  />
+                </Form.Group>
+              ) : null}
+              {editarUsuarios ? (
+                <Button type="submit" variant="warning">
+                  Editar
+                </Button>
+              ) : (
+                <Button type="submit" variant="success">
+                  Registrarse
+                </Button>
+              )}
+              ;
             </Form>
           </Col>
         </Row>
       </Container>
     </>
   );
+};
+
+FormRegistro.propTypes = {
+  editarUsuarios: PropTypes.object,
+  handleClose: PropTypes.func,
 };
 
 export default FormRegistro;
