@@ -3,6 +3,7 @@ import "./App.css";
 import Navegador from "./components/navegador/Navegador";
 import Footer from "./components/footer/Footer";
 import Carrusel from "./components/carrusel/Carrusel";
+import Card from "./components/cards/Cards";
 /*import React from 'react' Se importa como componente*/
 /*import {useState} from 'react' Se importa como funcionalidad*/
 
@@ -13,7 +14,10 @@ function App() {
     <>
     <Navegador/>
     <Carrusel/>
+    <Card/>
+
     <Footer/>
+    
       {/*NAVBAR 
       {  CARROUSEL
         CARDS

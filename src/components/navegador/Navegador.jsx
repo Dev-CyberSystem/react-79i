@@ -4,7 +4,7 @@ import "./styleNavegador.css"
 const Navegador = () => {
   return (
     <>
-      <Navbar expand="lg" className="bg-body-tertiary bg-dark">
+      <Navbar expand="lg" className="bg-body-tertiary">
         <Container>
           <Navbar.Brand href="#home">
               <img
