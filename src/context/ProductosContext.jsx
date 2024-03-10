@@ -20,8 +20,8 @@ const ProductosContext = ({ children }) => {
       };
 
     const addProducto = async (producto) =>{ /*creamos la funcion de guardar productos*/
-    console.log(addProducto)
-      try {
+    console.log(producto)
+    try {
         const response = await axios.post('http://localhost:8000/productos', producto); /*agrega los productos en la base de datos*/
         
         setProductos([...productos, response.data]); /*actualizamos nuestros productos trayendo productos y enviandolos a response.data*/

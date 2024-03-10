@@ -12,18 +12,35 @@ const UsersContext = ({children}) => {
     const getUsers = async () =>{
         try{    
             const response = await axios.get ("http://localhost:8000/users");
+            setUsuarios(response.data);
 
         } catch (error) {
 
         }
     };
 
+
+    const addUSer = async (usuario) =>{
+        try {
+            await axios.post ('http://localhost:8000/users', usuario);
+            await getUsers(); //actualiza la lista de usuarios
+        } catch (error) {
+            
+        }
+    };
+
+    const logOut = () =>{
+        localStorage.removeItem("user");
+        window.location.href= "/";
+    }
+
+
 useEffect(() => {
    getUsers(); 
 }, []);
 
 return (
-    <UsersProvider.Provider value={{usuarios, getUsers}}>
+    <UsersProvider.Provider value={{usuarios, getUsers, addUSer,logOut}}>
 
         {children}
 

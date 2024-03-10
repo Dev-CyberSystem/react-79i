@@ -5,7 +5,7 @@ import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 import { PropTypes } from "prop-types";
 
-const FormProductos = ({ editarProductos, handleClose }) => { /*estoy recibiendo props (editarProductos) de productoContext como prop*/
+const FormProductos = ({ editarProductos, handleClose }) => { /*estoy recibiendo props (editarProductos) de   como prop*/
   const { addProducto, updateProductos } =    useContext(ProductsProvider); /*desestructuracion de add producto*/
 
   const [producto, setProducto] = useState({
@@ -25,7 +25,7 @@ const FormProductos = ({ editarProductos, handleClose }) => { /*estoy recibiendo
   };
 
   const handleSubmit = (e) => {
-    e.preventDefoult();
+    e.preventDefault();
 
     if(editarProductos){
       updateProductos(producto);
@@ -44,8 +44,8 @@ const FormProductos = ({ editarProductos, handleClose }) => { /*estoy recibiendo
         imagen: "",
       });
     } else {
-
-      addProducto(producto);
+      console.log(producto, "formulario" );
+    addProducto(producto);
     Swal.fire({
       position: "center",
       icon: "success",

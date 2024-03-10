@@ -1,34 +1,39 @@
 {
-    "users": [
-      {
-        "id": "e9284ea7-2fc8-4d02-9adc-140cfaab7d2c",
-        "nombre": "Lionel ",
-        "email": "a@a.com",
-        "password": "123",
-        "isAdmin": false
-      },
-      {
-        "id": "6edd325c-360c-4de5-b77d-62bf3078d2d3",
-        "nombre": "Fideo",
-        "email": "f@f.com",
-        "password": "123",
-        "isAdmin": false
-      },
-      {
-        "id": "c77083bb-083f-47ba-b7b1-d44f3c9977cb",
-        "nombre": "Cuti",
-        "email": "c@c.com",
-        "password": "123",
-        "isAdmin": false
-      }
-    ],
-    "productos": [
-      {
-        "id": "dc13bbb1-fdfd-48cc-a54c-5e1f0eaacf95",
-        "nombre": "Cafe Brasilero",
-        "precio": "15",
-        "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
-      }
-    ]
-  }
-  
+  "users": [
+    {
+      "id": "e9284ea7-2fc8-4d02-9adc-140cfaab7d2c",
+      "nombre": "Lionel ",
+      "email": "a@a.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "6edd325c-360c-4de5-b77d-62bf3078d2d3",
+      "nombre": "Fideo",
+      "email": "f@f.com",
+      "password": "123",
+      "isAdmin": false
+    },
+    {
+      "id": "c77083bb-083f-47ba-b7b1-d44f3c9977cb",
+      "nombre": "Cuti",
+      "email": "c@c.com",
+      "password": "123",
+      "isAdmin": false
+    }
+  ],
+  "productos": [
+    {
+      "id": "dc13bbb1-fdfd-48cc-a54c-5e1f0eaacf95",
+      "nombre": "Cafe Brasilero",
+      "precio": "15",
+      "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
+    },
+    {
+      "id": "c4e2f607-8cb4-44af-80e9-2084e7f9ed64",
+      "nombre": "coca",
+      "precio": "12",
+      "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
+    }
+  ]
+}

@@ -6,7 +6,9 @@ import { Empresas } from "../../page/asesoria/Empresas";
 import { Personal} from '../../page/asesoria/Personal';
 import { Curriculum } from '../../page/asesoria/Curriculum'
 import Admin from '../../page/admin/Admin';
-import Productos from '../productos/Productos';
+
+import Login from '../login/Login';
+import FormRegistro from '../registro/FormRegistro';
 
 
 const Rutas = () => {
@@ -15,8 +17,9 @@ const Rutas = () => {
     <Routes>
     <Route path="/" element={<Home />} />
     <Route path="/nosotros" element={<Nosotros />} />
-    
+    <Route path="/login" element={<Login />} />
     <Route path="/admin" element={<Admin />} />
+    <Route path="/registro" element={<FormRegistro />} />
     <Route path="/asesoriaEmpresas" element={<Empresas />} />
     <Route path="/asesoriaPersonal" element={<Personal />} />
     <Route path="/ascesoriaCurriculum" element={<Curriculum />} />
