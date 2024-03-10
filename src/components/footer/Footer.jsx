@@ -1,9 +1,13 @@
 import React, { Fragment } from "react"
-
+import "./styleFooter.css"
+import { useNavigate } from 'react-router-dom';
 const Footer = () => {
+
+    const Navegate = useNavigate()
   return (
+
     <>
-    <footer className="bg-secondary page-footer font-small blue pt-4 mt-4">
+    <footer className="color-footer font-small blue pt-4 mt-4">
         <div className="container-fluid text-center text-md-left">
             <div className="row">
                 <div className="col-md-6 mt-md-0 mt-3">
@@ -14,19 +18,15 @@ const Footer = () => {
                 <hr className="clearfix w-100 d-md-none pb-0"/>
     
                 <div className="col-md-3 mb-md-0 mb-3">
-                    <h5 className="text-uppercase">Links</h5>
+                    <h5 className="text-uppercase">Mas Informacion</h5>
                     <ul className="list-unstyled">
-                        <li><a href="#!">Link 1</a></li>
-                        <li><a href="#!">Link 2</a></li>
-                        <li><a href="#!">Link 3</a></li>
-                        <li><a href="#!">Link 4</a></li>
+                        <li><a onClick={() => Navegate("/nosotros")}>Nosotros</a></li>
+                        <li><a onClick={() => Navegate("/productos")}>Productos</a></li>
+                        <li><a onClick={() => Navegate("*")}>Devoluciones</a></li>
+                        
                     </ul>
                 </div>
             </div>
-        </div>
-    
-        <div className="bg-dark text-center p-2">© 2024 Copyright:
-            <a href="https://web.rollingcodeschool.com/"> RollingCordeSchool</a>
         </div>
     </footer>
     </>

@@ -3,7 +3,8 @@ import "./App.css";
 import Navegador from "./components/navegador/Navegador";
 import Footer from "./components/footer/Footer";
 import Carrusel from "./components/carrusel/Carrusel";
-import { Productos } from "./components/productos/Productos";
+import { Productos } from "./page/home/productos/Productos";
+import Rutas from "./components/rutas/Rutas";
 
 
 
@@ -11,8 +12,7 @@ function App() {
   return (
     <>
       <Navegador/>
-      <Carrusel/>
-      <Productos/>
+      <Rutas/>
       <Footer/>
     </>
   );
