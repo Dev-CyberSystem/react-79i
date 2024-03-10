@@ -35,11 +35,16 @@ export function Navegador() {
           <Nav
             className="me-auto my-2 my-lg-0"
             style={{ maxHeight: '100px' }}
-            navbarScroll
-          >
-            <Nav className="me-auto">
+            navbarScroll>
+            <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
+            <NavLink className="nav-link" to="/link">Contenido</NavLink>
+            <Nav.Link href="#" disabled>
+              Coming Soon!
+            </Nav.Link>
+          </Nav>
+          <Form className="d-flex">
+          <Nav className="me-auto">
             {user ? "Bienvenido" + user.nombre : "NO ESTAS LOGEADO"}
-              <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
 
               {user?.isAdmin ? (
                 <Nav.Link onClick={() => navigate("/admin")}>
@@ -57,32 +62,6 @@ export function Navegador() {
                 </Button>
               )}
             </Nav>
-            <NavLink className="nav-link" to="/">Home</NavLink>
-            <NavLink className="nav-link" to="/link">Link</NavLink>
-            <NavDropdown title="Admin" id="navbarScrollingDropdown">
-              <NavDropdown.Item>
-              <NavLink className="nav-link" to="/admin">
-                Admin
-              </NavLink>
-              </NavDropdown.Item>
-              <NavDropdown.Item href="#action4">
-                DropDown2              </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item href="#action5">
-                DropDown3              </NavDropdown.Item>
-            </NavDropdown>
-            <Nav.Link href="#" disabled>
-              Coming Soon!
-            </Nav.Link>
-          </Nav>
-          <Form className="d-flex">
-            <Form.Control
-              type="search"
-              placeholder="Search"
-              className="me-2"
-              aria-label="Search"
-            />
-            <Button variant="outline-success">Search</Button>
           </Form>
         </Navbar.Collapse>
       </Container>
