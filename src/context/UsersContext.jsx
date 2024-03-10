@@ -43,18 +43,28 @@ const UsersContext = ({children}) => {
                 try {
                     axios.delete(`http://localhost:8000/users/${userObj.id}`);
                     setUsersArr(usersArr.filter((user) => user.id !== userObj.id))
+                    Swal.fire({
+                      title: `Usuario "${userObj.username}" eliminado`,
+                      icon: "success",
+                      showConfirmButton: false,
+                      timer: 2500
+                    });
                 } catch (ev) {
                     console.error(ev)
                 }
-              Swal.fire({
-                title: `Usuario "${userObj.username}" eliminado`,
-                icon: "success",
-                showConfirmButton: false,
-                timer: 2500
-              });
             }
           });
     }
+
+    const updateUser = async (userObj) => {
+        try {
+            await axios.put(`http://localhost:8000/users/${userObj.id}`, userObj);
+            await getUsers();
+        } catch (ev) {
+            console.error(ev)
+        }
+    }
+
 
     useEffect(() => {
         getUsers();
@@ -62,7 +72,7 @@ const UsersContext = ({children}) => {
 
 
   return (
-    <UsersProvider.Provider value={{ usersArr, addUser, suprUser }}>
+    <UsersProvider.Provider value={{ usersArr, addUser, suprUser, updateUser }}>
         {children}
     </UsersProvider.Provider>
   )

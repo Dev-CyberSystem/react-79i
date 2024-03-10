@@ -3,16 +3,16 @@ import { Table, Button, Modal } from "react-bootstrap";
 import PropTypes from "prop-types";
 import { useContext, useState } from "react";
 import { UsersProvider } from "../../context/UsersContext";
+import FormComp from "../form/FormComp";
 
 const TableComp = () => {
   const { usersArr, suprUser } = useContext(UsersProvider);
-
+  const [editUser, setEditUser] = useState(null);
   const [show, setShow] = useState(false);
-
   const handleClose = () => setShow(false);
-  
-  const handleEdit = () => {
-    setShow(true)
+  const handleEdit = (userObj) => {
+    setEditUser(userObj);
+    setShow(true);
   }
 
   return (
@@ -53,7 +53,7 @@ const TableComp = () => {
               <td key={"buttons"+userObj.id} className="border-start border-success border-opacity-25">
                 <div className="row row-cols-1 row-cols-lg-2">
                   <div>
-                    <Button onClick={() => handleEdit()} className="my-1" variant="warning">
+                    <Button onClick={() => handleEdit(userObj)} className="my-1" variant="warning">
                       Editar
                     </Button>
                   </div>
@@ -70,17 +70,19 @@ const TableComp = () => {
       </Table>
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>Modal heading</Modal.Title>
+          <Modal.Title>Editar usuario</Modal.Title>
         </Modal.Header>
-        <Modal.Body>Woohoo, you are reading this text in a modal!</Modal.Body>
-        <Modal.Footer>
+        <Modal.Body>
+          <FormComp editUser={editUser} handleClose={handleClose} />
+        </Modal.Body>
+        {/* <Modal.Footer>
           <Button variant="secondary" onClick={handleClose}>
             Close
           </Button>
           <Button variant="primary" onClick={handleClose}>
             Save Changes
           </Button>
-        </Modal.Footer>
+        </Modal.Footer> */}
       </Modal>
     </>
   );

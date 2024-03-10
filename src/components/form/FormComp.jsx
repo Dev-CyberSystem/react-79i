@@ -5,16 +5,16 @@ import { UsersProvider } from "../../context/UsersContext";
 import { v4 as uuidv4 } from "uuid";
 import Swal from "sweetalert2";
 
-const FormComp = () => {
+const FormComp = ({editUser, handleClose}) => {
   //   const [nombre, setNombre] = useState("");
   //   const [precio, setPrecio] = useState("");
-  const { addUser } = useContext(UsersProvider);
+  const { addUser, updateUser } = useContext(UsersProvider);
 
   const [user, setUser] = useState({
-    id: uuidv4(),
-    name: "",
-    username: "",
-    email: "",
+    id: editUser ? editUser.id : uuidv4(),
+    name: editUser ? editUser.name : "",
+    username: editUser ? editUser.username : "",
+    email: editUser ? editUser.email : "",
     address: {
         street: "",
         suite: "",
@@ -25,8 +25,8 @@ const FormComp = () => {
             lng: "",
         },
     },
-    phone: "",
-    website: "",
+    phone: editUser ? editUser.phone : "",
+    website: editUser ? editUser.website : "",
     company: {
         name: "",
         catchPhrase: "",
@@ -41,19 +41,19 @@ const FormComp = () => {
     });
     }
 
-    console.log(user)
-
   const handleSubmit = (e) => {
     e.preventDefault();
-    addUser(user);
-    Swal.fire({
-        postion: "center",
+    if (editUser) {
+      updateUser(user);
+      Swal.fire({
+        position: "center",
         icon: "success",
-        title: "El usuario fue almacenado",
+        title: "Cambios guardados",
         showConfirmButton: false,
         timer: 3000
-    })
-    setUser({
+      });
+      handleClose();
+      setUser({
         id: uuidv4(),
         name: "",
         username: "",
@@ -75,7 +75,40 @@ const FormComp = () => {
             catchPhrase: "",
             bs: ""
             }
-    });
+      });
+    } else {
+      addUser(user);
+      Swal.fire({
+          position: "center",
+          icon: "success",
+          title: "El usuario fue almacenado",
+          showConfirmButton: false,
+          timer: 3000
+      })
+      setUser({
+          id: uuidv4(),
+          name: "",
+          username: "",
+          email: "",
+          address: {
+              street: "",
+              suite: "",
+              city: "",
+              zipcode: "",
+              geo: {
+                  lat: "",
+                  lng: ""
+              },
+          },
+          phone: "",
+          website: "",
+          company: {
+              name: "",
+              catchPhrase: "",
+              bs: ""
+              }
+      });
+    }
   };
 
   return (
@@ -126,7 +159,10 @@ const FormComp = () => {
             name="city"
             placeholder="Ciudad" />
         </Form.Group>
-        <Button type="submit">Agregar usuario</Button>
+        {editUser 
+        ?<Button variant="warning" type="submit">Guardar cambios</Button> 
+        :<Button variant="success" type="submit">Agregar usuario</Button>
+        }
       </Form>
     </>
   );

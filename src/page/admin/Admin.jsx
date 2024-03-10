@@ -11,7 +11,7 @@ const Admin = () => {
   const { hookSet } = useContext(DataProvider);
   return (
     <>
-      <Container fluid className="admin__body">
+      <Container fluid className="admin__body bg-dark text-light">
         <Row>
           <Card className="bg-warning mb-1">
             <h1 className="text-center my-0">ADMIN PANEL</h1>
@@ -64,6 +64,6 @@ const Admin = () => {
   );
 };
 Admin.propTypes = {
-  hookReset: PropTypes.func,
+  hookSet: PropTypes.func,
 };
 export default Admin;
