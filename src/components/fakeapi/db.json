@@ -34,6 +34,12 @@
       "nombre": "Cafe Ecuatoriano",
       "precio": "200",
       "imagen": "https://www.greenstyle.com.ar/wp-content/uploads/2020/07/Cafetera-Market-Bra-12.jpg"
+    },
+    {
+      "id": "7c8b3f18-9737-4ffd-8a22-9dc419834d92",
+      "nombre": "",
+      "precio": "",
+      "imagen": ""
     }
   ]
 }

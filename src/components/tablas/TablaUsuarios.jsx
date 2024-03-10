@@ -22,7 +22,7 @@ const TablaProductos = () => {
         "No hay Usuarios"
       ) : (
         <>
-          <Table striped bordered hover>
+          <Table className="mt-4 p-1" striped bordered hover>
             <thead>
               <tr>
                 <th>#</th>
@@ -41,13 +41,13 @@ const TablaProductos = () => {
                     <td>{usuario.email}</td>
                     <td>{usuario.isAdmin ? "Si" : "No"}</td>
                     <td>
-                      <Button
+                      <Button className="m-1 p-1"
                         variant="warning"
                         onClick={() => handleEdit(usuario)}
                       >
                         Editar
                       </Button>
-                      <Button
+                      <Button className="m-1 p-1"
                         variant="danger"
                         onClick={() => deleteUsuario(usuario.id)}
                       >

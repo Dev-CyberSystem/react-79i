@@ -22,7 +22,7 @@ const TablaProductos = () => {
         "No hay productos"
       ) : (
         <>
-          <Table striped bordered hover>
+          <Table className="m-2 p-2" striped bordered hover>
             <thead>
               <tr>
                 <th>#</th>
@@ -38,8 +38,8 @@ const TablaProductos = () => {
                     <td>{producto.nombre}</td>
                     <td>{producto.precio}</td>
                     <td>
-                      <Button variant="warning" onClick={() => handleEdit(producto)}>Editar</Button>
-                      <Button variant="danger" onClick={() => deleteProductos(producto.id)}>Eliminar</Button>
+                      <Button className="m-1 p-1" variant="warning" onClick={() => handleEdit(producto)}>Editar</Button>
+                      <Button className="m-1 p-1" variant="danger" onClick={() => deleteProductos(producto.id)}>Eliminar</Button>
                     </td>
                   </tr>
               ))}
