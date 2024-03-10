@@ -1,17 +1,18 @@
+import "bootstrap/dist/css/bootstrap.min.css"; /* importar estilos de react bootstrap*/
+import Navegador from "../../components/navegador/Navegador";
+import Footer from "../../components/footer/Footer";
+import Carrusel from "../../components/carrusel/Carrusel";
+import Card from "../../components/cards/Cards";
 
 const Home = () => {
   return (
+    /*El fragment no ocupa lugar en memoria como un Div*/ 
     <>
-    {/* 
-      Landing page
-      -Navbar
-      -carrousel
-      -cards
-      -section (Informacion)
-    -footer */}
-      <h1>Home</h1>
+      <Navegador/>
+      <Carrusel/>
+      <Card/>
+      <Footer/>
     </>
-
   )
 }
 
