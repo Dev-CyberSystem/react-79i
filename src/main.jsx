@@ -4,6 +4,7 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 import { RouterProvider, createBrowserRouter } from 'react-router-dom'
 import Layout from './components/layout/Layout.jsx'
+import { PrivateRoute } from './components/private-route/PrivateRoute.jsx'
 import './index.css'
 import { Admin } from './page/admin/Admin.jsx'
 import Counter from './page/counter/Counter.jsx'
@@ -11,6 +12,7 @@ import Home from './page/home/Home.jsx'
 import { Info } from './page/info/Info.jsx'
 import { Movies } from './page/movies/Movies.jsx'
 import NotFound from './page/not-found/PageNotFound.jsx'
+import Register from './page/register/Register.jsx'
 import { store } from './redux/store.js'
 
 const router = createBrowserRouter([
@@ -35,7 +37,15 @@ const router = createBrowserRouter([
 			},
 			{
 				path: 'admin',
-				element: <Admin />,
+				element: (
+					<PrivateRoute>
+						<Admin />
+					</PrivateRoute>
+				),
+			},
+			{
+				path: 'register',
+				element: <Register />,
 			},
 		],
 		errorElement: <NotFound></NotFound>,

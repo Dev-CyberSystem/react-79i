@@ -1,9 +1,18 @@
 {
   "users": [
     {
-      "id": "1709833446505",
+      "id": "1710104232023",
       "name": "eze",
-      "email": "eze@eze.com"
+      "email": "eze@eze.com",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "1710160360208",
+      "name": "pepe",
+      "email": "pepe@argento.com",
+      "password": "pepe",
+      "role": "user"
     }
   ]
 }

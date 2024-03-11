@@ -1,17 +1,26 @@
 import { useState } from 'react'
 import { Button, Table } from 'react-bootstrap'
+import { useSelector } from 'react-redux'
 import { Error } from '../../components/error/Error'
 import FormUsers from '../../components/form-users/FormUsers'
 import { CustomModal } from '../../components/modal/Modal'
 import Spinner from '../../components/spinner/Spinner'
+import { authSelector } from '../../redux/features/auth/authSlice'
 import {
 	useDeleteUserMutation,
 	useGetAllUsersQuery,
 } from '../../redux/services/usersApi'
 
 export const Admin = () => {
-	const { data: users, isError: error, isLoading } = useGetAllUsersQuery()
+	const {
+		data: users,
+		isError: error,
+		isLoading,
+		error: resError,
+	} = useGetAllUsersQuery()
+
 	const [deleteUser] = useDeleteUserMutation()
+	const { name } = useSelector(authSelector)
 	const [show, setShow] = useState(false)
 	const [user, setUser] = useState(null)
 
@@ -20,12 +29,16 @@ export const Admin = () => {
 		setUser(user)
 		setShow(true)
 	}
-	const handleDelete = (id) => {
-		deleteUser(id)
+	const handleDelete = (user) => {
+		if (user.role === 'admin') {
+			alert('no se puede elimniar el usuario con rol admin')
+		} else {
+			deleteUser(user.id)
+		}
 	}
 
 	if (error) {
-		return <Error errorMsg={error}></Error>
+		return <Error errorMsg={resError.error}></Error>
 	}
 
 	if (!users || isLoading) {
@@ -34,6 +47,7 @@ export const Admin = () => {
 
 	return (
 		<>
+			<h1 className='text-light text-center py-2 '>Hola {name}</h1>
 			<FormUsers formType='add' />
 			<Table
 				striped
@@ -60,7 +74,7 @@ export const Admin = () => {
 								<Button variant='warning' onClick={() => handleShow(user)}>
 									Editar
 								</Button>
-								<Button variant='danger' onClick={() => handleDelete(user.id)}>
+								<Button variant='danger' onClick={() => handleDelete(user)}>
 									Eliminar
 								</Button>
 							</td>
