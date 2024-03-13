@@ -2,6 +2,7 @@ import { Button, Modal, Table } from "react-bootstrap"
 import { useContext, useState } from "react";
 import { UsuariosProvider } from "../../context/UsuariosContext";
 import FormUsuarios from "../formUsuarios/FormUsuarios";
+import FormRegister from "../formRegister/FormRegister";
 
 const TablaUsuarios = () => {
     const { usuarios, deleteUsuario } = useContext(UsuariosProvider);
@@ -32,7 +33,7 @@ const TablaUsuarios = () => {
                     <th>#</th>
                     <th>Nombre</th>
                     <th>Email</th>
-                    <th>Password</th>
+                    <th>Admin</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -40,9 +41,9 @@ const TablaUsuarios = () => {
                 {usuarios.map( (usuario) => (
                     <tr key={usuario.id}>
                         <td>{usuario.id}</td>
-                        <td>{usuario.name}</td>
+                        <td>{usuario.nombre}</td>
                         <td>{usuario.email}</td>
-                        <td>{usuario.password}</td>
+                        <td>{usuario.isAdmin ? "Si" : "No"}</td>
                         <td>
                             <Button variant="warning" onClick={ () => handleEdit(usuario) }>Editar</Button>
                             <Button variant="danger" onClick={ () => deleteUsuario(usuario.id) }>Eliminar</Button>
@@ -57,7 +58,8 @@ const TablaUsuarios = () => {
                 <Modal.Title>Formulario de Edición</Modal.Title>
             </Modal.Header>
             <Modal.Body>
-                <FormUsuarios editarUsuario={editarUsuario} handleClose={handleClose}/>
+                {/* <FormUsuarios editarUsuario={editarUsuario} handleClose={handleClose}/> */}
+                <FormRegister editarUsuario={editarUsuario} handleClose={handleClose}/>
             </Modal.Body>
         </Modal>
         </>

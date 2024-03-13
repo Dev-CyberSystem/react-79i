@@ -51,8 +51,14 @@ const UsuariosContext = ( {children} ) => {
         }
     };
 
+    // ------------->  LOGOUT  <-------------
+    const logOut = () => {
+        localStorage.removeItem("user");
+        window.location.href = "/";
+    };
+
     return (
-        <UsuariosProvider.Provider value={ { usuarios, addUsuario, updateUsuario, deleteUsuario } }>
+        <UsuariosProvider.Provider value={ { usuarios, addUsuario, updateUsuario, deleteUsuario, logOut } }>
             {children} {" "}
         </UsuariosProvider.Provider>
     )

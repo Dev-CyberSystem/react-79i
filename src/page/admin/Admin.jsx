@@ -22,11 +22,11 @@ const admin = () => {
         <hr />
 
         <Row>
-            <Col>
+            {/* <Col>
                 <FormUsuarios />
-            </Col>
+            </Col> */}
 
-            <Col>
+            <Col className='mt-5'>
                 <TablaUsuarios />
             </Col>
         </Row>

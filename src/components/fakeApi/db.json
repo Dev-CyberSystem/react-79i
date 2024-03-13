@@ -1,10 +1,11 @@
 {
   "users": [
     {
-      "id": "4a40494b-8ed7-4017-90d4-927c45b9fbd0",
-      "name": "Lio",
-      "email": "capo@ds",
-      "password": "1"
+      "id": "a7bf6c1d-370b-4681-b6f0-6c163ac6418f",
+      "nombre": "1",
+      "email": "1@1",
+      "password": "1",
+      "isAdmin": true
     }
   ],
   "productos": [
