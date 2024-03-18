@@ -11,8 +11,7 @@ const NavbarComp = () => {
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
 
-  const loggedUser = JSON.parse(localStorage.getItem("loggedUser")) | null;
-  console.log(loggedUser.name)
+  const loggedUser = JSON.parse(localStorage.getItem("loggedUser"));
 
     return (
         <>
@@ -44,8 +43,8 @@ const NavbarComp = () => {
                 <Nav.Link onClick={() => navigate('/s')}>404</Nav.Link>
                 <Nav.Link onClick={() => navigate('/admin')}>Admin panel</Nav.Link>
                 {loggedUser ?(
-                <Nav.Link disabled className='text-success'> asdasdasd</Nav.Link>
-                ) :(null)
+                <Nav.Link disabled className='text-success ms-5'>Bienvenido {loggedUser.name}</Nav.Link>
+                ) :null
                 }
               </Nav>
               <Form className="d-flex">
@@ -59,11 +58,14 @@ const NavbarComp = () => {
               </Form>
             </Navbar.Collapse>
             {loggedUser ?(
-            <Button variant="danger" onClick={localStorage.removeItem("loggedUser")+navigate('/')} className='ms-2'>Cerrar sesión</Button>
+            <Button variant="danger" onClick={()=> localStorage.removeItem("loggedUser")+navigate('/')} className='ms-2'>Cerrar sesión</Button>
             ) : (
-            <Button variant="success" onClick={handleShow} className='ms-2'>Iniciar sesión</Button>
+              <>
+                <Button variant="success" onClick={handleShow} className='ms-2'>Iniciar sesión</Button>
+                <Button variant="warning" onClick={() => navigate('/register') } className='ms-2'>Registrarse</Button>
+              </>
             )}
-            <Button variant="warning" onClick={() => navigate('/register') } className='ms-2'>Registrarse</Button>
+          
           </Container>
         </Navbar>
 
