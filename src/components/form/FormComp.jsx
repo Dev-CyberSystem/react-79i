@@ -13,6 +13,7 @@ const FormComp = ({editUser, handleClose}) => {
     name: editUser ? editUser.name : "",
     username: editUser ? editUser.username : "",
     email: editUser ? editUser.email : "",
+    password: editUser ? editUser.password : "",
     city: editUser ? editUser.city : "",
     phone: editUser ? editUser.phone : "",
     website: editUser ? editUser.website : "",
@@ -25,6 +26,7 @@ const FormComp = ({editUser, handleClose}) => {
         name: "",
         username: "",
         email: "",
+        password:"",
         city: "",
         phone: "",
         website: "",
@@ -33,10 +35,17 @@ const FormComp = ({editUser, handleClose}) => {
   };
 
   const handleChange = (e) => {
-    setUser({
+    if(e.target.type==="checkbox"){
+      setUser({
         ...user,
-        [e.target.name]: e.target.value,
+        [e.target.name]: e.target.checked,
     });
+    } else {
+      setUser({
+          ...user,
+          [e.target.name]: e.target.value,
+      });
+    }
   };
 
   const handleSubmit = (e) => {
@@ -112,8 +121,9 @@ const FormComp = ({editUser, handleClose}) => {
           <Form.Label className="mb-0">Administrador</Form.Label>
           <Form.Check
             type="checkbox"
-            defaultChecked={user.isAdmin}
-            onChange={(e)=> (e.target.value=e.target.checked) + console.log(e.target.value)+handleChange(e)}
+            label="Admin"
+            checked={user.isAdmin}
+            onChange={handleChange}
             name="isAdmin" />
         </Form.Group>
         {editUser 

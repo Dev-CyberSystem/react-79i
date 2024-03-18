@@ -52,7 +52,7 @@ const TableComp = () => {
                 {userObj.phone}
               </td>
               <td key={"isAdmin"+userObj.id} className="border-start border-success border-opacity-25">
-                {(userObj.isAdmin===true) ?"ADMIN." :"USUARIO"}
+                {userObj.isAdmin ?"ADMIN." :"USUARIO"}
               </td>
               <td key={"buttons"+userObj.id} className="border-start border-success border-opacity-25 text-nowrap">
                     <Button onClick={() => handleEdit(userObj)} className="" variant="warning">
