@@ -3,11 +3,9 @@ import { Form, Button } from "react-bootstrap";
 import { useState, useContext } from "react";
 import { UsersProvider } from "../../context/UsersContext";
 import { v4 as uuidv4 } from "uuid";
-import Swal from "sweetalert2";
 
 const FormComp = ({editUser, handleClose}) => {
-  //   const [nombre, setNombre] = useState("");
-  //   const [precio, setPrecio] = useState("");
+  
   const { addUser, updateUser } = useContext(UsersProvider);
 
   const [user, setUser] = useState({
@@ -15,99 +13,41 @@ const FormComp = ({editUser, handleClose}) => {
     name: editUser ? editUser.name : "",
     username: editUser ? editUser.username : "",
     email: editUser ? editUser.email : "",
-    address: {
-        street: "",
-        suite: "",
-        city: "",
-        zipcode: "",
-        geo: {
-            lat: "",
-            lng: "",
-        },
-    },
+    city: editUser ? editUser.city : "",
     phone: editUser ? editUser.phone : "",
     website: editUser ? editUser.website : "",
-    company: {
-        name: "",
-        catchPhrase: "",
-        bs: "",
-    },
+    isAdmin: editUser ? editUser.isAdmin : false
   });
+
+  const resetUserState = () => {
+      setUser({
+        id: uuidv4(),
+        name: "",
+        username: "",
+        email: "",
+        city: "",
+        phone: "",
+        website: "",
+        isAdmin: false
+      });
+  };
 
   const handleChange = (e) => {
     setUser({
         ...user,
         [e.target.name]: e.target.value,
     });
-    }
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (editUser) {
       updateUser(user);
-      Swal.fire({
-        position: "center",
-        icon: "success",
-        title: "Cambios guardados",
-        showConfirmButton: false,
-        timer: 3000
-      });
       handleClose();
-      setUser({
-        id: uuidv4(),
-        name: "",
-        username: "",
-        email: "",
-        address: {
-            street: "",
-            suite: "",
-            city: "",
-            zipcode: "",
-            geo: {
-                lat: "",
-                lng: ""
-            },
-        },
-        phone: "",
-        website: "",
-        company: {
-            name: "",
-            catchPhrase: "",
-            bs: ""
-            }
-      });
+      resetUserState()
     } else {
       addUser(user);
-      Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "El usuario fue almacenado",
-          showConfirmButton: false,
-          timer: 3000
-      })
-      setUser({
-          id: uuidv4(),
-          name: "",
-          username: "",
-          email: "",
-          address: {
-              street: "",
-              suite: "",
-              city: "",
-              zipcode: "",
-              geo: {
-                  lat: "",
-                  lng: ""
-              },
-          },
-          phone: "",
-          website: "",
-          company: {
-              name: "",
-              catchPhrase: "",
-              bs: ""
-              }
-      });
+      resetUserState()
     }
   };
 
@@ -130,7 +70,7 @@ const FormComp = ({editUser, handleClose}) => {
             value={user.username}
             onChange={handleChange}
             name="username"
-            placeholder="Sobrenombre de usuario" />
+            placeholder="Alias" />
         </Form.Group>
         <Form.Group className="mb-2">
           <Form.Label className="mb-0">Email</Form.Label>
@@ -142,22 +82,39 @@ const FormComp = ({editUser, handleClose}) => {
             placeholder="Email" />
         </Form.Group>
         <Form.Group className="mb-2">
+          <Form.Label className="mb-0">Ciudad</Form.Label>
+          <Form.Control
+            type="text"
+            value={user.city}
+            onChange={handleChange}
+            name="city"
+            placeholder="Ciudad" />
+        </Form.Group>
+        <Form.Group className="mb-2">
           <Form.Label className="mb-0">Teléfono</Form.Label>
           <Form.Control required
-            type="number"
+            type="phone"
             value={user.phone}
             onChange={handleChange}
             name="phone"
             placeholder="Teléfono" />
         </Form.Group>
         <Form.Group className="mb-2">
-          <Form.Label className="mb-0">Ciudad</Form.Label>
+          <Form.Label className="mb-0">Sitio Web</Form.Label>
           <Form.Control
             type="text"
-            value={user.address.city}
+            value={user.website}
             onChange={handleChange}
-            name="city"
-            placeholder="Ciudad" />
+            name="website"
+            placeholder="Sitio Web" />
+        </Form.Group>
+        <Form.Group className="mb-2">
+          <Form.Label className="mb-0">Administrador</Form.Label>
+          <Form.Check
+            type="checkbox"
+            defaultChecked={user.isAdmin}
+            onChange={(e)=> (e.target.value=e.target.checked) + console.log(e.target.value)+handleChange(e)}
+            name="isAdmin" />
         </Form.Group>
         {editUser 
         ?<Button variant="warning" type="submit">Guardar cambios</Button> 

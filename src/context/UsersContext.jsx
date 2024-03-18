@@ -23,6 +23,13 @@ const UsersContext = ({children}) => {
             const dispatchNewUser = await axios.post("http://localhost:8000/users", newUserObj);
             console.log(dispatchNewUser.data, "Usuario agregado")
             setUsersArr([...usersArr, dispatchNewUser.data])
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Usuario registrado",
+                showConfirmButton: false,
+                timer: 3000
+            });
         } catch(ev) {
             console.error(`Server dispatch fail==> ${ev}`)
         }
@@ -60,6 +67,13 @@ const UsersContext = ({children}) => {
         try {
             await axios.put(`http://localhost:8000/users/${userObj.id}`, userObj);
             await getUsers();
+            Swal.fire({
+                position: "center",
+                icon: "success",
+                title: "Cambios guardados",
+                showConfirmButton: false,
+                timer: 3000
+              });
         } catch (ev) {
             console.error(ev)
         }

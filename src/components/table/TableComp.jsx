@@ -14,7 +14,7 @@ const TableComp = () => {
     setEditUser(userObj);
     setShow(true);
   }
-
+  
   return (
     <>
       <Table
@@ -24,12 +24,13 @@ const TableComp = () => {
         className="border border-success border-opacity-100 text-center align-middle">
         <thead>
           <tr>
-            <th key="342f2f2f" className="border border-success border-opacity-50">N°</th>
-            <th key="5g5j77j" className="border border-success border-opacity-50">NOMBRE</th>
-            <th key="243h78" className="border border-success border-opacity-50">USUARIO</th>
-            <th key="7j48ih" className="border border-success border-opacity-50">TELÉFONO</th>
-            <th key="68755hggh" className="border border-success border-opacity-50">EMAIL</th>
-            <th key="345urgh65" className="border border-success border-opacity-50">ACCIONES</th>
+            <th key="N°" className="border border-success border-opacity-50">N°</th>
+            <th key="NOMBRE" className="border border-success border-opacity-50">NOMBRE</th>
+            <th key="ALIAS" className="border border-success border-opacity-50">ALIAS</th>
+            <th key="TEL" className="border border-success border-opacity-50">TELÉFONO</th>
+            <th key="EMAIL" className="border border-success border-opacity-50">EMAIL</th>
+            <th key="ESTADO" className="border border-success border-opacity-50">NIVEL</th>
+            <th key="ACCIONES" className="border border-success border-opacity-50">ACCIONES</th>
           </tr>
         </thead>
         <tbody>
@@ -44,25 +45,22 @@ const TableComp = () => {
               <td key={"username"+userObj.id} className="border-start border-success border-opacity-25">
                 {userObj.username}
               </td>
-              <td key={"phone"+userObj.id} className="border-start border-success border-opacity-25">
-                {userObj.phone}
-              </td>
               <td key={"email"+userObj.id} className="border-start border-success border-opacity-25">
                 {userObj.email}
               </td>
-              <td key={"buttons"+userObj.id} className="border-start border-success border-opacity-25">
-                <div className="row row-cols-1 row-cols-lg-2">
-                  <div>
-                    <Button onClick={() => handleEdit(userObj)} className="my-1" variant="warning">
+              <td key={"phone"+userObj.id} className="border-start border-success border-opacity-25">
+                {userObj.phone}
+              </td>
+              <td key={"isAdmin"+userObj.id} className="border-start border-success border-opacity-25">
+                {(userObj.isAdmin===true) ?"ADMIN." :"USUARIO"}
+              </td>
+              <td key={"buttons"+userObj.id} className="border-start border-success border-opacity-25 text-nowrap">
+                    <Button onClick={() => handleEdit(userObj)} className="" variant="warning">
                       Editar
                     </Button>
-                  </div>
-                  <div>
-                    <Button onClick={() => suprUser(userObj)} className="my-1" variant="danger">
+                    <Button onClick={() => suprUser(userObj)} className="ms-1" variant="danger">
                       Eliminar
                     </Button>
-                  </div>
-                </div>
               </td>
             </tr>
           ))}
@@ -75,14 +73,6 @@ const TableComp = () => {
         <Modal.Body>
           <FormComp editUser={editUser} handleClose={handleClose} />
         </Modal.Body>
-        {/* <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Close
-          </Button>
-          <Button variant="primary" onClick={handleClose}>
-            Save Changes
-          </Button>
-        </Modal.Footer> */}
       </Modal>
     </>
   );

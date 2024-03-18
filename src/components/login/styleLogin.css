@@ -1,0 +1,8 @@
+.textLink {
+    text-decoration: none;
+    color: rgb(0, 27, 116);
+}
+.textLink:hover {
+    cursor: pointer;
+    color: rgb(0, 204, 204);
+}
