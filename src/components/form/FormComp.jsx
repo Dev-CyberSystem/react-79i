@@ -35,15 +35,16 @@ const FormComp = ({editUser, handleClose}) => {
   };
 
   const handleChange = (e) => {
-    if(e.target.type==="checkbox"){
+    const { name, value, checked, type } = e.target
+    if(type==="checkbox"){
       setUser({
         ...user,
-        [e.target.name]: e.target.checked,
+        [name]: checked,
     });
     } else {
       setUser({
           ...user,
-          [e.target.name]: e.target.value,
+          [name]: value,
       });
     }
   };
