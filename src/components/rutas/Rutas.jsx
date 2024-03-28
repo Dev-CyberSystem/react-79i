@@ -11,8 +11,8 @@ const Rutas = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/registro" element={<FormRegistro />} />
-        {user && user.isAdmin ? (
-          <Route path="/admin" element={<Admin />} />
+        {user && user.admin ? (
+          <Route path="/api/admin" element={<Admin />} />
         ) : null}
 
         <Route path="*" element={<h1>Not Found</h1>} />

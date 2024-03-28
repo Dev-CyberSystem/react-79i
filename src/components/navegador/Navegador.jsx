@@ -30,8 +30,8 @@ const Navegador = () => {
               {user ? "Bienvenido" + user.nombre : "No hay usuario"}
               <Nav.Link onClick={() => navigate("/")}>Home</Nav.Link>
 
-              {user?.isAdmin ? (
-                <Nav.Link onClick={() => navigate("/admin")}>
+              {user?.admin ? (
+                <Nav.Link onClick={() => navigate("/api/admin")}>
                   Administrador
                 </Nav.Link>
               ) : null}

@@ -12,11 +12,12 @@ const FormRegistro = ({ editarUsuarios, handleClose }) => {
   const navigate = useNavigate();
 
   const [usuario, setUsuario] = useState({
-    id: editarUsuarios ? editarUsuarios.id : uuidv4(),
+    id: editarUsuarios ? editarUsuarios._id : uuidv4(),
     nombre: editarUsuarios ? editarUsuarios.nombre : "",
+    apellido: editarUsuarios ? editarUsuarios.apellido : "",
     email: editarUsuarios ? editarUsuarios.email : "",
     password: editarUsuarios ? editarUsuarios.password : "",
-    isAdmin: editarUsuarios ? editarUsuarios.isAdmin : false,
+    admin: editarUsuarios ? editarUsuarios.admin : false,
   });
 
   const handleChange = (e) => {
@@ -83,6 +84,16 @@ const FormRegistro = ({ editarUsuarios, handleClose }) => {
                 placeholder="Nombre del usuario"
               />
             </Form.Group>
+              <Form.Group className="mb-3">
+              <Form.Label>apellido</Form.Label>
+              <Form.Control
+                type="text"
+                value={usuario.apellido}
+                onChange={handleChange}
+                name="apellido"
+                placeholder="Apellido del usuario"
+              />
+            </Form.Group>
             <Form.Group className="mb-3">
               <Form.Label>Email</Form.Label>
               <Form.Control
@@ -109,9 +120,9 @@ const FormRegistro = ({ editarUsuarios, handleClose }) => {
                 <Form.Check
                   type="checkbox"
                   label="Admin"
-                  checked={usuario.isAdmin}
+                  checked={usuario.admin}
                   onChange={handleChange}
-                  name="isAdmin"
+                  name="admin"
                 />
               </Form.Group>
             ) : null}

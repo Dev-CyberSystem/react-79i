@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Form, Button } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
 import { UsersProvider } from "../../context/UsersContext";
@@ -9,41 +9,40 @@ const Login = ({ handleClose }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
-  const { usuarios } = useContext(UsersProvider);
+  const { loginUsuario, usuarioLogueado } = useContext(UsersProvider);
 
-  console.log(usuarios, "usuarios en el login");
+  console.log(usuarioLogueado, "usuarios en el login");
 
   const navigate = useNavigate();
 
+  useEffect(() => {
+    if (usuarioLogueado) {
+      Swal.fire({
+        position: "center",
+        icon: "success",
+        title: "Bienvenido",
+        showConfirmButton: false,
+        timer: 1500,
+      });
+
+      const usuario = {
+        nombre: usuarioLogueado.nombre,
+        apellido: usuarioLogueado.apellido,
+        email: usuarioLogueado.email,
+        admin: usuarioLogueado.admin,
+      };
+
+      localStorage.setItem("user", JSON.stringify(usuario));
+      
+      handleClose();
+    } 
+  }, [usuarioLogueado, handleClose]);
+
   const handleSubmit = (e) => {
     e.preventDefault();
+
     try {
-      const user = usuarios.find(
-        (user) => user.email === email && user.password === password
-      );
-
-      console.log(user, "user");
-      if (user) {
-        Swal.fire({
-          position: "center",
-          icon: "success",
-          title: "Bienvenido",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-
-        localStorage.setItem("user", JSON.stringify(user));
-        navigate("/");
-        handleClose();
-      } else {
-        Swal.fire({
-          position: "center",
-          icon: "error",
-          title: "Usuario o contraseña incorrectos",
-          showConfirmButton: false,
-          timer: 1500,
-        });
-      }
+      loginUsuario({ email, password });
     } catch (error) {
       console.log(error);
     }

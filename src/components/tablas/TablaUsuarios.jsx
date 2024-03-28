@@ -35,10 +35,10 @@ const TablaProductos = () => {
               {usuarios.map((usuario) => (
                 <>
                   <tr>
-                    <td>{usuario.id}</td>
+                    <td>{usuario._id}</td>
                     <td>{usuario.nombre}</td>
                     <td>{usuario.email}</td>
-                    <td>{usuario.isAdmin ? "Si" : "No"}</td>
+                    <td>{usuario.admin ? "Si" : "No"}</td>
                     <td>
                       <Button
                         variant="warning"
